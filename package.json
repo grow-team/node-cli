@@ -5,5 +5,13 @@
   "main": "index.js",
   "repository": "git@github.com:an-jia/node-cli.git",
   "author": "jialinjing <jialinjing@360.cn>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^5.0.1"
+  },
+  "devDependencies": {
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
+  }
 }
