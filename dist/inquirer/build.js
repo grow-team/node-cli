@@ -1068,17 +1068,6 @@ var conversions_13 = conversions.hcg;
 var conversions_14 = conversions.apple;
 var conversions_15 = conversions.gray;
 
-/*
-	this function routes a model to all other models.
-
-	all functions that are routed have a property `.conversion` attached
-	to the returned synthetic function. This property is an array
-	of strings, each with the steps in between the 'from' and 'to'
-	color models (inclusive).
-
-	conversions that are not possible simply are not included.
-*/
-
 function buildGraph() {
 	var graph = {};
 	// https://jsperf.com/object-keys-vs-for-in-with-closure/3
@@ -2017,13 +2006,6 @@ const fn = str => {
 
 module.exports = Object.assign(fn, figures);
 });
-
-/**
- * Separator object
- * Used to space/separate choices group
- * @constructor
- * @param {String} line   Separation line content (facultative)
- */
 
 class Separator {
   constructor(line) {
@@ -19391,10 +19373,6 @@ MuteStream.prototype.destroy = proxy('destroy');
 MuteStream.prototype.destroySoon = proxy('destroySoon');
 MuteStream.prototype.close = proxy('close');
 
-/**
- * Base interface class other can inherits from
- */
-
 class UI {
   constructor(opt) {
     // Instantiate the Readline interface
@@ -19573,12 +19551,6 @@ x.iTerm = {};
 x.iTerm.setCwd = cwd => '\u001B]50;CurrentDir=' + (cwd || process.cwd()) + '\u0007';
 });
 
-/**
- * Move cursor left by `x`
- * @param  {Readline} rl - Readline instance
- * @param  {Number}   x  - How far to go left (default to 1)
- */
-
 var left = function(rl, x) {
   rl.output.write(ansiEscapes.cursorBackward(x));
 };
@@ -19629,15 +19601,6 @@ var readline$2 = {
 	down: down,
 	clearLine: clearLine
 };
-
-/**
- * Sticky bottom bar user interface
- */
-
-
-
-
-
 
 class BottomBar extends baseUI {
   constructor(opt) {
@@ -19729,9 +19692,6 @@ class BottomBar extends baseUI {
 
 var bottomBar = BottomBar;
 
-// CommonJS / Node have global context exposed as "global" variable.
-// We don't want to include the whole node.d.ts this this compilation unit so we'll just fake
-// the global "global" var for now.
 var __window = typeof window !== 'undefined' && window;
 var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' &&
     self instanceof WorkerGlobalScope && self;
@@ -19746,7 +19706,7 @@ var root_1 = _root;
         throw new Error('RxJS could not find any global context (window, self, global)');
     }
 })();
-
+//# sourceMappingURL=root.js.map
 
 var root = {
 	root: root_1
@@ -19756,14 +19716,14 @@ function isFunction(x) {
     return typeof x === 'function';
 }
 var isFunction_2 = isFunction;
-
+//# sourceMappingURL=isFunction.js.map
 
 var isFunction_1 = {
 	isFunction: isFunction_2
 };
 
 var isArray_1 = Array.isArray || (function (x) { return x && typeof x.length === 'number'; });
-
+//# sourceMappingURL=isArray.js.map
 
 var isArray = {
 	isArray: isArray_1
@@ -19773,15 +19733,14 @@ function isObject(x) {
     return x != null && typeof x === 'object';
 }
 var isObject_2 = isObject;
-
+//# sourceMappingURL=isObject.js.map
 
 var isObject_1 = {
 	isObject: isObject_2
 };
 
-// typeof any so that it we don't have to cast when comparing a result to the error object
 var errorObject_1 = { e: {} };
-
+//# sourceMappingURL=errorObject.js.map
 
 var errorObject = {
 	errorObject: errorObject_1
@@ -19803,7 +19762,7 @@ function tryCatch(fn) {
 }
 var tryCatch_2 = tryCatch;
 
-
+//# sourceMappingURL=tryCatch.js.map
 
 var tryCatch_1 = {
 	tryCatch: tryCatch_2
@@ -19832,24 +19791,12 @@ var UnsubscriptionError$1 = (function (_super) {
     return UnsubscriptionError;
 }(Error));
 var UnsubscriptionError_2 = UnsubscriptionError$1;
-
+//# sourceMappingURL=UnsubscriptionError.js.map
 
 var UnsubscriptionError_1 = {
 	UnsubscriptionError: UnsubscriptionError_2
 };
 
-/**
- * Represents a disposable resource, such as the execution of an Observable. A
- * Subscription has one important method, `unsubscribe`, that takes no argument
- * and just disposes the resource held by the subscription.
- *
- * Additionally, subscriptions may be grouped together through the `add()`
- * method, which will attach a child Subscription to the current Subscription.
- * When a Subscription is unsubscribed, all its children (and its grandchildren)
- * will be unsubscribed as well.
- *
- * @class Subscription
- */
 var Subscription$1 = (function () {
     /**
      * @param {function(): void} [unsubscribe] A function describing how to
@@ -20023,7 +19970,7 @@ var Subscription_2 = Subscription$1;
 function flattenUnsubscriptionErrors(errors) {
     return errors.reduce(function (errs, err) { return errs.concat((err instanceof UnsubscriptionError_1.UnsubscriptionError) ? err.errors : err); }, []);
 }
-
+//# sourceMappingURL=Subscription.js.map
 
 var Subscription_1 = {
 	Subscription: Subscription_2
@@ -20035,7 +19982,7 @@ var empty = {
     error: function (err) { throw err; },
     complete: function () { }
 };
-
+//# sourceMappingURL=Observer.js.map
 
 var Observer = {
 	empty: empty
@@ -20049,7 +19996,7 @@ exports.rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'f
  * @deprecated use rxSubscriber instead
  */
 exports.$$rxSubscriber = exports.rxSubscriber;
-
+//# sourceMappingURL=rxSubscriber.js.map
 });
 
 var rxSubscriber_1 = rxSubscriber.rxSubscriber;
@@ -20318,7 +20265,7 @@ var SafeSubscriber = (function (_super) {
     };
     return SafeSubscriber;
 }(Subscriber$1));
-
+//# sourceMappingURL=Subscriber.js.map
 
 var Subscriber_1 = {
 	Subscriber: Subscriber_2
@@ -20339,7 +20286,7 @@ function toSubscriber(nextOrObserver, error, complete) {
     return new Subscriber_1.Subscriber(nextOrObserver, error, complete);
 }
 var toSubscriber_2 = toSubscriber;
-
+//# sourceMappingURL=toSubscriber.js.map
 
 var toSubscriber_1 = {
 	toSubscriber: toSubscriber_2
@@ -20369,23 +20316,21 @@ exports.observable = getSymbolObservable(root.root);
  * @deprecated use observable instead
  */
 exports.$$observable = exports.observable;
-
+//# sourceMappingURL=observable.js.map
 });
 
 var observable_1 = observable.getSymbolObservable;
 var observable_2 = observable.observable;
 var observable_3 = observable.$$observable;
 
-/* tslint:disable:no-empty */
 function noop() { }
 var noop_2 = noop;
-
+//# sourceMappingURL=noop.js.map
 
 var noop_1 = {
 	noop: noop_2
 };
 
-/* tslint:enable:max-line-length */
 function pipe$1() {
     var fns = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -20407,19 +20352,13 @@ function pipeFromArray(fns) {
     };
 }
 var pipeFromArray_1 = pipeFromArray;
-
+//# sourceMappingURL=pipe.js.map
 
 var pipe_1 = {
 	pipe: pipe_2,
 	pipeFromArray: pipeFromArray_1
 };
 
-/**
- * A representation of any set of values over any amount of time. This is the most basic building block
- * of RxJS.
- *
- * @class Observable<T>
- */
 var Observable$1 = (function () {
     /**
      * @constructor
@@ -20713,7 +20652,7 @@ var Observable$1 = (function () {
     return Observable;
 }());
 var Observable_2 = Observable$1;
-
+//# sourceMappingURL=Observable.js.map
 
 var Observable_1 = {
 	Observable: Observable_2
@@ -20744,7 +20683,7 @@ var ObjectUnsubscribedError$1 = (function (_super) {
     return ObjectUnsubscribedError;
 }(Error));
 var ObjectUnsubscribedError_2 = ObjectUnsubscribedError$1;
-
+//# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 var ObjectUnsubscribedError_1 = {
 	ObjectUnsubscribedError: ObjectUnsubscribedError_2
@@ -20788,7 +20727,7 @@ var SubjectSubscription = (function (_super) {
     return SubjectSubscription;
 }(Subscription_1.Subscription));
 var SubjectSubscription_2 = SubjectSubscription;
-
+//# sourceMappingURL=SubjectSubscription.js.map
 
 var SubjectSubscription_1 = {
 	SubjectSubscription: SubjectSubscription_2
@@ -20960,7 +20899,7 @@ var AnonymousSubject$1 = (function (_super) {
     return AnonymousSubject;
 }(Subject$1));
 var AnonymousSubject_1 = AnonymousSubject$1;
-
+//# sourceMappingURL=Subject.js.map
 
 var Subject_1 = {
 	SubjectSubscriber: SubjectSubscriber_1,
@@ -21019,7 +20958,7 @@ var AsyncSubject$1 = (function (_super) {
     return AsyncSubject;
 }(Subject_1.Subject));
 var AsyncSubject_2 = AsyncSubject$1;
-
+//# sourceMappingURL=AsyncSubject.js.map
 
 var AsyncSubject_1 = {
 	AsyncSubject: AsyncSubject_2
@@ -21287,20 +21226,21 @@ function dispatchError(arg) {
     var err = arg.err, subject = arg.subject;
     subject.error(err);
 }
-
+//# sourceMappingURL=BoundCallbackObservable.js.map
 
 var BoundCallbackObservable_1 = {
 	BoundCallbackObservable: BoundCallbackObservable_2
 };
 
 var bindCallback_1 = BoundCallbackObservable_1.BoundCallbackObservable.create;
-
+//# sourceMappingURL=bindCallback.js.map
 
 var bindCallback$2 = {
 	bindCallback: bindCallback_1
 };
 
 Observable_1.Observable.bindCallback = bindCallback$2.bindCallback;
+//# sourceMappingURL=bindCallback.js.map
 
 var __extends$7 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -21563,26 +21503,27 @@ function dispatchError$1(arg) {
     var err = arg.err, subject = arg.subject;
     subject.error(err);
 }
-
+//# sourceMappingURL=BoundNodeCallbackObservable.js.map
 
 var BoundNodeCallbackObservable_1 = {
 	BoundNodeCallbackObservable: BoundNodeCallbackObservable_2
 };
 
 var bindNodeCallback_1 = BoundNodeCallbackObservable_1.BoundNodeCallbackObservable.create;
-
+//# sourceMappingURL=bindNodeCallback.js.map
 
 var bindNodeCallback$2 = {
 	bindNodeCallback: bindNodeCallback_1
 };
 
 Observable_1.Observable.bindNodeCallback = bindNodeCallback$2.bindNodeCallback;
+//# sourceMappingURL=bindNodeCallback.js.map
 
 function isScheduler(value) {
     return value && typeof value.schedule === 'function';
 }
 var isScheduler_2 = isScheduler;
-
+//# sourceMappingURL=isScheduler.js.map
 
 var isScheduler_1 = {
 	isScheduler: isScheduler_2
@@ -21644,7 +21585,7 @@ var ScalarObservable = (function (_super) {
     return ScalarObservable;
 }(Observable_1.Observable));
 var ScalarObservable_2 = ScalarObservable;
-
+//# sourceMappingURL=ScalarObservable.js.map
 
 var ScalarObservable_1 = {
 	ScalarObservable: ScalarObservable_2
@@ -21729,7 +21670,7 @@ var EmptyObservable = (function (_super) {
     return EmptyObservable;
 }(Observable_1.Observable));
 var EmptyObservable_2 = EmptyObservable;
-
+//# sourceMappingURL=EmptyObservable.js.map
 
 var EmptyObservable_1 = {
 	EmptyObservable: EmptyObservable_2
@@ -21855,7 +21796,7 @@ var ArrayObservable = (function (_super) {
     return ArrayObservable;
 }(Observable_1.Observable));
 var ArrayObservable_2 = ArrayObservable;
-
+//# sourceMappingURL=ArrayObservable.js.map
 
 var ArrayObservable_1 = {
 	ArrayObservable: ArrayObservable_2
@@ -21889,14 +21830,14 @@ var OuterSubscriber = (function (_super) {
     return OuterSubscriber;
 }(Subscriber_1.Subscriber));
 var OuterSubscriber_2 = OuterSubscriber;
-
+//# sourceMappingURL=OuterSubscriber.js.map
 
 var OuterSubscriber_1 = {
 	OuterSubscriber: OuterSubscriber_2
 };
 
 var isArrayLike_1 = (function (x) { return x && typeof x.length === 'number'; });
-
+//# sourceMappingURL=isArrayLike.js.map
 
 var isArrayLike = {
 	isArrayLike: isArrayLike_1
@@ -21906,7 +21847,7 @@ function isPromise(value) {
     return value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
 }
 var isPromise_2 = isPromise;
-
+//# sourceMappingURL=isPromise.js.map
 
 var isPromise_1 = {
 	isPromise: isPromise_2
@@ -21948,7 +21889,7 @@ exports.iterator = symbolIteratorPonyfill(root.root);
  * @deprecated use iterator instead
  */
 exports.$$iterator = exports.iterator;
-
+//# sourceMappingURL=iterator.js.map
 });
 
 var iterator_1 = iterator.symbolIteratorPonyfill;
@@ -21989,7 +21930,7 @@ var InnerSubscriber = (function (_super) {
     return InnerSubscriber;
 }(Subscriber_1.Subscriber));
 var InnerSubscriber_2 = InnerSubscriber;
-
+//# sourceMappingURL=InnerSubscriber.js.map
 
 var InnerSubscriber_1 = {
 	InnerSubscriber: InnerSubscriber_2
@@ -22064,7 +22005,7 @@ function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     return null;
 }
 var subscribeToResult_2 = subscribeToResult;
-
+//# sourceMappingURL=subscribeToResult.js.map
 
 var subscribeToResult_1 = {
 	subscribeToResult: subscribeToResult_2
@@ -22219,7 +22160,7 @@ var CombineLatestSubscriber = (function (_super) {
     return CombineLatestSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var CombineLatestSubscriber_1 = CombineLatestSubscriber;
-
+//# sourceMappingURL=combineLatest.js.map
 
 var combineLatest_1 = {
 	combineLatest: combineLatest_2$2,
@@ -22227,115 +22168,6 @@ var combineLatest_1 = {
 	CombineLatestSubscriber: CombineLatestSubscriber_1
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Combines multiple Observables to create an Observable whose values are
- * calculated from the latest values of each of its input Observables.
- *
- * <span class="informal">Whenever any input Observable emits a value, it
- * computes a formula using the latest values from all the inputs, then emits
- * the output of that formula.</span>
- *
- * <img src="./img/combineLatest.png" width="100%">
- *
- * `combineLatest` combines the values from all the Observables passed as
- * arguments. This is done by subscribing to each Observable in order and,
- * whenever any Observable emits, collecting an array of the most recent
- * values from each Observable. So if you pass `n` Observables to operator,
- * returned Observable will always emit an array of `n` values, in order
- * corresponding to order of passed Observables (value from the first Observable
- * on the first place and so on).
- *
- * Static version of `combineLatest` accepts either an array of Observables
- * or each Observable can be put directly as an argument. Note that array of
- * Observables is good choice, if you don't know beforehand how many Observables
- * you will combine. Passing empty array will result in Observable that
- * completes immediately.
- *
- * To ensure output array has always the same length, `combineLatest` will
- * actually wait for all input Observables to emit at least once,
- * before it starts emitting results. This means if some Observable emits
- * values before other Observables started emitting, all that values but last
- * will be lost. On the other hand, is some Observable does not emit value but
- * completes, resulting Observable will complete at the same moment without
- * emitting anything, since it will be now impossible to include value from
- * completed Observable in resulting array. Also, if some input Observable does
- * not emit any value and never completes, `combineLatest` will also never emit
- * and never complete, since, again, it will wait for all streams to emit some
- * value.
- *
- * If at least one Observable was passed to `combineLatest` and all passed Observables
- * emitted something, resulting Observable will complete when all combined
- * streams complete. So even if some Observable completes, result of
- * `combineLatest` will still emit values when other Observables do. In case
- * of completed Observable, its value from now on will always be the last
- * emitted value. On the other hand, if any Observable errors, `combineLatest`
- * will error immediately as well, and all other Observables will be unsubscribed.
- *
- * `combineLatest` accepts as optional parameter `project` function, which takes
- * as arguments all values that would normally be emitted by resulting Observable.
- * `project` can return any kind of value, which will be then emitted by Observable
- * instead of default array. Note that `project` does not take as argument that array
- * of values, but values themselves. That means default `project` can be imagined
- * as function that takes all its arguments and puts them into an array.
- *
- *
- * @example <caption>Combine two timer Observables</caption>
- * const firstTimer = Rx.Observable.timer(0, 1000); // emit 0, 1, 2... after every second, starting from now
- * const secondTimer = Rx.Observable.timer(500, 1000); // emit 0, 1, 2... after every second, starting 0,5s from now
- * const combinedTimers = Rx.Observable.combineLatest(firstTimer, secondTimer);
- * combinedTimers.subscribe(value => console.log(value));
- * // Logs
- * // [0, 0] after 0.5s
- * // [1, 0] after 1s
- * // [1, 1] after 1.5s
- * // [2, 1] after 2s
- *
- *
- * @example <caption>Combine an array of Observables</caption>
- * const observables = [1, 5, 10].map(
- *   n => Rx.Observable.of(n).delay(n * 1000).startWith(0) // emit 0 and then emit n after n seconds
- * );
- * const combined = Rx.Observable.combineLatest(observables);
- * combined.subscribe(value => console.log(value));
- * // Logs
- * // [0, 0, 0] immediately
- * // [1, 0, 0] after 1s
- * // [1, 5, 0] after 5s
- * // [1, 5, 10] after 10s
- *
- *
- * @example <caption>Use project function to dynamically calculate the Body-Mass Index</caption>
- * var weight = Rx.Observable.of(70, 72, 76, 79, 75);
- * var height = Rx.Observable.of(1.76, 1.77, 1.78);
- * var bmi = Rx.Observable.combineLatest(weight, height, (w, h) => w / (h * h));
- * bmi.subscribe(x => console.log('BMI is ' + x));
- *
- * // With output to console:
- * // BMI is 24.212293388429753
- * // BMI is 23.93948099205209
- * // BMI is 23.671253629592222
- *
- *
- * @see {@link combineAll}
- * @see {@link merge}
- * @see {@link withLatestFrom}
- *
- * @param {ObservableInput} observable1 An input Observable to combine with other Observables.
- * @param {ObservableInput} observable2 An input Observable to combine with other Observables.
- * More than one input Observables may be given as arguments
- * or an array of Observables may be given as the first argument.
- * @param {function} [project] An optional function to project the values from
- * the combined latest values into a new value on the output Observable.
- * @param {Scheduler} [scheduler=null] The IScheduler to use for subscribing to
- * each input Observable.
- * @return {Observable} An Observable of projected values from the most recent
- * values from each input Observable, or an array of the most recent values from
- * each input Observable.
- * @static true
- * @name combineLatest
- * @owner Observable
- */
 function combineLatest$2() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -22357,16 +22189,17 @@ function combineLatest$2() {
     return new ArrayObservable_1.ArrayObservable(observables, scheduler).lift(new combineLatest_1.CombineLatestOperator(project));
 }
 var combineLatest_3 = combineLatest$2;
-
+//# sourceMappingURL=combineLatest.js.map
 
 var combineLatest_2 = {
 	combineLatest: combineLatest_3
 };
 
 Observable_1.Observable.combineLatest = combineLatest_2.combineLatest;
+//# sourceMappingURL=combineLatest.js.map
 
 var of_1 = ArrayObservable_1.ArrayObservable.of;
-
+//# sourceMappingURL=of.js.map
 
 var of = {
 	of: of_1
@@ -22491,7 +22324,7 @@ function dispatchError$2(arg) {
         subscriber.error(err);
     }
 }
-
+//# sourceMappingURL=PromiseObservable.js.map
 
 var PromiseObservable_1 = {
 	PromiseObservable: PromiseObservable_2
@@ -22658,7 +22491,7 @@ function sign(value) {
     }
     return valueAsNumber < 0 ? -1 : 1;
 }
-
+//# sourceMappingURL=IteratorObservable.js.map
 
 var IteratorObservable_1 = {
 	IteratorObservable: IteratorObservable_2
@@ -22732,26 +22565,12 @@ var ArrayLikeObservable = (function (_super) {
     return ArrayLikeObservable;
 }(Observable_1.Observable));
 var ArrayLikeObservable_2 = ArrayLikeObservable;
-
+//# sourceMappingURL=ArrayLikeObservable.js.map
 
 var ArrayLikeObservable_1 = {
 	ArrayLikeObservable: ArrayLikeObservable_2
 };
 
-/**
- * Represents a push-based event or value that an {@link Observable} can emit.
- * This class is particularly useful for operators that manage notifications,
- * like {@link materialize}, {@link dematerialize}, {@link observeOn}, and
- * others. Besides wrapping the actual delivered value, it also annotates it
- * with metadata of, for instance, what type of push message it is (`next`,
- * `error`, or `complete`).
- *
- * @see {@link materialize}
- * @see {@link dematerialize}
- * @see {@link observeOn}
- *
- * @class Notification<T>
- */
 var Notification$1 = (function () {
     function Notification(kind, value, error) {
         this.kind = kind;
@@ -22862,7 +22681,7 @@ var Notification$1 = (function () {
     return Notification;
 }());
 var Notification_2 = Notification$1;
-
+//# sourceMappingURL=Notification.js.map
 
 var Notification_1 = {
 	Notification: Notification_2
@@ -22981,7 +22800,7 @@ var ObserveOnMessage = (function () {
     return ObserveOnMessage;
 }());
 var ObserveOnMessage_1 = ObserveOnMessage;
-
+//# sourceMappingURL=observeOn.js.map
 
 var observeOn_1 = {
 	observeOn: observeOn_2,
@@ -23110,14 +22929,14 @@ var FromObservable = (function (_super) {
     return FromObservable;
 }(Observable_1.Observable));
 var FromObservable_2 = FromObservable;
-
+//# sourceMappingURL=FromObservable.js.map
 
 var FromObservable_1 = {
 	FromObservable: FromObservable_2
 };
 
 var from_1 = FromObservable_1.FromObservable.create;
-
+//# sourceMappingURL=from.js.map
 
 var from = {
 	from: from_1
@@ -23294,7 +23113,7 @@ var MergeMapSubscriber = (function (_super) {
     return MergeMapSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var MergeMapSubscriber_1 = MergeMapSubscriber;
-
+//# sourceMappingURL=mergeMap.js.map
 
 var mergeMap_1 = {
 	mergeMap: mergeMap_2,
@@ -23306,219 +23125,33 @@ function identity(x) {
     return x;
 }
 var identity_2 = identity;
-
+//# sourceMappingURL=identity.js.map
 
 var identity_1 = {
 	identity: identity_2
 };
 
-/**
- * Converts a higher-order Observable into a first-order Observable which
- * concurrently delivers all values that are emitted on the inner Observables.
- *
- * <span class="informal">Flattens an Observable-of-Observables.</span>
- *
- * <img src="./img/mergeAll.png" width="100%">
- *
- * `mergeAll` subscribes to an Observable that emits Observables, also known as
- * a higher-order Observable. Each time it observes one of these emitted inner
- * Observables, it subscribes to that and delivers all the values from the
- * inner Observable on the output Observable. The output Observable only
- * completes once all inner Observables have completed. Any error delivered by
- * a inner Observable will be immediately emitted on the output Observable.
- *
- * @example <caption>Spawn a new interval Observable for each click event, and blend their outputs as one Observable</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var firstOrder = higherOrder.mergeAll();
- * firstOrder.subscribe(x => console.log(x));
- *
- * @example <caption>Count from 0 to 9 every second for each click, but only allow 2 concurrent timers</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
- * var firstOrder = higherOrder.mergeAll(2);
- * firstOrder.subscribe(x => console.log(x));
- *
- * @see {@link combineAll}
- * @see {@link concatAll}
- * @see {@link exhaust}
- * @see {@link merge}
- * @see {@link mergeMap}
- * @see {@link mergeMapTo}
- * @see {@link mergeScan}
- * @see {@link switch}
- * @see {@link zipAll}
- *
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of inner
- * Observables being subscribed to concurrently.
- * @return {Observable} An Observable that emits values coming from all the
- * inner Observables emitted by the source Observable.
- * @method mergeAll
- * @owner Observable
- */
 function mergeAll(concurrent) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     return mergeMap_1.mergeMap(identity_1.identity, null, concurrent);
 }
 var mergeAll_2 = mergeAll;
-
+//# sourceMappingURL=mergeAll.js.map
 
 var mergeAll_1 = {
 	mergeAll: mergeAll_2
 };
 
-/**
- * Converts a higher-order Observable into a first-order Observable by
- * concatenating the inner Observables in order.
- *
- * <span class="informal">Flattens an Observable-of-Observables by putting one
- * inner Observable after the other.</span>
- *
- * <img src="./img/concatAll.png" width="100%">
- *
- * Joins every Observable emitted by the source (a higher-order Observable), in
- * a serial fashion. It subscribes to each inner Observable only after the
- * previous inner Observable has completed, and merges all of their values into
- * the returned observable.
- *
- * __Warning:__ If the source Observable emits Observables quickly and
- * endlessly, and the inner Observables it emits generally complete slower than
- * the source emits, you can run into memory issues as the incoming Observables
- * collect in an unbounded buffer.
- *
- * Note: `concatAll` is equivalent to `mergeAll` with concurrency parameter set
- * to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
- * var firstOrder = higherOrder.concatAll();
- * firstOrder.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link combineAll}
- * @see {@link concat}
- * @see {@link concatMap}
- * @see {@link concatMapTo}
- * @see {@link exhaust}
- * @see {@link mergeAll}
- * @see {@link switch}
- * @see {@link zipAll}
- *
- * @return {Observable} An Observable emitting values from all the inner
- * Observables concatenated.
- * @method concatAll
- * @owner Observable
- */
 function concatAll() {
     return mergeAll_1.mergeAll(1);
 }
 var concatAll_2 = concatAll;
-
+//# sourceMappingURL=concatAll.js.map
 
 var concatAll_1 = {
 	concatAll: concatAll_2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Creates an output Observable which sequentially emits all values from given
- * Observable and then moves on to the next.
- *
- * <span class="informal">Concatenates multiple Observables together by
- * sequentially emitting their values, one Observable after the other.</span>
- *
- * <img src="./img/concat.png" width="100%">
- *
- * `concat` joins multiple Observables together, by subscribing to them one at a time and
- * merging their results into the output Observable. You can pass either an array of
- * Observables, or put them directly as arguments. Passing an empty array will result
- * in Observable that completes immediately.
- *
- * `concat` will subscribe to first input Observable and emit all its values, without
- * changing or affecting them in any way. When that Observable completes, it will
- * subscribe to then next Observable passed and, again, emit its values. This will be
- * repeated, until the operator runs out of Observables. When last input Observable completes,
- * `concat` will complete as well. At any given moment only one Observable passed to operator
- * emits values. If you would like to emit values from passed Observables concurrently, check out
- * {@link merge} instead, especially with optional `concurrent` parameter. As a matter of fact,
- * `concat` is an equivalent of `merge` operator with `concurrent` parameter set to `1`.
- *
- * Note that if some input Observable never completes, `concat` will also never complete
- * and Observables following the one that did not complete will never be subscribed. On the other
- * hand, if some Observable simply completes immediately after it is subscribed, it will be
- * invisible for `concat`, which will just move on to the next Observable.
- *
- * If any Observable in chain errors, instead of passing control to the next Observable,
- * `concat` will error immediately as well. Observables that would be subscribed after
- * the one that emitted error, never will.
- *
- * If you pass to `concat` the same Observable many times, its stream of values
- * will be "replayed" on every subscription, which means you can repeat given Observable
- * as many times as you like. If passing the same Observable to `concat` 1000 times becomes tedious,
- * you can always use {@link repeat}.
- *
- * @example <caption>Concatenate a timer counting from 0 to 3 with a synchronous sequence from 1 to 10</caption>
- * var timer = Rx.Observable.interval(1000).take(4);
- * var sequence = Rx.Observable.range(1, 10);
- * var result = Rx.Observable.concat(timer, sequence);
- * result.subscribe(x => console.log(x));
- *
- * // results in:
- * // 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3 -immediate-> 1 ... 10
- *
- *
- * @example <caption>Concatenate an array of 3 Observables</caption>
- * var timer1 = Rx.Observable.interval(1000).take(10);
- * var timer2 = Rx.Observable.interval(2000).take(6);
- * var timer3 = Rx.Observable.interval(500).take(10);
- * var result = Rx.Observable.concat([timer1, timer2, timer3]); // note that array is passed
- * result.subscribe(x => console.log(x));
- *
- * // results in the following:
- * // (Prints to console sequentially)
- * // -1000ms-> 0 -1000ms-> 1 -1000ms-> ... 9
- * // -2000ms-> 0 -2000ms-> 1 -2000ms-> ... 5
- * // -500ms-> 0 -500ms-> 1 -500ms-> ... 9
- *
- *
- * @example <caption>Concatenate the same Observable to repeat it</caption>
- * const timer = Rx.Observable.interval(1000).take(2);
- *
- * Rx.Observable.concat(timer, timer) // concating the same Observable!
- * .subscribe(
- *   value => console.log(value),
- *   err => {},
- *   () => console.log('...and it is done!')
- * );
- *
- * // Logs:
- * // 0 after 1s
- * // 1 after 2s
- * // 0 after 3s
- * // 1 after 4s
- * // "...and it is done!" also after 4s
- *
- * @see {@link concatAll}
- * @see {@link concatMap}
- * @see {@link concatMapTo}
- *
- * @param {ObservableInput} input1 An input Observable to concatenate with others.
- * @param {ObservableInput} input2 An input Observable to concatenate with others.
- * More than one input Observables may be given as argument.
- * @param {Scheduler} [scheduler=null] An optional IScheduler to schedule each
- * Observable subscription on.
- * @return {Observable} All values of each passed Observable merged into a
- * single Observable, in order, in serial fashion.
- * @static true
- * @name concat
- * @owner Observable
- */
 function concat$2() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -23530,13 +23163,14 @@ function concat$2() {
     return concatAll_1.concatAll()(of.of.apply(void 0, observables));
 }
 var concat_2 = concat$2;
-
+//# sourceMappingURL=concat.js.map
 
 var concat_1 = {
 	concat: concat_2
 };
 
 Observable_1.Observable.concat = concat_1.concat;
+//# sourceMappingURL=concat.js.map
 
 var __extends$20 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -23635,29 +23269,31 @@ var DeferSubscriber = (function (_super) {
     };
     return DeferSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=DeferObservable.js.map
 
 var DeferObservable_1 = {
 	DeferObservable: DeferObservable_2
 };
 
 var defer_1 = DeferObservable_1.DeferObservable.create;
-
+//# sourceMappingURL=defer.js.map
 
 var defer$2 = {
 	defer: defer_1
 };
 
 Observable_1.Observable.defer = defer$2.defer;
+//# sourceMappingURL=defer.js.map
 
 var empty_1 = EmptyObservable_1.EmptyObservable.create;
-
+//# sourceMappingURL=empty.js.map
 
 var empty$3 = {
 	empty: empty_1
 };
 
 Observable_1.Observable.empty = empty$3.empty;
+//# sourceMappingURL=empty.js.map
 
 var __extends$21 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -23859,22 +23495,24 @@ var ForkJoinSubscriber = (function (_super) {
     };
     return ForkJoinSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=ForkJoinObservable.js.map
 
 var ForkJoinObservable_1 = {
 	ForkJoinObservable: ForkJoinObservable_2
 };
 
 var forkJoin_1 = ForkJoinObservable_1.ForkJoinObservable.create;
-
+//# sourceMappingURL=forkJoin.js.map
 
 var forkJoin$2 = {
 	forkJoin: forkJoin_1
 };
 
 Observable_1.Observable.forkJoin = forkJoin$2.forkJoin;
+//# sourceMappingURL=forkJoin.js.map
 
 Observable_1.Observable.from = from.from;
+//# sourceMappingURL=from.js.map
 
 var __extends$22 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -24090,20 +23728,21 @@ var FromEventObservable = (function (_super) {
     return FromEventObservable;
 }(Observable_1.Observable));
 var FromEventObservable_2 = FromEventObservable;
-
+//# sourceMappingURL=FromEventObservable.js.map
 
 var FromEventObservable_1 = {
 	FromEventObservable: FromEventObservable_2
 };
 
 var fromEvent_1 = FromEventObservable_1.FromEventObservable.create;
-
+//# sourceMappingURL=fromEvent.js.map
 
 var fromEvent$2 = {
 	fromEvent: fromEvent_1
 };
 
 Observable_1.Observable.fromEvent = fromEvent$2.fromEvent;
+//# sourceMappingURL=fromEvent.js.map
 
 var __extends$23 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -24216,29 +23855,31 @@ var FromEventPatternObservable = (function (_super) {
     return FromEventPatternObservable;
 }(Observable_1.Observable));
 var FromEventPatternObservable_2 = FromEventPatternObservable;
-
+//# sourceMappingURL=FromEventPatternObservable.js.map
 
 var FromEventPatternObservable_1 = {
 	FromEventPatternObservable: FromEventPatternObservable_2
 };
 
 var fromEventPattern_1 = FromEventPatternObservable_1.FromEventPatternObservable.create;
-
+//# sourceMappingURL=fromEventPattern.js.map
 
 var fromEventPattern$2 = {
 	fromEventPattern: fromEventPattern_1
 };
 
 Observable_1.Observable.fromEventPattern = fromEventPattern$2.fromEventPattern;
+//# sourceMappingURL=fromEventPattern.js.map
 
 var fromPromise_1 = PromiseObservable_1.PromiseObservable.create;
-
+//# sourceMappingURL=fromPromise.js.map
 
 var fromPromise$2 = {
 	fromPromise: fromPromise_1
 };
 
 Observable_1.Observable.fromPromise = fromPromise$2.fromPromise;
+//# sourceMappingURL=fromPromise.js.map
 
 var __extends$24 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -24373,20 +24014,21 @@ var GenerateObservable = (function (_super) {
     return GenerateObservable;
 }(Observable_1.Observable));
 var GenerateObservable_2 = GenerateObservable;
-
+//# sourceMappingURL=GenerateObservable.js.map
 
 var GenerateObservable_1 = {
 	GenerateObservable: GenerateObservable_2
 };
 
 var generate_1 = GenerateObservable_1.GenerateObservable.create;
-
+//# sourceMappingURL=generate.js.map
 
 var generate$2 = {
 	generate: generate_1
 };
 
 Observable_1.Observable.generate = generate$2.generate;
+//# sourceMappingURL=generate.js.map
 
 var __extends$25 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -24447,20 +24089,21 @@ var IfSubscriber = (function (_super) {
     };
     return IfSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=IfObservable.js.map
 
 var IfObservable_1 = {
 	IfObservable: IfObservable_2
 };
 
 var _if_1 = IfObservable_1.IfObservable.create;
-
+//# sourceMappingURL=if.js.map
 
 var _if$2 = {
 	_if: _if_1
 };
 
 Observable_1.Observable.if = _if$2._if;
+//# sourceMappingURL=if.js.map
 
 function isNumeric(val) {
     // parseFloat NaNs numeric-cast false positives (null|true|false|"")
@@ -24471,7 +24114,7 @@ function isNumeric(val) {
 }
 var isNumeric_2 = isNumeric;
 
-
+//# sourceMappingURL=isNumeric.js.map
 
 var isNumeric_1 = {
 	isNumeric: isNumeric_2
@@ -24519,7 +24162,7 @@ var Action = (function (_super) {
     return Action;
 }(Subscription_1.Subscription));
 var Action_2 = Action;
-
+//# sourceMappingURL=Action.js.map
 
 var Action_1 = {
 	Action: Action_2
@@ -24665,28 +24308,12 @@ var AsyncAction = (function (_super) {
     return AsyncAction;
 }(Action_1.Action));
 var AsyncAction_2 = AsyncAction;
-
+//# sourceMappingURL=AsyncAction.js.map
 
 var AsyncAction_1 = {
 	AsyncAction: AsyncAction_2
 };
 
-/**
- * An execution context and a data structure to order tasks and schedule their
- * execution. Provides a notion of (potentially virtual) time, through the
- * `now()` getter method.
- *
- * Each unit of work in a Scheduler is called an {@link Action}.
- *
- * ```ts
- * class Scheduler {
- *   now(): number;
- *   schedule(work, delay?, state?): Subscription;
- * }
- * ```
- *
- * @class Scheduler
- */
 var Scheduler$1 = (function () {
     function Scheduler(SchedulerAction, now) {
         if (now === void 0) { now = Scheduler.now; }
@@ -24718,7 +24345,7 @@ var Scheduler$1 = (function () {
     return Scheduler;
 }());
 var Scheduler_2 = Scheduler$1;
-
+//# sourceMappingURL=Scheduler.js.map
 
 var Scheduler_1$1 = {
 	Scheduler: Scheduler_2
@@ -24773,56 +24400,14 @@ var AsyncScheduler = (function (_super) {
     return AsyncScheduler;
 }(Scheduler_1$1.Scheduler));
 var AsyncScheduler_2 = AsyncScheduler;
-
+//# sourceMappingURL=AsyncScheduler.js.map
 
 var AsyncScheduler_1 = {
 	AsyncScheduler: AsyncScheduler_2
 };
 
-/**
- *
- * Async Scheduler
- *
- * <span class="informal">Schedule task as if you used setTimeout(task, duration)</span>
- *
- * `async` scheduler schedules tasks asynchronously, by putting them on the JavaScript
- * event loop queue. It is best used to delay tasks in time or to schedule tasks repeating
- * in intervals.
- *
- * If you just want to "defer" task, that is to perform it right after currently
- * executing synchronous code ends (commonly achieved by `setTimeout(deferredTask, 0)`),
- * better choice will be the {@link asap} scheduler.
- *
- * @example <caption>Use async scheduler to delay task</caption>
- * const task = () => console.log('it works!');
- *
- * Rx.Scheduler.async.schedule(task, 2000);
- *
- * // After 2 seconds logs:
- * // "it works!"
- *
- *
- * @example <caption>Use async scheduler to repeat task in intervals</caption>
- * function task(state) {
- *   console.log(state);
- *   this.schedule(state + 1, 1000); // `this` references currently executing Action,
- *                                   // which we reschedule with new state and delay
- * }
- *
- * Rx.Scheduler.async.schedule(task, 3000, 0);
- *
- * // Logs:
- * // 0 after 3s
- * // 1 after 4s
- * // 2 after 5s
- * // 3 after 6s
- *
- * @static true
- * @name async
- * @owner Scheduler
- */
 var async_1 = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
-
+//# sourceMappingURL=async.js.map
 
 var async = {
 	async: async_1
@@ -24914,82 +24499,22 @@ var IntervalObservable = (function (_super) {
     return IntervalObservable;
 }(Observable_1.Observable));
 var IntervalObservable_2 = IntervalObservable;
-
+//# sourceMappingURL=IntervalObservable.js.map
 
 var IntervalObservable_1 = {
 	IntervalObservable: IntervalObservable_2
 };
 
 var interval_1 = IntervalObservable_1.IntervalObservable.create;
-
+//# sourceMappingURL=interval.js.map
 
 var interval$2 = {
 	interval: interval_1
 };
 
 Observable_1.Observable.interval = interval$2.interval;
+//# sourceMappingURL=interval.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Creates an output Observable which concurrently emits all values from every
- * given input Observable.
- *
- * <span class="informal">Flattens multiple Observables together by blending
- * their values into one Observable.</span>
- *
- * <img src="./img/merge.png" width="100%">
- *
- * `merge` subscribes to each given input Observable (as arguments), and simply
- * forwards (without doing any transformation) all the values from all the input
- * Observables to the output Observable. The output Observable only completes
- * once all input Observables have completed. Any error delivered by an input
- * Observable will be immediately emitted on the output Observable.
- *
- * @example <caption>Merge together two Observables: 1s interval and clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var timer = Rx.Observable.interval(1000);
- * var clicksOrTimer = Rx.Observable.merge(clicks, timer);
- * clicksOrTimer.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // timer will emit ascending values, one every second(1000ms) to console
- * // clicks logs MouseEvents to console everytime the "document" is clicked
- * // Since the two streams are merged you see these happening
- * // as they occur.
- *
- * @example <caption>Merge together 3 Observables, but only 2 run concurrently</caption>
- * var timer1 = Rx.Observable.interval(1000).take(10);
- * var timer2 = Rx.Observable.interval(2000).take(6);
- * var timer3 = Rx.Observable.interval(500).take(10);
- * var concurrent = 2; // the argument
- * var merged = Rx.Observable.merge(timer1, timer2, timer3, concurrent);
- * merged.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // - First timer1 and timer2 will run concurrently
- * // - timer1 will emit a value every 1000ms for 10 iterations
- * // - timer2 will emit a value every 2000ms for 6 iterations
- * // - after timer1 hits it's max iteration, timer2 will
- * //   continue, and timer3 will start to run concurrently with timer2
- * // - when timer2 hits it's max iteration it terminates, and
- * //   timer3 will continue to emit a value every 500ms until it is complete
- *
- * @see {@link mergeAll}
- * @see {@link mergeMap}
- * @see {@link mergeMapTo}
- * @see {@link mergeScan}
- *
- * @param {...ObservableInput} observables Input Observables to merge together.
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
- * Observables being subscribed to concurrently.
- * @param {Scheduler} [scheduler=null] The IScheduler to use for managing
- * concurrency of input Observables.
- * @return {Observable} an Observable that emits items that are the result of
- * every input Observable.
- * @static true
- * @name merge
- * @owner Observable
- */
 function merge$2() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -25013,13 +24538,14 @@ function merge$2() {
     return mergeAll_1.mergeAll(concurrent)(new ArrayObservable_1.ArrayObservable(observables, scheduler));
 }
 var merge_2 = merge$2;
-
+//# sourceMappingURL=merge.js.map
 
 var merge_1 = {
 	merge: merge_2
 };
 
 Observable_1.Observable.merge = merge_1.merge;
+//# sourceMappingURL=merge.js.map
 
 var __extends$30 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25108,7 +24634,7 @@ var RaceSubscriber = (function (_super) {
     return RaceSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var RaceSubscriber_1 = RaceSubscriber;
-
+//# sourceMappingURL=race.js.map
 
 var race_1 = {
 	race: race_2,
@@ -25117,6 +24643,7 @@ var race_1 = {
 };
 
 Observable_1.Observable.race = race_1.race;
+//# sourceMappingURL=race.js.map
 
 var __extends$31 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25175,22 +24702,24 @@ var NeverObservable = (function (_super) {
     return NeverObservable;
 }(Observable_1.Observable));
 var NeverObservable_2 = NeverObservable;
-
+//# sourceMappingURL=NeverObservable.js.map
 
 var NeverObservable_1 = {
 	NeverObservable: NeverObservable_2
 };
 
 var never_1 = NeverObservable_1.NeverObservable.create;
-
+//# sourceMappingURL=never.js.map
 
 var never$2 = {
 	never: never_1
 };
 
 Observable_1.Observable.never = never$2.never;
+//# sourceMappingURL=never.js.map
 
 Observable_1.Observable.of = of.of;
+//# sourceMappingURL=of.js.map
 
 var __extends$32 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25327,7 +24856,7 @@ var OnErrorResumeNextSubscriber = (function (_super) {
     };
     return OnErrorResumeNextSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 var onErrorResumeNext_1 = {
 	onErrorResumeNext: onErrorResumeNext_2$1,
@@ -25335,13 +24864,14 @@ var onErrorResumeNext_1 = {
 };
 
 var onErrorResumeNext_2 = onErrorResumeNext_1.onErrorResumeNextStatic;
-
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 var onErrorResumeNext$2 = {
 	onErrorResumeNext: onErrorResumeNext_2
 };
 
 Observable_1.Observable.onErrorResumeNext = onErrorResumeNext$2.onErrorResumeNext;
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 var __extends$33 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25426,20 +24956,21 @@ var PairsObservable = (function (_super) {
     return PairsObservable;
 }(Observable_1.Observable));
 var PairsObservable_2 = PairsObservable;
-
+//# sourceMappingURL=PairsObservable.js.map
 
 var PairsObservable_1 = {
 	PairsObservable: PairsObservable_2
 };
 
 var pairs_1 = PairsObservable_1.PairsObservable.create;
-
+//# sourceMappingURL=pairs.js.map
 
 var pairs$2 = {
 	pairs: pairs_1
 };
 
 Observable_1.Observable.pairs = pairs$2.pairs;
+//# sourceMappingURL=pairs.js.map
 
 var __extends$34 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25535,20 +25066,21 @@ var RangeObservable = (function (_super) {
     return RangeObservable;
 }(Observable_1.Observable));
 var RangeObservable_2 = RangeObservable;
-
+//# sourceMappingURL=RangeObservable.js.map
 
 var RangeObservable_1 = {
 	RangeObservable: RangeObservable_2
 };
 
 var range_1 = RangeObservable_1.RangeObservable.create;
-
+//# sourceMappingURL=range.js.map
 
 var range$2 = {
 	range: range_1
 };
 
 Observable_1.Observable.range = range$2.range;
+//# sourceMappingURL=range.js.map
 
 var __extends$35 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25609,20 +25141,21 @@ var UsingSubscriber = (function (_super) {
     };
     return UsingSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=UsingObservable.js.map
 
 var UsingObservable_1 = {
 	UsingObservable: UsingObservable_2
 };
 
 var using_1 = UsingObservable_1.UsingObservable.create;
-
+//# sourceMappingURL=using.js.map
 
 var using$2 = {
 	using: using_1
 };
 
 Observable_1.Observable.using = using$2.using;
+//# sourceMappingURL=using.js.map
 
 var __extends$36 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -25705,26 +25238,27 @@ var ErrorObservable = (function (_super) {
     return ErrorObservable;
 }(Observable_1.Observable));
 var ErrorObservable_2 = ErrorObservable;
-
+//# sourceMappingURL=ErrorObservable.js.map
 
 var ErrorObservable_1 = {
 	ErrorObservable: ErrorObservable_2
 };
 
 var _throw_1 = ErrorObservable_1.ErrorObservable.create;
-
+//# sourceMappingURL=throw.js.map
 
 var _throw$2 = {
 	_throw: _throw_1
 };
 
 Observable_1.Observable.throw = _throw$2._throw;
+//# sourceMappingURL=throw.js.map
 
 function isDate(value) {
     return value instanceof Date && !isNaN(+value);
 }
 var isDate_2 = isDate;
-
+//# sourceMappingURL=isDate.js.map
 
 var isDate_1 = {
 	isDate: isDate_2
@@ -25835,20 +25369,21 @@ var TimerObservable = (function (_super) {
     return TimerObservable;
 }(Observable_1.Observable));
 var TimerObservable_2 = TimerObservable;
-
+//# sourceMappingURL=TimerObservable.js.map
 
 var TimerObservable_1 = {
 	TimerObservable: TimerObservable_2
 };
 
 var timer_1 = TimerObservable_1.TimerObservable.create;
-
+//# sourceMappingURL=timer.js.map
 
 var timer$2 = {
 	timer: timer_1
 };
 
 Observable_1.Observable.timer = timer$2.timer;
+//# sourceMappingURL=timer.js.map
 
 var __extends$38 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -26129,7 +25664,7 @@ var ZipBufferIterator = (function (_super) {
     };
     return ZipBufferIterator;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=zip.js.map
 
 var zip_1 = {
 	zip: zip_2$1,
@@ -26139,13 +25674,14 @@ var zip_1 = {
 };
 
 var zip_2 = zip_1.zipStatic;
-
+//# sourceMappingURL=zip.js.map
 
 var zip$2 = {
 	zip: zip_2
 };
 
 Observable_1.Observable.zip = zip$2.zip;
+//# sourceMappingURL=zip.js.map
 
 var __extends$40 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -26234,7 +25770,7 @@ var MapSubscriber = (function (_super) {
     };
     return MapSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=map.js.map
 
 var map_1 = {
 	map: map_2,
@@ -26661,7 +26197,7 @@ var AjaxTimeoutError$1 = (function (_super) {
     return AjaxTimeoutError;
 }(AjaxError$1));
 var AjaxTimeoutError_1 = AjaxTimeoutError$1;
-
+//# sourceMappingURL=AjaxObservable.js.map
 
 var AjaxObservable_1 = {
 	ajaxGet: ajaxGet_1,
@@ -26678,13 +26214,14 @@ var AjaxObservable_1 = {
 };
 
 var ajax_1 = AjaxObservable_1.AjaxObservable.create;
-
+//# sourceMappingURL=ajax.js.map
 
 var ajax$2 = {
 	ajax: ajax_1
 };
 
 Observable_1.Observable.ajax = ajax$2.ajax;
+//# sourceMappingURL=ajax.js.map
 
 var __extends$43 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -26733,7 +26270,7 @@ var QueueAction = (function (_super) {
     return QueueAction;
 }(AsyncAction_1.AsyncAction));
 var QueueAction_2 = QueueAction;
-
+//# sourceMappingURL=QueueAction.js.map
 
 var QueueAction_1 = {
 	QueueAction: QueueAction_2
@@ -26753,75 +26290,14 @@ var QueueScheduler = (function (_super) {
     return QueueScheduler;
 }(AsyncScheduler_1.AsyncScheduler));
 var QueueScheduler_2 = QueueScheduler;
-
+//# sourceMappingURL=QueueScheduler.js.map
 
 var QueueScheduler_1 = {
 	QueueScheduler: QueueScheduler_2
 };
 
-/**
- *
- * Queue Scheduler
- *
- * <span class="informal">Put every next task on a queue, instead of executing it immediately</span>
- *
- * `queue` scheduler, when used with delay, behaves the same as {@link async} scheduler.
- *
- * When used without delay, it schedules given task synchronously - executes it right when
- * it is scheduled. However when called recursively, that is when inside the scheduled task,
- * another task is scheduled with queue scheduler, instead of executing immediately as well,
- * that task will be put on a queue and wait for current one to finish.
- *
- * This means that when you execute task with `queue` scheduler, you are sure it will end
- * before any other task scheduled with that scheduler will start.
- *
- * @examples <caption>Schedule recursively first, then do something</caption>
- *
- * Rx.Scheduler.queue.schedule(() => {
- *   Rx.Scheduler.queue.schedule(() => console.log('second')); // will not happen now, but will be put on a queue
- *
- *   console.log('first');
- * });
- *
- * // Logs:
- * // "first"
- * // "second"
- *
- *
- * @example <caption>Reschedule itself recursively</caption>
- *
- * Rx.Scheduler.queue.schedule(function(state) {
- *   if (state !== 0) {
- *     console.log('before', state);
- *     this.schedule(state - 1); // `this` references currently executing Action,
- *                               // which we reschedule with new state
- *     console.log('after', state);
- *   }
- * }, 0, 3);
- *
- * // In scheduler that runs recursively, you would expect:
- * // "before", 3
- * // "before", 2
- * // "before", 1
- * // "after", 1
- * // "after", 2
- * // "after", 3
- *
- * // But with queue it logs:
- * // "before", 3
- * // "after", 3
- * // "before", 2
- * // "after", 2
- * // "before", 1
- * // "after", 1
- *
- *
- * @static true
- * @name queue
- * @owner Scheduler
- */
 var queue_1 = new QueueScheduler_1.QueueScheduler(QueueAction_1.QueueAction);
-
+//# sourceMappingURL=queue.js.map
 
 var queue = {
 	queue: queue_1
@@ -26927,7 +26403,7 @@ var ReplayEvent = (function () {
     }
     return ReplayEvent;
 }());
-
+//# sourceMappingURL=ReplaySubject.js.map
 
 var ReplaySubject_1 = {
 	ReplaySubject: ReplaySubject_2
@@ -26956,7 +26432,7 @@ function getAssign(root$$2) {
 }
 var getAssign_1 = getAssign;
 var assign_1 = getAssign(root.root);
-
+//# sourceMappingURL=assign.js.map
 
 var assign = {
 	assignImpl: assignImpl_1,
@@ -27212,20 +26688,21 @@ var WebSocketSubject = (function (_super) {
     return WebSocketSubject;
 }(Subject_1.AnonymousSubject));
 var WebSocketSubject_2 = WebSocketSubject;
-
+//# sourceMappingURL=WebSocketSubject.js.map
 
 var WebSocketSubject_1 = {
 	WebSocketSubject: WebSocketSubject_2
 };
 
 var webSocket_1 = WebSocketSubject_1.WebSocketSubject.create;
-
+//# sourceMappingURL=webSocket.js.map
 
 var webSocket$2 = {
 	webSocket: webSocket_1
 };
 
 Observable_1.Observable.webSocket = webSocket$2.webSocket;
+//# sourceMappingURL=webSocket.js.map
 
 var __extends$45 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -27303,55 +26780,24 @@ var BufferSubscriber = (function (_super) {
     };
     return BufferSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=buffer.js.map
 
 var buffer_1 = {
 	buffer: buffer_2$2
 };
 
-/**
- * Buffers the source Observable values until `closingNotifier` emits.
- *
- * <span class="informal">Collects values from the past as an array, and emits
- * that array only when another Observable emits.</span>
- *
- * <img src="./img/buffer.png" width="100%">
- *
- * Buffers the incoming Observable values until the given `closingNotifier`
- * Observable emits a value, at which point it emits the buffer on the output
- * Observable and starts a new buffer internally, awaiting the next time
- * `closingNotifier` emits.
- *
- * @example <caption>On every click, emit array of most recent interval events</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var interval = Rx.Observable.interval(1000);
- * var buffered = interval.buffer(clicks);
- * buffered.subscribe(x => console.log(x));
- *
- * @see {@link bufferCount}
- * @see {@link bufferTime}
- * @see {@link bufferToggle}
- * @see {@link bufferWhen}
- * @see {@link window}
- *
- * @param {Observable<any>} closingNotifier An Observable that signals the
- * buffer to be emitted on the output Observable.
- * @return {Observable<T[]>} An Observable of buffers, which are arrays of
- * values.
- * @method buffer
- * @owner Observable
- */
 function buffer$2(closingNotifier) {
     return buffer_1.buffer(closingNotifier)(this);
 }
 var buffer_3 = buffer$2;
-
+//# sourceMappingURL=buffer.js.map
 
 var buffer_2 = {
 	buffer: buffer_3
 };
 
 Observable_1.Observable.prototype.buffer = buffer_2.buffer;
+//# sourceMappingURL=buffer.js.map
 
 var __extends$46 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -27493,65 +26939,25 @@ var BufferSkipCountSubscriber = (function (_super) {
     };
     return BufferSkipCountSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=bufferCount.js.map
 
 var bufferCount_1 = {
 	bufferCount: bufferCount_2$2
 };
 
-/**
- * Buffers the source Observable values until the size hits the maximum
- * `bufferSize` given.
- *
- * <span class="informal">Collects values from the past as an array, and emits
- * that array only when its size reaches `bufferSize`.</span>
- *
- * <img src="./img/bufferCount.png" width="100%">
- *
- * Buffers a number of values from the source Observable by `bufferSize` then
- * emits the buffer and clears it, and starts a new buffer each
- * `startBufferEvery` values. If `startBufferEvery` is not provided or is
- * `null`, then new buffers are started immediately at the start of the source
- * and when each buffer closes and is emitted.
- *
- * @example <caption>Emit the last two click events as an array</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var buffered = clicks.bufferCount(2);
- * buffered.subscribe(x => console.log(x));
- *
- * @example <caption>On every click, emit the last two click events as an array</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var buffered = clicks.bufferCount(2, 1);
- * buffered.subscribe(x => console.log(x));
- *
- * @see {@link buffer}
- * @see {@link bufferTime}
- * @see {@link bufferToggle}
- * @see {@link bufferWhen}
- * @see {@link pairwise}
- * @see {@link windowCount}
- *
- * @param {number} bufferSize The maximum size of the buffer emitted.
- * @param {number} [startBufferEvery] Interval at which to start a new buffer.
- * For example if `startBufferEvery` is `2`, then a new buffer will be started
- * on every other value from the source. A new buffer is started at the
- * beginning of the source by default.
- * @return {Observable<T[]>} An Observable of arrays of buffered values.
- * @method bufferCount
- * @owner Observable
- */
 function bufferCount$2(bufferSize, startBufferEvery) {
     if (startBufferEvery === void 0) { startBufferEvery = null; }
     return bufferCount_1.bufferCount(bufferSize, startBufferEvery)(this);
 }
 var bufferCount_3 = bufferCount$2;
-
+//# sourceMappingURL=bufferCount.js.map
 
 var bufferCount_2 = {
 	bufferCount: bufferCount_3
 };
 
 Observable_1.Observable.prototype.bufferCount = bufferCount_2.bufferCount;
+//# sourceMappingURL=bufferCount.js.map
 
 var __extends$47 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -27752,56 +27158,12 @@ function dispatchBufferClose(arg) {
     var subscriber = arg.subscriber, context = arg.context;
     subscriber.closeContext(context);
 }
-
+//# sourceMappingURL=bufferTime.js.map
 
 var bufferTime_1 = {
 	bufferTime: bufferTime_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Buffers the source Observable values for a specific time period.
- *
- * <span class="informal">Collects values from the past as an array, and emits
- * those arrays periodically in time.</span>
- *
- * <img src="./img/bufferTime.png" width="100%">
- *
- * Buffers values from the source for a specific time duration `bufferTimeSpan`.
- * Unless the optional argument `bufferCreationInterval` is given, it emits and
- * resets the buffer every `bufferTimeSpan` milliseconds. If
- * `bufferCreationInterval` is given, this operator opens the buffer every
- * `bufferCreationInterval` milliseconds and closes (emits and resets) the
- * buffer every `bufferTimeSpan` milliseconds. When the optional argument
- * `maxBufferSize` is specified, the buffer will be closed either after
- * `bufferTimeSpan` milliseconds or when it contains `maxBufferSize` elements.
- *
- * @example <caption>Every second, emit an array of the recent click events</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var buffered = clicks.bufferTime(1000);
- * buffered.subscribe(x => console.log(x));
- *
- * @example <caption>Every 5 seconds, emit the click events from the next 2 seconds</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var buffered = clicks.bufferTime(2000, 5000);
- * buffered.subscribe(x => console.log(x));
- *
- * @see {@link buffer}
- * @see {@link bufferCount}
- * @see {@link bufferToggle}
- * @see {@link bufferWhen}
- * @see {@link windowTime}
- *
- * @param {number} bufferTimeSpan The amount of time to fill each buffer array.
- * @param {number} [bufferCreationInterval] The interval at which to start new
- * buffers.
- * @param {number} [maxBufferSize] The maximum buffer size.
- * @param {Scheduler} [scheduler=async] The scheduler on which to schedule the
- * intervals that determine buffer boundaries.
- * @return {Observable<T[]>} An observable of arrays of buffered values.
- * @method bufferTime
- * @owner Observable
- */
 function bufferTime$2(bufferTimeSpan) {
     var length = arguments.length;
     var scheduler = async.async;
@@ -27820,13 +27182,14 @@ function bufferTime$2(bufferTimeSpan) {
     return bufferTime_1.bufferTime(bufferTimeSpan, bufferCreationInterval, maxBufferSize, scheduler)(this);
 }
 var bufferTime_3 = bufferTime$2;
-
+//# sourceMappingURL=bufferTime.js.map
 
 var bufferTime_2 = {
 	bufferTime: bufferTime_3
 };
 
 Observable_1.Observable.prototype.bufferTime = bufferTime_2.bufferTime;
+//# sourceMappingURL=bufferTime.js.map
 
 var __extends$48 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -27980,61 +27343,24 @@ var BufferToggleSubscriber = (function (_super) {
     };
     return BufferToggleSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=bufferToggle.js.map
 
 var bufferToggle_1 = {
 	bufferToggle: bufferToggle_2$2
 };
 
-/**
- * Buffers the source Observable values starting from an emission from
- * `openings` and ending when the output of `closingSelector` emits.
- *
- * <span class="informal">Collects values from the past as an array. Starts
- * collecting only when `opening` emits, and calls the `closingSelector`
- * function to get an Observable that tells when to close the buffer.</span>
- *
- * <img src="./img/bufferToggle.png" width="100%">
- *
- * Buffers values from the source by opening the buffer via signals from an
- * Observable provided to `openings`, and closing and sending the buffers when
- * a Subscribable or Promise returned by the `closingSelector` function emits.
- *
- * @example <caption>Every other second, emit the click events from the next 500ms</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var openings = Rx.Observable.interval(1000);
- * var buffered = clicks.bufferToggle(openings, i =>
- *   i % 2 ? Rx.Observable.interval(500) : Rx.Observable.empty()
- * );
- * buffered.subscribe(x => console.log(x));
- *
- * @see {@link buffer}
- * @see {@link bufferCount}
- * @see {@link bufferTime}
- * @see {@link bufferWhen}
- * @see {@link windowToggle}
- *
- * @param {SubscribableOrPromise<O>} openings A Subscribable or Promise of notifications to start new
- * buffers.
- * @param {function(value: O): SubscribableOrPromise} closingSelector A function that takes
- * the value emitted by the `openings` observable and returns a Subscribable or Promise,
- * which, when it emits, signals that the associated buffer should be emitted
- * and cleared.
- * @return {Observable<T[]>} An observable of arrays of buffered values.
- * @method bufferToggle
- * @owner Observable
- */
 function bufferToggle$2(openings, closingSelector) {
     return bufferToggle_1.bufferToggle(openings, closingSelector)(this);
 }
 var bufferToggle_3 = bufferToggle$2;
-
+//# sourceMappingURL=bufferToggle.js.map
 
 var bufferToggle_2 = {
 	bufferToggle: bufferToggle_3
 };
 
 Observable_1.Observable.prototype.bufferToggle = bufferToggle_2.bufferToggle;
+//# sourceMappingURL=bufferToggle.js.map
 
 var __extends$49 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -28158,56 +27484,24 @@ var BufferWhenSubscriber = (function (_super) {
     };
     return BufferWhenSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=bufferWhen.js.map
 
 var bufferWhen_1 = {
 	bufferWhen: bufferWhen_2$2
 };
 
-/**
- * Buffers the source Observable values, using a factory function of closing
- * Observables to determine when to close, emit, and reset the buffer.
- *
- * <span class="informal">Collects values from the past as an array. When it
- * starts collecting values, it calls a function that returns an Observable that
- * tells when to close the buffer and restart collecting.</span>
- *
- * <img src="./img/bufferWhen.png" width="100%">
- *
- * Opens a buffer immediately, then closes the buffer when the observable
- * returned by calling `closingSelector` function emits a value. When it closes
- * the buffer, it immediately opens a new buffer and repeats the process.
- *
- * @example <caption>Emit an array of the last clicks every [1-5] random seconds</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var buffered = clicks.bufferWhen(() =>
- *   Rx.Observable.interval(1000 + Math.random() * 4000)
- * );
- * buffered.subscribe(x => console.log(x));
- *
- * @see {@link buffer}
- * @see {@link bufferCount}
- * @see {@link bufferTime}
- * @see {@link bufferToggle}
- * @see {@link windowWhen}
- *
- * @param {function(): Observable} closingSelector A function that takes no
- * arguments and returns an Observable that signals buffer closure.
- * @return {Observable<T[]>} An observable of arrays of buffered values.
- * @method bufferWhen
- * @owner Observable
- */
 function bufferWhen$2(closingSelector) {
     return bufferWhen_1.bufferWhen(closingSelector)(this);
 }
 var bufferWhen_3 = bufferWhen$2;
-
+//# sourceMappingURL=bufferWhen.js.map
 
 var bufferWhen_2 = {
 	bufferWhen: bufferWhen_3
 };
 
 Observable_1.Observable.prototype.bufferWhen = bufferWhen_2.bufferWhen;
+//# sourceMappingURL=bufferWhen.js.map
 
 var __extends$50 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -28323,76 +27617,17 @@ var CatchSubscriber = (function (_super) {
     };
     return CatchSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=catchError.js.map
 
 var catchError_1 = {
 	catchError: catchError_2
 };
 
-/**
- * Catches errors on the observable to be handled by returning a new observable or throwing an error.
- *
- * <img src="./img/catch.png" width="100%">
- *
- * @example <caption>Continues with a different Observable when there's an error</caption>
- *
- * Observable.of(1, 2, 3, 4, 5)
- *   .map(n => {
- * 	   if (n == 4) {
- * 	     throw 'four!';
- *     }
- *	   return n;
- *   })
- *   .catch(err => Observable.of('I', 'II', 'III', 'IV', 'V'))
- *   .subscribe(x => console.log(x));
- *   // 1, 2, 3, I, II, III, IV, V
- *
- * @example <caption>Retries the caught source Observable again in case of error, similar to retry() operator</caption>
- *
- * Observable.of(1, 2, 3, 4, 5)
- *   .map(n => {
- * 	   if (n === 4) {
- * 	     throw 'four!';
- *     }
- * 	   return n;
- *   })
- *   .catch((err, caught) => caught)
- *   .take(30)
- *   .subscribe(x => console.log(x));
- *   // 1, 2, 3, 1, 2, 3, ...
- *
- * @example <caption>Throws a new error when the source Observable throws an error</caption>
- *
- * Observable.of(1, 2, 3, 4, 5)
- *   .map(n => {
- *     if (n == 4) {
- *       throw 'four!';
- *     }
- *     return n;
- *   })
- *   .catch(err => {
- *     throw 'error in source. Details: ' + err;
- *   })
- *   .subscribe(
- *     x => console.log(x),
- *     err => console.log(err)
- *   );
- *   // 1, 2, 3, error in source. Details: four!
- *
- * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
- *  is the source observable, in case you'd like to "retry" that observable by returning it again. Whatever observable
- *  is returned by the `selector` will be used to continue the observable chain.
- * @return {Observable} An observable that originates from either the source or the observable returned by the
- *  catch `selector` function.
- * @method catch
- * @name catch
- * @owner Observable
- */
 function _catch$2(selector) {
     return catchError_1.catchError(selector)(this);
 }
 var _catch_2 = _catch$2;
-
+//# sourceMappingURL=catch.js.map
 
 var _catch_1 = {
 	_catch: _catch_2
@@ -28400,113 +27635,31 @@ var _catch_1 = {
 
 Observable_1.Observable.prototype.catch = _catch_1._catch;
 Observable_1.Observable.prototype._catch = _catch_1._catch;
+//# sourceMappingURL=catch.js.map
 
 function combineAll$3(project) {
     return function (source) { return source.lift(new combineLatest_1.CombineLatestOperator(project)); };
 }
 var combineAll_2$2 = combineAll$3;
-
+//# sourceMappingURL=combineAll.js.map
 
 var combineAll_1 = {
 	combineAll: combineAll_2$2
 };
 
-/**
- * Converts a higher-order Observable into a first-order Observable by waiting
- * for the outer Observable to complete, then applying {@link combineLatest}.
- *
- * <span class="informal">Flattens an Observable-of-Observables by applying
- * {@link combineLatest} when the Observable-of-Observables completes.</span>
- *
- * <img src="./img/combineAll.png" width="100%">
- *
- * Takes an Observable of Observables, and collects all Observables from it.
- * Once the outer Observable completes, it subscribes to all collected
- * Observables and combines their values using the {@link combineLatest}
- * strategy, such that:
- * - Every time an inner Observable emits, the output Observable emits.
- * - When the returned observable emits, it emits all of the latest values by:
- *   - If a `project` function is provided, it is called with each recent value
- *     from each inner Observable in whatever order they arrived, and the result
- *     of the `project` function is what is emitted by the output Observable.
- *   - If there is no `project` function, an array of all of the most recent
- *     values is emitted by the output Observable.
- *
- * @example <caption>Map two click events to a finite interval Observable, then apply combineAll</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map(ev =>
- *   Rx.Observable.interval(Math.random()*2000).take(3)
- * ).take(2);
- * var result = higherOrder.combineAll();
- * result.subscribe(x => console.log(x));
- *
- * @see {@link combineLatest}
- * @see {@link mergeAll}
- *
- * @param {function} [project] An optional function to map the most recent
- * values from each inner Observable into a new result. Takes each of the most
- * recent values from each collected inner Observable as arguments, in order.
- * @return {Observable} An Observable of projected results or arrays of recent
- * values.
- * @method combineAll
- * @owner Observable
- */
 function combineAll$2(project) {
     return combineAll_1.combineAll(project)(this);
 }
 var combineAll_3 = combineAll$2;
-
+//# sourceMappingURL=combineAll.js.map
 
 var combineAll_2 = {
 	combineAll: combineAll_3
 };
 
 Observable_1.Observable.prototype.combineAll = combineAll_2.combineAll;
+//# sourceMappingURL=combineAll.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Combines multiple Observables to create an Observable whose values are
- * calculated from the latest values of each of its input Observables.
- *
- * <span class="informal">Whenever any input Observable emits a value, it
- * computes a formula using the latest values from all the inputs, then emits
- * the output of that formula.</span>
- *
- * <img src="./img/combineLatest.png" width="100%">
- *
- * `combineLatest` combines the values from this Observable with values from
- * Observables passed as arguments. This is done by subscribing to each
- * Observable, in order, and collecting an array of each of the most recent
- * values any time any of the input Observables emits, then either taking that
- * array and passing it as arguments to an optional `project` function and
- * emitting the return value of that, or just emitting the array of recent
- * values directly if there is no `project` function.
- *
- * @example <caption>Dynamically calculate the Body-Mass Index from an Observable of weight and one for height</caption>
- * var weight = Rx.Observable.of(70, 72, 76, 79, 75);
- * var height = Rx.Observable.of(1.76, 1.77, 1.78);
- * var bmi = weight.combineLatest(height, (w, h) => w / (h * h));
- * bmi.subscribe(x => console.log('BMI is ' + x));
- *
- * // With output to console:
- * // BMI is 24.212293388429753
- * // BMI is 23.93948099205209
- * // BMI is 23.671253629592222
- *
- * @see {@link combineAll}
- * @see {@link merge}
- * @see {@link withLatestFrom}
- *
- * @param {ObservableInput} other An input Observable to combine with the source
- * Observable. More than one input Observables may be given as argument.
- * @param {function} [project] An optional function to project the values from
- * the combined latest values into a new value on the output Observable.
- * @return {Observable} An Observable of projected values from the most recent
- * values from each input Observable, or an array of the most recent values from
- * each input Observable.
- * @method combineLatest
- * @owner Observable
- */
 function combineLatest$6() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -28515,13 +27668,14 @@ function combineLatest$6() {
     return combineLatest_1.combineLatest.apply(void 0, observables)(this);
 }
 var combineLatest_3$1 = combineLatest$6;
-
+//# sourceMappingURL=combineLatest.js.map
 
 var combineLatest_2$3 = {
 	combineLatest: combineLatest_3$1
 };
 
 Observable_1.Observable.prototype.combineLatest = combineLatest_2$3.combineLatest;
+//# sourceMappingURL=combineLatest.js.map
 
 var concat_2$1 = concat_1;
 var concatStatic$1 = concat_2$1.concat;
@@ -28583,7 +27737,7 @@ function concat$6() {
     return function (source) { return source.lift.call(concat_1.concat.apply(void 0, [source].concat(observables))); };
 }
 var concat_4$1 = concat$6;
-
+//# sourceMappingURL=concat.js.map
 
 var concat_3$2 = {
 	concatStatic: concatStatic$1,
@@ -28649,7 +27803,7 @@ function concat$5() {
     return concat_3$2.concat.apply(void 0, observables)(this);
 }
 var concat_4 = concat$5;
-
+//# sourceMappingURL=concat.js.map
 
 var concat_3 = {
 	concatStatic: concatStatic,
@@ -28657,345 +27811,66 @@ var concat_3 = {
 };
 
 Observable_1.Observable.prototype.concat = concat_3.concat;
+//# sourceMappingURL=concat.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Converts a higher-order Observable into a first-order Observable by
- * concatenating the inner Observables in order.
- *
- * <span class="informal">Flattens an Observable-of-Observables by putting one
- * inner Observable after the other.</span>
- *
- * <img src="./img/concatAll.png" width="100%">
- *
- * Joins every Observable emitted by the source (a higher-order Observable), in
- * a serial fashion. It subscribes to each inner Observable only after the
- * previous inner Observable has completed, and merges all of their values into
- * the returned observable.
- *
- * __Warning:__ If the source Observable emits Observables quickly and
- * endlessly, and the inner Observables it emits generally complete slower than
- * the source emits, you can run into memory issues as the incoming Observables
- * collect in an unbounded buffer.
- *
- * Note: `concatAll` is equivalent to `mergeAll` with concurrency parameter set
- * to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
- * var firstOrder = higherOrder.concatAll();
- * firstOrder.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link combineAll}
- * @see {@link concat}
- * @see {@link concatMap}
- * @see {@link concatMapTo}
- * @see {@link exhaust}
- * @see {@link mergeAll}
- * @see {@link switch}
- * @see {@link zipAll}
- *
- * @return {Observable} An Observable emitting values from all the inner
- * Observables concatenated.
- * @method concatAll
- * @owner Observable
- */
 function concatAll$3() {
     return concatAll_1.concatAll()(this);
 }
 var concatAll_3 = concatAll$3;
-
+//# sourceMappingURL=concatAll.js.map
 
 var concatAll_2$1 = {
 	concatAll: concatAll_3
 };
 
 Observable_1.Observable.prototype.concatAll = concatAll_2$1.concatAll;
+//# sourceMappingURL=concatAll.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to an Observable which is merged in the output
- * Observable, in a serialized fashion waiting for each one to complete before
- * merging the next.
- *
- * <span class="informal">Maps each value to an Observable, then flattens all of
- * these inner Observables using {@link concatAll}.</span>
- *
- * <img src="./img/concatMap.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an (so-called "inner") Observable. Each new inner Observable is
- * concatenated with the previous inner Observable.
- *
- * __Warning:__ if source values arrive endlessly and faster than their
- * corresponding inner Observables can complete, it will result in memory issues
- * as inner Observables amass in an unbounded buffer waiting for their turn to
- * be subscribed to.
- *
- * Note: `concatMap` is equivalent to `mergeMap` with concurrency parameter set
- * to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.concatMap(ev => Rx.Observable.interval(1000).take(4));
- * result.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link concat}
- * @see {@link concatAll}
- * @see {@link concatMapTo}
- * @see {@link exhaustMap}
- * @see {@link mergeMap}
- * @see {@link switchMap}
- *
- * @param {function(value: T, ?index: number): ObservableInput} project A function
- * that, when applied to an item emitted by the source Observable, returns an
- * Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An Observable that emits the result of applying the
- * projection function (and the optional `resultSelector`) to each item emitted
- * by the source Observable and taking values from each projected inner
- * Observable sequentially.
- * @method concatMap
- * @owner Observable
- */
 function concatMap$3(project, resultSelector) {
     return mergeMap_1.mergeMap(project, resultSelector, 1);
 }
 var concatMap_2$2 = concatMap$3;
-
+//# sourceMappingURL=concatMap.js.map
 
 var concatMap_1 = {
 	concatMap: concatMap_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to an Observable which is merged in the output
- * Observable, in a serialized fashion waiting for each one to complete before
- * merging the next.
- *
- * <span class="informal">Maps each value to an Observable, then flattens all of
- * these inner Observables using {@link concatAll}.</span>
- *
- * <img src="./img/concatMap.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an (so-called "inner") Observable. Each new inner Observable is
- * concatenated with the previous inner Observable.
- *
- * __Warning:__ if source values arrive endlessly and faster than their
- * corresponding inner Observables can complete, it will result in memory issues
- * as inner Observables amass in an unbounded buffer waiting for their turn to
- * be subscribed to.
- *
- * Note: `concatMap` is equivalent to `mergeMap` with concurrency parameter set
- * to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.concatMap(ev => Rx.Observable.interval(1000).take(4));
- * result.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link concat}
- * @see {@link concatAll}
- * @see {@link concatMapTo}
- * @see {@link exhaustMap}
- * @see {@link mergeMap}
- * @see {@link switchMap}
- *
- * @param {function(value: T, ?index: number): ObservableInput} project A function
- * that, when applied to an item emitted by the source Observable, returns an
- * Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An Observable that emits the result of applying the
- * projection function (and the optional `resultSelector`) to each item emitted
- * by the source Observable and taking values from each projected inner
- * Observable sequentially.
- * @method concatMap
- * @owner Observable
- */
 function concatMap$2(project, resultSelector) {
     return concatMap_1.concatMap(project, resultSelector)(this);
 }
 var concatMap_3 = concatMap$2;
-
+//# sourceMappingURL=concatMap.js.map
 
 var concatMap_2 = {
 	concatMap: concatMap_3
 };
 
 Observable_1.Observable.prototype.concatMap = concatMap_2.concatMap;
+//# sourceMappingURL=concatMap.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to the same Observable which is merged multiple
- * times in a serialized fashion on the output Observable.
- *
- * <span class="informal">It's like {@link concatMap}, but maps each value
- * always to the same inner Observable.</span>
- *
- * <img src="./img/concatMapTo.png" width="100%">
- *
- * Maps each source value to the given Observable `innerObservable` regardless
- * of the source value, and then flattens those resulting Observables into one
- * single Observable, which is the output Observable. Each new `innerObservable`
- * instance emitted on the output Observable is concatenated with the previous
- * `innerObservable` instance.
- *
- * __Warning:__ if source values arrive endlessly and faster than their
- * corresponding inner Observables can complete, it will result in memory issues
- * as inner Observables amass in an unbounded buffer waiting for their turn to
- * be subscribed to.
- *
- * Note: `concatMapTo` is equivalent to `mergeMapTo` with concurrency parameter
- * set to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.concatMapTo(Rx.Observable.interval(1000).take(4));
- * result.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link concat}
- * @see {@link concatAll}
- * @see {@link concatMap}
- * @see {@link mergeMapTo}
- * @see {@link switchMapTo}
- *
- * @param {ObservableInput} innerObservable An Observable to replace each value from
- * the source Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An observable of values merged together by joining the
- * passed observable with itself, one after the other, for each value emitted
- * from the source.
- * @method concatMapTo
- * @owner Observable
- */
 function concatMapTo$3(innerObservable, resultSelector) {
     return concatMap_1.concatMap(function () { return innerObservable; }, resultSelector);
 }
 var concatMapTo_2$2 = concatMapTo$3;
-
+//# sourceMappingURL=concatMapTo.js.map
 
 var concatMapTo_1 = {
 	concatMapTo: concatMapTo_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to the same Observable which is merged multiple
- * times in a serialized fashion on the output Observable.
- *
- * <span class="informal">It's like {@link concatMap}, but maps each value
- * always to the same inner Observable.</span>
- *
- * <img src="./img/concatMapTo.png" width="100%">
- *
- * Maps each source value to the given Observable `innerObservable` regardless
- * of the source value, and then flattens those resulting Observables into one
- * single Observable, which is the output Observable. Each new `innerObservable`
- * instance emitted on the output Observable is concatenated with the previous
- * `innerObservable` instance.
- *
- * __Warning:__ if source values arrive endlessly and faster than their
- * corresponding inner Observables can complete, it will result in memory issues
- * as inner Observables amass in an unbounded buffer waiting for their turn to
- * be subscribed to.
- *
- * Note: `concatMapTo` is equivalent to `mergeMapTo` with concurrency parameter
- * set to `1`.
- *
- * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.concatMapTo(Rx.Observable.interval(1000).take(4));
- * result.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // (results are not concurrent)
- * // For every click on the "document" it will emit values 0 to 3 spaced
- * // on a 1000ms interval
- * // one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
- *
- * @see {@link concat}
- * @see {@link concatAll}
- * @see {@link concatMap}
- * @see {@link mergeMapTo}
- * @see {@link switchMapTo}
- *
- * @param {ObservableInput} innerObservable An Observable to replace each value from
- * the source Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An observable of values merged together by joining the
- * passed observable with itself, one after the other, for each value emitted
- * from the source.
- * @method concatMapTo
- * @owner Observable
- */
 function concatMapTo$2(innerObservable, resultSelector) {
     return concatMapTo_1.concatMapTo(innerObservable, resultSelector)(this);
 }
 var concatMapTo_3 = concatMapTo$2;
-
+//# sourceMappingURL=concatMapTo.js.map
 
 var concatMapTo_2 = {
 	concatMapTo: concatMapTo_3
 };
 
 Observable_1.Observable.prototype.concatMapTo = concatMapTo_2.concatMapTo;
+//# sourceMappingURL=concatMapTo.js.map
 
 var __extends$51 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29106,71 +27981,24 @@ var CountSubscriber = (function (_super) {
     };
     return CountSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=count.js.map
 
 var count_1 = {
 	count: count_2$2
 };
 
-/**
- * Counts the number of emissions on the source and emits that number when the
- * source completes.
- *
- * <span class="informal">Tells how many values were emitted, when the source
- * completes.</span>
- *
- * <img src="./img/count.png" width="100%">
- *
- * `count` transforms an Observable that emits values into an Observable that
- * emits a single value that represents the number of values emitted by the
- * source Observable. If the source Observable terminates with an error, `count`
- * will pass this error notification along without emitting a value first. If
- * the source Observable does not terminate at all, `count` will neither emit
- * a value nor terminate. This operator takes an optional `predicate` function
- * as argument, in which case the output emission will represent the number of
- * source values that matched `true` with the `predicate`.
- *
- * @example <caption>Counts how many seconds have passed before the first click happened</caption>
- * var seconds = Rx.Observable.interval(1000);
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var secondsBeforeClick = seconds.takeUntil(clicks);
- * var result = secondsBeforeClick.count();
- * result.subscribe(x => console.log(x));
- *
- * @example <caption>Counts how many odd numbers are there between 1 and 7</caption>
- * var numbers = Rx.Observable.range(1, 7);
- * var result = numbers.count(i => i % 2 === 1);
- * result.subscribe(x => console.log(x));
- *
- * // Results in:
- * // 4
- *
- * @see {@link max}
- * @see {@link min}
- * @see {@link reduce}
- *
- * @param {function(value: T, i: number, source: Observable<T>): boolean} [predicate] A
- * boolean function to select what values are to be counted. It is provided with
- * arguments of:
- * - `value`: the value from the source Observable.
- * - `index`: the (zero-based) "index" of the value from the source Observable.
- * - `source`: the source Observable instance itself.
- * @return {Observable} An Observable of one number that represents the count as
- * described above.
- * @method count
- * @owner Observable
- */
 function count$2(predicate) {
     return count_1.count(predicate)(this);
 }
 var count_3 = count$2;
-
+//# sourceMappingURL=count.js.map
 
 var count_2 = {
 	count: count_3
 };
 
 Observable_1.Observable.prototype.count = count_2.count;
+//# sourceMappingURL=count.js.map
 
 var __extends$52 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29247,63 +28075,24 @@ var DeMaterializeSubscriber = (function (_super) {
     };
     return DeMaterializeSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=dematerialize.js.map
 
 var dematerialize_1 = {
 	dematerialize: dematerialize_2$2
 };
 
-/**
- * Converts an Observable of {@link Notification} objects into the emissions
- * that they represent.
- *
- * <span class="informal">Unwraps {@link Notification} objects as actual `next`,
- * `error` and `complete` emissions. The opposite of {@link materialize}.</span>
- *
- * <img src="./img/dematerialize.png" width="100%">
- *
- * `dematerialize` is assumed to operate an Observable that only emits
- * {@link Notification} objects as `next` emissions, and does not emit any
- * `error`. Such Observable is the output of a `materialize` operation. Those
- * notifications are then unwrapped using the metadata they contain, and emitted
- * as `next`, `error`, and `complete` on the output Observable.
- *
- * Use this operator in conjunction with {@link materialize}.
- *
- * @example <caption>Convert an Observable of Notifications to an actual Observable</caption>
- * var notifA = new Rx.Notification('N', 'A');
- * var notifB = new Rx.Notification('N', 'B');
- * var notifE = new Rx.Notification('E', void 0,
- *   new TypeError('x.toUpperCase is not a function')
- * );
- * var materialized = Rx.Observable.of(notifA, notifB, notifE);
- * var upperCase = materialized.dematerialize();
- * upperCase.subscribe(x => console.log(x), e => console.error(e));
- *
- * // Results in:
- * // A
- * // B
- * // TypeError: x.toUpperCase is not a function
- *
- * @see {@link Notification}
- * @see {@link materialize}
- *
- * @return {Observable} An Observable that emits items and notifications
- * embedded in Notification objects emitted by the source Observable.
- * @method dematerialize
- * @owner Observable
- */
 function dematerialize$2() {
     return dematerialize_1.dematerialize()(this);
 }
 var dematerialize_3 = dematerialize$2;
-
+//# sourceMappingURL=dematerialize.js.map
 
 var dematerialize_2 = {
 	dematerialize: dematerialize_3
 };
 
 Observable_1.Observable.prototype.dematerialize = dematerialize_2.dematerialize;
+//# sourceMappingURL=dematerialize.js.map
 
 var __extends$53 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29430,65 +28219,24 @@ var DebounceSubscriber = (function (_super) {
     };
     return DebounceSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=debounce.js.map
 
 var debounce_1 = {
 	debounce: debounce_2$2
 };
 
-/**
- * Emits a value from the source Observable only after a particular time span
- * determined by another Observable has passed without another source emission.
- *
- * <span class="informal">It's like {@link debounceTime}, but the time span of
- * emission silence is determined by a second Observable.</span>
- *
- * <img src="./img/debounce.png" width="100%">
- *
- * `debounce` delays values emitted by the source Observable, but drops previous
- * pending delayed emissions if a new value arrives on the source Observable.
- * This operator keeps track of the most recent value from the source
- * Observable, and spawns a duration Observable by calling the
- * `durationSelector` function. The value is emitted only when the duration
- * Observable emits a value or completes, and if no other value was emitted on
- * the source Observable since the duration Observable was spawned. If a new
- * value appears before the duration Observable emits, the previous value will
- * be dropped and will not be emitted on the output Observable.
- *
- * Like {@link debounceTime}, this is a rate-limiting operator, and also a
- * delay-like operator since output emissions do not necessarily occur at the
- * same time as they did on the source Observable.
- *
- * @example <caption>Emit the most recent click after a burst of clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.debounce(() => Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link audit}
- * @see {@link debounceTime}
- * @see {@link delayWhen}
- * @see {@link throttle}
- *
- * @param {function(value: T): SubscribableOrPromise} durationSelector A function
- * that receives a value from the source Observable, for computing the timeout
- * duration for each source value, returned as an Observable or a Promise.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified duration Observable returned by
- * `durationSelector`, and may drop some values if they occur too frequently.
- * @method debounce
- * @owner Observable
- */
 function debounce$2(durationSelector) {
     return debounce_1.debounce(durationSelector)(this);
 }
 var debounce_3 = debounce$2;
-
+//# sourceMappingURL=debounce.js.map
 
 var debounce_2 = {
 	debounce: debounce_3
 };
 
 Observable_1.Observable.prototype.debounce = debounce_2.debounce;
+//# sourceMappingURL=debounce.js.map
 
 var __extends$54 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29604,70 +28352,25 @@ var DebounceTimeSubscriber = (function (_super) {
 function dispatchNext$3(subscriber) {
     subscriber.debouncedNext();
 }
-
+//# sourceMappingURL=debounceTime.js.map
 
 var debounceTime_1 = {
 	debounceTime: debounceTime_2$2
 };
 
-/**
- * Emits a value from the source Observable only after a particular time span
- * has passed without another source emission.
- *
- * <span class="informal">It's like {@link delay}, but passes only the most
- * recent value from each burst of emissions.</span>
- *
- * <img src="./img/debounceTime.png" width="100%">
- *
- * `debounceTime` delays values emitted by the source Observable, but drops
- * previous pending delayed emissions if a new value arrives on the source
- * Observable. This operator keeps track of the most recent value from the
- * source Observable, and emits that only when `dueTime` enough time has passed
- * without any other value appearing on the source Observable. If a new value
- * appears before `dueTime` silence occurs, the previous value will be dropped
- * and will not be emitted on the output Observable.
- *
- * This is a rate-limiting operator, because it is impossible for more than one
- * value to be emitted in any time window of duration `dueTime`, but it is also
- * a delay-like operator since output emissions do not occur at the same time as
- * they did on the source Observable. Optionally takes a {@link IScheduler} for
- * managing timers.
- *
- * @example <caption>Emit the most recent click after a burst of clicks</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.debounceTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounce}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttleTime}
- *
- * @param {number} dueTime The timeout duration in milliseconds (or the time
- * unit determined internally by the optional `scheduler`) for the window of
- * time required to wait for emission silence before emitting the most recent
- * source value.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the timeout for each value.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified `dueTime`, and may drop some values if they occur
- * too frequently.
- * @method debounceTime
- * @owner Observable
- */
 function debounceTime$2(dueTime, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return debounceTime_1.debounceTime(dueTime, scheduler)(this);
 }
 var debounceTime_3 = debounceTime$2;
-
+//# sourceMappingURL=debounceTime.js.map
 
 var debounceTime_2 = {
 	debounceTime: debounceTime_3
 };
 
 Observable_1.Observable.prototype.debounceTime = debounceTime_2.debounceTime;
+//# sourceMappingURL=debounceTime.js.map
 
 var __extends$55 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29744,55 +28447,25 @@ var DefaultIfEmptySubscriber = (function (_super) {
     };
     return DefaultIfEmptySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=defaultIfEmpty.js.map
 
 var defaultIfEmpty_1 = {
 	defaultIfEmpty: defaultIfEmpty_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Emits a given value if the source Observable completes without emitting any
- * `next` value, otherwise mirrors the source Observable.
- *
- * <span class="informal">If the source Observable turns out to be empty, then
- * this operator will emit a default value.</span>
- *
- * <img src="./img/defaultIfEmpty.png" width="100%">
- *
- * `defaultIfEmpty` emits the values emitted by the source Observable or a
- * specified default value if the source Observable is empty (completes without
- * having emitted any `next` value).
- *
- * @example <caption>If no clicks happen in 5 seconds, then emit "no clicks"</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var clicksBeforeFive = clicks.takeUntil(Rx.Observable.interval(5000));
- * var result = clicksBeforeFive.defaultIfEmpty('no clicks');
- * result.subscribe(x => console.log(x));
- *
- * @see {@link empty}
- * @see {@link last}
- *
- * @param {any} [defaultValue=null] The default value used if the source
- * Observable is empty.
- * @return {Observable} An Observable that emits either the specified
- * `defaultValue` if the source Observable emits no items, or the values emitted
- * by the source Observable.
- * @method defaultIfEmpty
- * @owner Observable
- */
 function defaultIfEmpty$2(defaultValue) {
     if (defaultValue === void 0) { defaultValue = null; }
     return defaultIfEmpty_1.defaultIfEmpty(defaultValue)(this);
 }
 var defaultIfEmpty_3 = defaultIfEmpty$2;
-
+//# sourceMappingURL=defaultIfEmpty.js.map
 
 var defaultIfEmpty_2 = {
 	defaultIfEmpty: defaultIfEmpty_3
 };
 
 Observable_1.Observable.prototype.defaultIfEmpty = defaultIfEmpty_2.defaultIfEmpty;
+//# sourceMappingURL=defaultIfEmpty.js.map
 
 var __extends$56 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -29927,63 +28600,25 @@ var DelayMessage = (function () {
     }
     return DelayMessage;
 }());
-
+//# sourceMappingURL=delay.js.map
 
 var delay_1 = {
 	delay: delay_2$2
 };
 
-/**
- * Delays the emission of items from the source Observable by a given timeout or
- * until a given Date.
- *
- * <span class="informal">Time shifts each item by some specified amount of
- * milliseconds.</span>
- *
- * <img src="./img/delay.png" width="100%">
- *
- * If the delay argument is a Number, this operator time shifts the source
- * Observable by that amount of time expressed in milliseconds. The relative
- * time intervals between the values are preserved.
- *
- * If the delay argument is a Date, this operator time shifts the start of the
- * Observable execution until the given date occurs.
- *
- * @example <caption>Delay each click by one second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var delayedClicks = clicks.delay(1000); // each click emitted after 1 second
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @example <caption>Delay all clicks until a future date happens</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var date = new Date('March 15, 2050 12:00:00'); // in the future
- * var delayedClicks = clicks.delay(date); // click emitted only after that date
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @see {@link debounceTime}
- * @see {@link delayWhen}
- *
- * @param {number|Date} delay The delay duration in milliseconds (a `number`) or
- * a `Date` until which the emission of the source items is delayed.
- * @param {Scheduler} [scheduler=async] The IScheduler to use for
- * managing the timers that handle the time-shift for each item.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified timeout or Date.
- * @method delay
- * @owner Observable
- */
 function delay$2(delay, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return delay_1.delay(delay, scheduler)(this);
 }
 var delay_3 = delay$2;
-
+//# sourceMappingURL=delay.js.map
 
 var delay_2 = {
 	delay: delay_3
 };
 
 Observable_1.Observable.prototype.delay = delay_2.delay;
+//# sourceMappingURL=delay.js.map
 
 var __extends$57 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -30177,68 +28812,24 @@ var SubscriptionDelaySubscriber = (function (_super) {
     };
     return SubscriptionDelaySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=delayWhen.js.map
 
 var delayWhen_1 = {
 	delayWhen: delayWhen_2$2
 };
 
-/**
- * Delays the emission of items from the source Observable by a given time span
- * determined by the emissions of another Observable.
- *
- * <span class="informal">It's like {@link delay}, but the time span of the
- * delay duration is determined by a second Observable.</span>
- *
- * <img src="./img/delayWhen.png" width="100%">
- *
- * `delayWhen` time shifts each emitted value from the source Observable by a
- * time span determined by another Observable. When the source emits a value,
- * the `delayDurationSelector` function is called with the source value as
- * argument, and should return an Observable, called the "duration" Observable.
- * The source value is emitted on the output Observable only when the duration
- * Observable emits a value or completes.
- *
- * Optionally, `delayWhen` takes a second argument, `subscriptionDelay`, which
- * is an Observable. When `subscriptionDelay` emits its first value or
- * completes, the source Observable is subscribed to and starts behaving like
- * described in the previous paragraph. If `subscriptionDelay` is not provided,
- * `delayWhen` will subscribe to the source Observable as soon as the output
- * Observable is subscribed.
- *
- * @example <caption>Delay each click by a random amount of time, between 0 and 5 seconds</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var delayedClicks = clicks.delayWhen(event =>
- *   Rx.Observable.interval(Math.random() * 5000)
- * );
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @see {@link debounce}
- * @see {@link delay}
- *
- * @param {function(value: T): Observable} delayDurationSelector A function that
- * returns an Observable for each value emitted by the source Observable, which
- * is then used to delay the emission of that item on the output Observable
- * until the Observable returned from this function emits a value.
- * @param {Observable} subscriptionDelay An Observable that triggers the
- * subscription to the source Observable once it emits any value.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by an amount of time specified by the Observable returned by
- * `delayDurationSelector`.
- * @method delayWhen
- * @owner Observable
- */
 function delayWhen$2(delayDurationSelector, subscriptionDelay) {
     return delayWhen_1.delayWhen(delayDurationSelector, subscriptionDelay)(this);
 }
 var delayWhen_3 = delayWhen$2;
-
+//# sourceMappingURL=delayWhen.js.map
 
 var delayWhen_2 = {
 	delayWhen: delayWhen_3
 };
 
 Observable_1.Observable.prototype.delayWhen = delayWhen_2.delayWhen;
+//# sourceMappingURL=delayWhen.js.map
 
 function minimalSetImpl() {
     // THIS IS NOT a full impl of Set, this is just the minimum
@@ -30270,7 +28861,7 @@ function minimalSetImpl() {
 }
 var minimalSetImpl_1 = minimalSetImpl;
 var Set$1 = root.root.Set || minimalSetImpl();
-
+//# sourceMappingURL=Set.js.map
 
 var _Set = {
 	minimalSetImpl: minimalSetImpl_1,
@@ -30395,69 +28986,25 @@ var DistinctSubscriber = (function (_super) {
     return DistinctSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var DistinctSubscriber_1 = DistinctSubscriber;
-
+//# sourceMappingURL=distinct.js.map
 
 var distinct_1 = {
 	distinct: distinct_2$2,
 	DistinctSubscriber: DistinctSubscriber_1
 };
 
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from previous items.
- *
- * If a keySelector function is provided, then it will project each value from the source observable into a new value that it will
- * check for equality with previously projected values. If a keySelector function is not provided, it will use each value from the
- * source observable directly with an equality check against previous values.
- *
- * In JavaScript runtimes that support `Set`, this operator will use a `Set` to improve performance of the distinct value checking.
- *
- * In other runtimes, this operator will use a minimal implementation of `Set` that relies on an `Array` and `indexOf` under the
- * hood, so performance will degrade as more values are checked for distinction. Even in newer browsers, a long-running `distinct`
- * use might result in memory leaks. To help alleviate this in some scenarios, an optional `flushes` parameter is also provided so
- * that the internal `Set` can be "flushed", basically clearing it of values.
- *
- * @example <caption>A simple example with numbers</caption>
- * Observable.of(1, 1, 2, 2, 2, 1, 2, 3, 4, 3, 2, 1)
- *   .distinct()
- *   .subscribe(x => console.log(x)); // 1, 2, 3, 4
- *
- * @example <caption>An example using a keySelector function</caption>
- * interface Person {
- *    age: number,
- *    name: string
- * }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'})
- *     .distinct((p: Person) => p.name)
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- *
- * @see {@link distinctUntilChanged}
- * @see {@link distinctUntilKeyChanged}
- *
- * @param {function} [keySelector] Optional function to select which value you want to check as distinct.
- * @param {Observable} [flushes] Optional Observable for flushing the internal HashSet of the operator.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values.
- * @method distinct
- * @owner Observable
- */
 function distinct$2(keySelector, flushes) {
     return distinct_1.distinct(keySelector, flushes)(this);
 }
 var distinct_3 = distinct$2;
-
+//# sourceMappingURL=distinct.js.map
 
 var distinct_2 = {
 	distinct: distinct_3
 };
 
 Observable_1.Observable.prototype.distinct = distinct_2.distinct;
+//# sourceMappingURL=distinct.js.map
 
 var __extends$59 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -30565,201 +29112,47 @@ var DistinctUntilChangedSubscriber = (function (_super) {
     };
     return DistinctUntilChangedSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=distinctUntilChanged.js.map
 
 var distinctUntilChanged_1 = {
 	distinctUntilChanged: distinctUntilChanged_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
- *
- * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
- *
- * If a comparator function is not provided, an equality check is used by default.
- *
- * @example <caption>A simple example with numbers</caption>
- * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
- *   .distinctUntilChanged()
- *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
- *
- * @example <caption>An example using a compare function</caption>
- * interface Person {
- *    age: number,
- *    name: string
- * }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'})
- *     { age: 6, name: 'Foo'})
- *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo' }
- *
- * @see {@link distinct}
- * @see {@link distinctUntilKeyChanged}
- *
- * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values.
- * @method distinctUntilChanged
- * @owner Observable
- */
 function distinctUntilChanged$2(compare, keySelector) {
     return distinctUntilChanged_1.distinctUntilChanged(compare, keySelector)(this);
 }
 var distinctUntilChanged_3 = distinctUntilChanged$2;
-
+//# sourceMappingURL=distinctUntilChanged.js.map
 
 var distinctUntilChanged_2 = {
 	distinctUntilChanged: distinctUntilChanged_3
 };
 
 Observable_1.Observable.prototype.distinctUntilChanged = distinctUntilChanged_2.distinctUntilChanged;
+//# sourceMappingURL=distinctUntilChanged.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
- * using a property accessed by using the key provided to check if the two items are distinct.
- *
- * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
- *
- * If a comparator function is not provided, an equality check is used by default.
- *
- * @example <caption>An example comparing the name of persons</caption>
- *
- *  interface Person {
- *     age: number,
- *     name: string
- *  }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'},
- *     { age: 6, name: 'Foo'})
- *     .distinctUntilKeyChanged('name')
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo' }
- *
- * @example <caption>An example comparing the first letters of the name</caption>
- *
- * interface Person {
- *     age: number,
- *     name: string
- *  }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo1'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo2'},
- *     { age: 6, name: 'Foo3'})
- *     .distinctUntilKeyChanged('name', (x: string, y: string) => x.substring(0, 3) === y.substring(0, 3))
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo1' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo2' }
- *
- * @see {@link distinct}
- * @see {@link distinctUntilChanged}
- *
- * @param {string} key String key for object property lookup on each item.
- * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values based on the key specified.
- * @method distinctUntilKeyChanged
- * @owner Observable
- */
 function distinctUntilKeyChanged$3(key, compare) {
     return distinctUntilChanged_1.distinctUntilChanged(function (x, y) { return compare ? compare(x[key], y[key]) : x[key] === y[key]; });
 }
 var distinctUntilKeyChanged_2$2 = distinctUntilKeyChanged$3;
-
+//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 var distinctUntilKeyChanged_1 = {
 	distinctUntilKeyChanged: distinctUntilKeyChanged_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item,
- * using a property accessed by using the key provided to check if the two items are distinct.
- *
- * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
- *
- * If a comparator function is not provided, an equality check is used by default.
- *
- * @example <caption>An example comparing the name of persons</caption>
- *
- *  interface Person {
- *     age: number,
- *     name: string
- *  }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'},
- *     { age: 6, name: 'Foo'})
- *     .distinctUntilKeyChanged('name')
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo' }
- *
- * @example <caption>An example comparing the first letters of the name</caption>
- *
- * interface Person {
- *     age: number,
- *     name: string
- *  }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo1'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo2'},
- *     { age: 6, name: 'Foo3'})
- *     .distinctUntilKeyChanged('name', (x: string, y: string) => x.substring(0, 3) === y.substring(0, 3))
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo1' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo2' }
- *
- * @see {@link distinct}
- * @see {@link distinctUntilChanged}
- *
- * @param {string} key String key for object property lookup on each item.
- * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values based on the key specified.
- * @method distinctUntilKeyChanged
- * @owner Observable
- */
 function distinctUntilKeyChanged$2(key, compare) {
     return distinctUntilKeyChanged_1.distinctUntilKeyChanged(key, compare)(this);
 }
 var distinctUntilKeyChanged_3 = distinctUntilKeyChanged$2;
-
+//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 var distinctUntilKeyChanged_2 = {
 	distinctUntilKeyChanged: distinctUntilKeyChanged_3
 };
 
 Observable_1.Observable.prototype.distinctUntilKeyChanged = distinctUntilKeyChanged_2.distinctUntilKeyChanged;
+//# sourceMappingURL=distinctUntilKeyChanged.js.map
 
 var __extends$60 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -30872,61 +29265,17 @@ var DoSubscriber = (function (_super) {
     };
     return DoSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=tap.js.map
 
 var tap_1 = {
 	tap: tap_2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Perform a side effect for every emission on the source Observable, but return
- * an Observable that is identical to the source.
- *
- * <span class="informal">Intercepts each emission on the source and runs a
- * function, but returns an output which is identical to the source as long as errors don't occur.</span>
- *
- * <img src="./img/do.png" width="100%">
- *
- * Returns a mirrored Observable of the source Observable, but modified so that
- * the provided Observer is called to perform a side effect for every value,
- * error, and completion emitted by the source. Any errors that are thrown in
- * the aforementioned Observer or handlers are safely sent down the error path
- * of the output Observable.
- *
- * This operator is useful for debugging your Observables for the correct values
- * or performing other side effects.
- *
- * Note: this is different to a `subscribe` on the Observable. If the Observable
- * returned by `do` is not subscribed, the side effects specified by the
- * Observer will never happen. `do` therefore simply spies on existing
- * execution, it does not trigger an execution to happen like `subscribe` does.
- *
- * @example <caption>Map every click to the clientX position of that click, while also logging the click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var positions = clicks
- *   .do(ev => console.log(ev))
- *   .map(ev => ev.clientX);
- * positions.subscribe(x => console.log(x));
- *
- * @see {@link map}
- * @see {@link subscribe}
- *
- * @param {Observer|function} [nextOrObserver] A normal Observer object or a
- * callback for `next`.
- * @param {function} [error] Callback for errors in the source.
- * @param {function} [complete] Callback for the completion of the source.
- * @return {Observable} An Observable identical to the source, but runs the
- * specified Observer or callback(s) for each item.
- * @method do
- * @name do
- * @owner Observable
- */
 function _do$2(nextOrObserver, error, complete) {
     return tap_1.tap(nextOrObserver, error, complete)(this);
 }
 var _do_2 = _do$2;
-
+//# sourceMappingURL=do.js.map
 
 var _do_1 = {
 	_do: _do_2
@@ -30934,6 +29283,7 @@ var _do_1 = {
 
 Observable_1.Observable.prototype.do = _do_1._do;
 Observable_1.Observable.prototype._do = _do_1._do;
+//# sourceMappingURL=do.js.map
 
 var __extends$61 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31022,58 +29372,24 @@ var SwitchFirstSubscriber = (function (_super) {
     };
     return SwitchFirstSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=exhaust.js.map
 
 var exhaust_1 = {
 	exhaust: exhaust_2$2
 };
 
-/**
- * Converts a higher-order Observable into a first-order Observable by dropping
- * inner Observables while the previous inner Observable has not yet completed.
- *
- * <span class="informal">Flattens an Observable-of-Observables by dropping the
- * next inner Observables while the current inner is still executing.</span>
- *
- * <img src="./img/exhaust.png" width="100%">
- *
- * `exhaust` subscribes to an Observable that emits Observables, also known as a
- * higher-order Observable. Each time it observes one of these emitted inner
- * Observables, the output Observable begins emitting the items emitted by that
- * inner Observable. So far, it behaves like {@link mergeAll}. However,
- * `exhaust` ignores every new inner Observable if the previous Observable has
- * not yet completed. Once that one completes, it will accept and flatten the
- * next inner Observable and repeat this process.
- *
- * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(5));
- * var result = higherOrder.exhaust();
- * result.subscribe(x => console.log(x));
- *
- * @see {@link combineAll}
- * @see {@link concatAll}
- * @see {@link switch}
- * @see {@link mergeAll}
- * @see {@link exhaustMap}
- * @see {@link zipAll}
- *
- * @return {Observable} An Observable that takes a source of Observables and propagates the first observable
- * exclusively until it completes before subscribing to the next.
- * @method exhaust
- * @owner Observable
- */
 function exhaust$2() {
     return exhaust_1.exhaust()(this);
 }
 var exhaust_3 = exhaust$2;
-
+//# sourceMappingURL=exhaust.js.map
 
 var exhaust_2 = {
 	exhaust: exhaust_3
 };
 
 Observable_1.Observable.prototype.exhaust = exhaust_2.exhaust;
+//# sourceMappingURL=exhaust.js.map
 
 var __extends$62 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31211,69 +29527,24 @@ var SwitchFirstMapSubscriber = (function (_super) {
     };
     return SwitchFirstMapSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=exhaustMap.js.map
 
 var exhaustMap_1 = {
 	exhaustMap: exhaustMap_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to an Observable which is merged in the output
- * Observable only if the previous projected Observable has completed.
- *
- * <span class="informal">Maps each value to an Observable, then flattens all of
- * these inner Observables using {@link exhaust}.</span>
- *
- * <img src="./img/exhaustMap.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an (so-called "inner") Observable. When it projects a source value to
- * an Observable, the output Observable begins emitting the items emitted by
- * that projected Observable. However, `exhaustMap` ignores every new projected
- * Observable if the previous projected Observable has not yet completed. Once
- * that one completes, it will accept and flatten the next projected Observable
- * and repeat this process.
- *
- * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.exhaustMap((ev) => Rx.Observable.interval(1000).take(5));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link concatMap}
- * @see {@link exhaust}
- * @see {@link mergeMap}
- * @see {@link switchMap}
- *
- * @param {function(value: T, ?index: number): ObservableInput} project A function
- * that, when applied to an item emitted by the source Observable, returns an
- * Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An Observable containing projected Observables
- * of each item of the source, ignoring projected Observables that start before
- * their preceding Observable has completed.
- * @method exhaustMap
- * @owner Observable
- */
 function exhaustMap$2(project, resultSelector) {
     return exhaustMap_1.exhaustMap(project, resultSelector)(this);
 }
 var exhaustMap_3 = exhaustMap$2;
-
+//# sourceMappingURL=exhaustMap.js.map
 
 var exhaustMap_2 = {
 	exhaustMap: exhaustMap_3
 };
 
 Observable_1.Observable.prototype.exhaustMap = exhaustMap_2.exhaustMap;
+//# sourceMappingURL=exhaustMap.js.map
 
 var __extends$63 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31424,7 +29695,7 @@ var ExpandSubscriber = (function (_super) {
     return ExpandSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var ExpandSubscriber_1 = ExpandSubscriber;
-
+//# sourceMappingURL=expand.js.map
 
 var expand_1 = {
 	expand: expand_2$2,
@@ -31432,52 +29703,6 @@ var expand_1 = {
 	ExpandSubscriber: ExpandSubscriber_1
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Recursively projects each source value to an Observable which is merged in
- * the output Observable.
- *
- * <span class="informal">It's similar to {@link mergeMap}, but applies the
- * projection function to every source value as well as every output value.
- * It's recursive.</span>
- *
- * <img src="./img/expand.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an Observable, and then merging those resulting Observables and
- * emitting the results of this merger. *Expand* will re-emit on the output
- * Observable every source value. Then, each output value is given to the
- * `project` function which returns an inner Observable to be merged on the
- * output Observable. Those output values resulting from the projection are also
- * given to the `project` function to produce new output values. This is how
- * *expand* behaves recursively.
- *
- * @example <caption>Start emitting the powers of two on every click, at most 10 of them</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var powersOfTwo = clicks
- *   .mapTo(1)
- *   .expand(x => Rx.Observable.of(2 * x).delay(1000))
- *   .take(10);
- * powersOfTwo.subscribe(x => console.log(x));
- *
- * @see {@link mergeMap}
- * @see {@link mergeScan}
- *
- * @param {function(value: T, index: number) => Observable} project A function
- * that, when applied to an item emitted by the source or the output Observable,
- * returns an Observable.
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
- * Observables being subscribed to concurrently.
- * @param {Scheduler} [scheduler=null] The IScheduler to use for subscribing to
- * each projected inner Observable.
- * @return {Observable} An Observable that emits the source values and also
- * result of applying the projection function to each value emitted on the
- * output Observable and and merging the results of the Observables obtained
- * from this transformation.
- * @method expand
- * @owner Observable
- */
 function expand$2(project, concurrent, scheduler) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     if (scheduler === void 0) { scheduler = undefined; }
@@ -31485,13 +29710,14 @@ function expand$2(project, concurrent, scheduler) {
     return expand_1.expand(project, concurrent, scheduler)(this);
 }
 var expand_3 = expand$2;
-
+//# sourceMappingURL=expand.js.map
 
 var expand_2 = {
 	expand: expand_3
 };
 
 Observable_1.Observable.prototype.expand = expand_2.expand;
+//# sourceMappingURL=expand.js.map
 
 var __extends$65 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31519,7 +29745,7 @@ var ArgumentOutOfRangeError$1 = (function (_super) {
     return ArgumentOutOfRangeError;
 }(Error));
 var ArgumentOutOfRangeError_2 = ArgumentOutOfRangeError$1;
-
+//# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 var ArgumentOutOfRangeError_1 = {
 	ArgumentOutOfRangeError: ArgumentOutOfRangeError_2
@@ -31623,65 +29849,24 @@ var ElementAtSubscriber = (function (_super) {
     };
     return ElementAtSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=elementAt.js.map
 
 var elementAt_1 = {
 	elementAt: elementAt_2$2
 };
 
-/**
- * Emits the single value at the specified `index` in a sequence of emissions
- * from the source Observable.
- *
- * <span class="informal">Emits only the i-th value, then completes.</span>
- *
- * <img src="./img/elementAt.png" width="100%">
- *
- * `elementAt` returns an Observable that emits the item at the specified
- * `index` in the source Observable, or a default value if that `index` is out
- * of range and the `default` argument is provided. If the `default` argument is
- * not given and the `index` is out of range, the output Observable will emit an
- * `ArgumentOutOfRangeError` error.
- *
- * @example <caption>Emit only the third click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.elementAt(2);
- * result.subscribe(x => console.log(x));
- *
- * // Results in:
- * // click 1 = nothing
- * // click 2 = nothing
- * // click 3 = MouseEvent object logged to console
- *
- * @see {@link first}
- * @see {@link last}
- * @see {@link skip}
- * @see {@link single}
- * @see {@link take}
- *
- * @throws {ArgumentOutOfRangeError} When using `elementAt(i)`, it delivers an
- * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0` or the
- * Observable has completed before emitting the i-th `next` notification.
- *
- * @param {number} index Is the number `i` for the i-th source emission that has
- * happened since the subscription, starting from the number `0`.
- * @param {T} [defaultValue] The default value returned for missing indices.
- * @return {Observable} An Observable that emits a single item, if it is found.
- * Otherwise, will emit the default value if given. If not, then emits an error.
- * @method elementAt
- * @owner Observable
- */
 function elementAt$2(index, defaultValue) {
     return elementAt_1.elementAt(index, defaultValue)(this);
 }
 var elementAt_3 = elementAt$2;
-
+//# sourceMappingURL=elementAt.js.map
 
 var elementAt_2 = {
 	elementAt: elementAt_3
 };
 
 Observable_1.Observable.prototype.elementAt = elementAt_2.elementAt;
+//# sourceMappingURL=elementAt.js.map
 
 var __extends$66 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31775,63 +29960,24 @@ var FilterSubscriber = (function (_super) {
     };
     return FilterSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=filter.js.map
 
 var filter_1 = {
 	filter: filter_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Filter items emitted by the source Observable by only emitting those that
- * satisfy a specified predicate.
- *
- * <span class="informal">Like
- * [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter),
- * it only emits a value from the source if it passes a criterion function.</span>
- *
- * <img src="./img/filter.png" width="100%">
- *
- * Similar to the well-known `Array.prototype.filter` method, this operator
- * takes values from the source Observable, passes them through a `predicate`
- * function and only emits those values that yielded `true`.
- *
- * @example <caption>Emit only click events whose target was a DIV element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var clicksOnDivs = clicks.filter(ev => ev.target.tagName === 'DIV');
- * clicksOnDivs.subscribe(x => console.log(x));
- *
- * @see {@link distinct}
- * @see {@link distinctUntilChanged}
- * @see {@link distinctUntilKeyChanged}
- * @see {@link ignoreElements}
- * @see {@link partition}
- * @see {@link skip}
- *
- * @param {function(value: T, index: number): boolean} predicate A function that
- * evaluates each value emitted by the source Observable. If it returns `true`,
- * the value is emitted, if `false` the value is not passed to the output
- * Observable. The `index` parameter is the number `i` for the i-th source
- * emission that has happened since the subscription, starting from the number
- * `0`.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {Observable} An Observable of values from the source that were
- * allowed by the `predicate` function.
- * @method filter
- * @owner Observable
- */
 function filter$2(predicate, thisArg) {
     return filter_1.filter(predicate, thisArg)(this);
 }
 var filter_3 = filter$2;
-
+//# sourceMappingURL=filter.js.map
 
 var filter_2 = {
 	filter: filter_3
 };
 
 Observable_1.Observable.prototype.filter = filter_2.filter;
+//# sourceMappingURL=filter.js.map
 
 var __extends$67 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31874,25 +30020,17 @@ var FinallySubscriber = (function (_super) {
     }
     return FinallySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=finalize.js.map
 
 var finalize_1 = {
 	finalize: finalize_2
 };
 
-/**
- * Returns an Observable that mirrors the source Observable, but will call a specified function when
- * the source terminates on complete or error.
- * @param {function} callback Function to be called when source terminates.
- * @return {Observable} An Observable that mirrors the source, but will call the specified function on termination.
- * @method finally
- * @owner Observable
- */
 function _finally$2(callback) {
     return finalize_1.finalize(callback)(this);
 }
 var _finally_2 = _finally$2;
-
+//# sourceMappingURL=finally.js.map
 
 var _finally_1 = {
 	_finally: _finally_2
@@ -31900,6 +30038,7 @@ var _finally_1 = {
 
 Observable_1.Observable.prototype.finally = _finally_1._finally;
 Observable_1.Observable.prototype._finally = _finally_1._finally;
+//# sourceMappingURL=finally.js.map
 
 var __extends$68 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -31999,7 +30138,7 @@ var FindValueSubscriber = (function (_super) {
     return FindValueSubscriber;
 }(Subscriber_1.Subscriber));
 var FindValueSubscriber_1 = FindValueSubscriber;
-
+//# sourceMappingURL=find.js.map
 
 var find_1 = {
 	find: find_2$2,
@@ -32007,141 +30146,41 @@ var find_1 = {
 	FindValueSubscriber: FindValueSubscriber_1
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Emits only the first value emitted by the source Observable that meets some
- * condition.
- *
- * <span class="informal">Finds the first value that passes some test and emits
- * that.</span>
- *
- * <img src="./img/find.png" width="100%">
- *
- * `find` searches for the first item in the source Observable that matches the
- * specified condition embodied by the `predicate`, and returns the first
- * occurrence in the source. Unlike {@link first}, the `predicate` is required
- * in `find`, and does not emit an error if a valid value is not found.
- *
- * @example <caption>Find and emit the first click that happens on a DIV element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.find(ev => ev.target.tagName === 'DIV');
- * result.subscribe(x => console.log(x));
- *
- * @see {@link filter}
- * @see {@link first}
- * @see {@link findIndex}
- * @see {@link take}
- *
- * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
- * A function called with each item to test for condition matching.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {Observable<T>} An Observable of the first item that matches the
- * condition.
- * @method find
- * @owner Observable
- */
 function find$2(predicate, thisArg) {
     return find_1.find(predicate, thisArg)(this);
 }
 var find_3 = find$2;
-
+//# sourceMappingURL=find.js.map
 
 var find_2 = {
 	find: find_3
 };
 
 Observable_1.Observable.prototype.find = find_2.find;
+//# sourceMappingURL=find.js.map
 
-/**
- * Emits only the index of the first value emitted by the source Observable that
- * meets some condition.
- *
- * <span class="informal">It's like {@link find}, but emits the index of the
- * found value, not the value itself.</span>
- *
- * <img src="./img/findIndex.png" width="100%">
- *
- * `findIndex` searches for the first item in the source Observable that matches
- * the specified condition embodied by the `predicate`, and returns the
- * (zero-based) index of the first occurrence in the source. Unlike
- * {@link first}, the `predicate` is required in `findIndex`, and does not emit
- * an error if a valid value is not found.
- *
- * @example <caption>Emit the index of first click that happens on a DIV element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.findIndex(ev => ev.target.tagName === 'DIV');
- * result.subscribe(x => console.log(x));
- *
- * @see {@link filter}
- * @see {@link find}
- * @see {@link first}
- * @see {@link take}
- *
- * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
- * A function called with each item to test for condition matching.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {Observable} An Observable of the index of the first item that
- * matches the condition.
- * @method find
- * @owner Observable
- */
 function findIndex$3(predicate, thisArg) {
     return function (source) { return source.lift(new find_1.FindValueOperator(predicate, source, true, thisArg)); };
 }
 var findIndex_2$2 = findIndex$3;
-
+//# sourceMappingURL=findIndex.js.map
 
 var findIndex_1 = {
 	findIndex: findIndex_2$2
 };
 
-/**
- * Emits only the index of the first value emitted by the source Observable that
- * meets some condition.
- *
- * <span class="informal">It's like {@link find}, but emits the index of the
- * found value, not the value itself.</span>
- *
- * <img src="./img/findIndex.png" width="100%">
- *
- * `findIndex` searches for the first item in the source Observable that matches
- * the specified condition embodied by the `predicate`, and returns the
- * (zero-based) index of the first occurrence in the source. Unlike
- * {@link first}, the `predicate` is required in `findIndex`, and does not emit
- * an error if a valid value is not found.
- *
- * @example <caption>Emit the index of first click that happens on a DIV element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.findIndex(ev => ev.target.tagName === 'DIV');
- * result.subscribe(x => console.log(x));
- *
- * @see {@link filter}
- * @see {@link find}
- * @see {@link first}
- * @see {@link take}
- *
- * @param {function(value: T, index: number, source: Observable<T>): boolean} predicate
- * A function called with each item to test for condition matching.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {Observable} An Observable of the index of the first item that
- * matches the condition.
- * @method find
- * @owner Observable
- */
 function findIndex$2(predicate, thisArg) {
     return findIndex_1.findIndex(predicate, thisArg)(this);
 }
 var findIndex_3 = findIndex$2;
-
+//# sourceMappingURL=findIndex.js.map
 
 var findIndex_2 = {
 	findIndex: findIndex_3
 };
 
 Observable_1.Observable.prototype.findIndex = findIndex_2.findIndex;
+//# sourceMappingURL=findIndex.js.map
 
 var __extends$70 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -32169,7 +30208,7 @@ var EmptyError$1 = (function (_super) {
     return EmptyError;
 }(Error));
 var EmptyError_2 = EmptyError$1;
-
+//# sourceMappingURL=EmptyError.js.map
 
 var EmptyError_1 = {
 	EmptyError: EmptyError_2
@@ -32325,72 +30364,24 @@ var FirstSubscriber = (function (_super) {
     };
     return FirstSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=first.js.map
 
 var first_1 = {
 	first: first_2$2
 };
 
-/**
- * Emits only the first value (or the first value that meets some condition)
- * emitted by the source Observable.
- *
- * <span class="informal">Emits only the first value. Or emits only the first
- * value that passes some test.</span>
- *
- * <img src="./img/first.png" width="100%">
- *
- * If called with no arguments, `first` emits the first value of the source
- * Observable, then completes. If called with a `predicate` function, `first`
- * emits the first value of the source that matches the specified condition. It
- * may also take a `resultSelector` function to produce the output value from
- * the input value, and a `defaultValue` to emit in case the source completes
- * before it is able to emit a valid value. Throws an error if `defaultValue`
- * was not provided and a matching element is not found.
- *
- * @example <caption>Emit only the first click that happens on the DOM</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.first();
- * result.subscribe(x => console.log(x));
- *
- * @example <caption>Emits the first click that happens on a DIV</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.first(ev => ev.target.tagName === 'DIV');
- * result.subscribe(x => console.log(x));
- *
- * @see {@link filter}
- * @see {@link find}
- * @see {@link take}
- *
- * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
- * callback if the Observable completes before any `next` notification was sent.
- *
- * @param {function(value: T, index: number, source: Observable<T>): boolean} [predicate]
- * An optional function called with each item to test for condition matching.
- * @param {function(value: T, index: number): R} [resultSelector] A function to
- * produce the value on the output Observable based on the values
- * and the indices of the source Observable. The arguments passed to this
- * function are:
- * - `value`: the value that was emitted on the source.
- * - `index`: the "index" of the value from the source.
- * @param {R} [defaultValue] The default value emitted in case no valid value
- * was found on the source.
- * @return {Observable<T|R>} An Observable of the first item that matches the
- * condition.
- * @method first
- * @owner Observable
- */
 function first$2(predicate, resultSelector, defaultValue) {
     return first_1.first(predicate, resultSelector, defaultValue)(this);
 }
 var first_3 = first$2;
-
+//# sourceMappingURL=first.js.map
 
 var first_2 = {
 	first: first_3
 };
 
 Observable_1.Observable.prototype.first = first_2.first;
+//# sourceMappingURL=first.js.map
 
 var MapPolyfill = (function () {
     function MapPolyfill() {
@@ -32437,14 +30428,14 @@ var MapPolyfill = (function () {
     return MapPolyfill;
 }());
 var MapPolyfill_2 = MapPolyfill;
-
+//# sourceMappingURL=MapPolyfill.js.map
 
 var MapPolyfill_1 = {
 	MapPolyfill: MapPolyfill_2
 };
 
 var Map$1 = root.root.Map || (function () { return MapPolyfill_1.MapPolyfill; })();
-
+//# sourceMappingURL=Map.js.map
 
 var _Map = {
 	Map: Map$1
@@ -32479,7 +30470,7 @@ var FastMap = (function () {
     return FastMap;
 }());
 var FastMap_2 = FastMap;
-
+//# sourceMappingURL=FastMap.js.map
 
 var FastMap_1 = {
 	FastMap: FastMap_2
@@ -32759,7 +30750,7 @@ var InnerRefCountSubscription = (function (_super) {
     };
     return InnerRefCountSubscription;
 }(Subscription_1.Subscription));
-
+//# sourceMappingURL=groupBy.js.map
 
 var groupBy_1 = {
 	groupBy: groupBy_2$2,
@@ -32839,7 +30830,7 @@ function groupBy$2(keySelector, elementSelector, durationSelector, subjectSelect
     return groupBy_1.groupBy(keySelector, elementSelector, durationSelector, subjectSelector)(this);
 }
 var groupBy_3 = groupBy$2;
-
+//# sourceMappingURL=groupBy.js.map
 
 var groupBy_2 = {
 	GroupedObservable: GroupedObservable,
@@ -32847,6 +30838,7 @@ var groupBy_2 = {
 };
 
 Observable_1.Observable.prototype.groupBy = groupBy_2.groupBy;
+//# sourceMappingURL=groupBy.js.map
 
 var __extends$72 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -32894,34 +30886,25 @@ var IgnoreElementsSubscriber = (function (_super) {
     };
     return IgnoreElementsSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=ignoreElements.js.map
 
 var ignoreElements_1 = {
 	ignoreElements: ignoreElements_2$2
 };
 
-/**
- * Ignores all items emitted by the source Observable and only passes calls of `complete` or `error`.
- *
- * <img src="./img/ignoreElements.png" width="100%">
- *
- * @return {Observable} An empty Observable that only calls `complete`
- * or `error`, based on which one is called by the source Observable.
- * @method ignoreElements
- * @owner Observable
- */
 function ignoreElements$2() {
     return ignoreElements_1.ignoreElements()(this);
 }
 var ignoreElements_3 = ignoreElements$2;
 
-
+//# sourceMappingURL=ignoreElements.js.map
 
 var ignoreElements_2 = {
 	ignoreElements: ignoreElements_3
 };
 
 Observable_1.Observable.prototype.ignoreElements = ignoreElements_2.ignoreElements;
+//# sourceMappingURL=ignoreElements.js.map
 
 var __extends$73 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -32964,32 +30947,24 @@ var IsEmptySubscriber = (function (_super) {
     };
     return IsEmptySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=isEmpty.js.map
 
 var isEmpty_1 = {
 	isEmpty: isEmpty_2$2
 };
 
-/**
- * If the source Observable is empty it returns an Observable that emits true, otherwise it emits false.
- *
- * <img src="./img/isEmpty.png" width="100%">
- *
- * @return {Observable} An Observable that emits a Boolean.
- * @method isEmpty
- * @owner Observable
- */
 function isEmpty$2() {
     return isEmpty_1.isEmpty()(this);
 }
 var isEmpty_3 = isEmpty$2;
-
+//# sourceMappingURL=isEmpty.js.map
 
 var isEmpty_2 = {
 	isEmpty: isEmpty_3
 };
 
 Observable_1.Observable.prototype.isEmpty = isEmpty_2.isEmpty;
+//# sourceMappingURL=isEmpty.js.map
 
 var __extends$74 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33107,171 +31082,49 @@ var AuditSubscriber = (function (_super) {
     };
     return AuditSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=audit.js.map
 
 var audit_1 = {
 	audit: audit_2$2
 };
 
-/**
- * Ignores source values for a duration determined by another Observable, then
- * emits the most recent value from the source Observable, then repeats this
- * process.
- *
- * <span class="informal">It's like {@link auditTime}, but the silencing
- * duration is determined by a second Observable.</span>
- *
- * <img src="./img/audit.png" width="100%">
- *
- * `audit` is similar to `throttle`, but emits the last value from the silenced
- * time window, instead of the first value. `audit` emits the most recent value
- * from the source Observable on the output Observable as soon as its internal
- * timer becomes disabled, and ignores source values while the timer is enabled.
- * Initially, the timer is disabled. As soon as the first source value arrives,
- * the timer is enabled by calling the `durationSelector` function with the
- * source value, which returns the "duration" Observable. When the duration
- * Observable emits a value or completes, the timer is disabled, then the most
- * recent source value is emitted on the output Observable, and this process
- * repeats for the next source value.
- *
- * @example <caption>Emit clicks at a rate of at most one click per second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.audit(ev => Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounce}
- * @see {@link delayWhen}
- * @see {@link sample}
- * @see {@link throttle}
- *
- * @param {function(value: T): SubscribableOrPromise} durationSelector A function
- * that receives a value from the source Observable, for computing the silencing
- * duration, returned as an Observable or a Promise.
- * @return {Observable<T>} An Observable that performs rate-limiting of
- * emissions from the source Observable.
- * @method audit
- * @owner Observable
- */
 function audit$2(durationSelector) {
     return audit_1.audit(durationSelector)(this);
 }
 var audit_3 = audit$2;
-
+//# sourceMappingURL=audit.js.map
 
 var audit_2 = {
 	audit: audit_3
 };
 
 Observable_1.Observable.prototype.audit = audit_2.audit;
+//# sourceMappingURL=audit.js.map
 
-/**
- * Ignores source values for `duration` milliseconds, then emits the most recent
- * value from the source Observable, then repeats this process.
- *
- * <span class="informal">When it sees a source values, it ignores that plus
- * the next ones for `duration` milliseconds, and then it emits the most recent
- * value from the source.</span>
- *
- * <img src="./img/auditTime.png" width="100%">
- *
- * `auditTime` is similar to `throttleTime`, but emits the last value from the
- * silenced time window, instead of the first value. `auditTime` emits the most
- * recent value from the source Observable on the output Observable as soon as
- * its internal timer becomes disabled, and ignores source values while the
- * timer is enabled. Initially, the timer is disabled. As soon as the first
- * source value arrives, the timer is enabled. After `duration` milliseconds (or
- * the time unit determined internally by the optional `scheduler`) has passed,
- * the timer is disabled, then the most recent source value is emitted on the
- * output Observable, and this process repeats for the next source value.
- * Optionally takes a {@link IScheduler} for managing timers.
- *
- * @example <caption>Emit clicks at a rate of at most one click per second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.auditTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link audit}
- * @see {@link debounceTime}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttleTime}
- *
- * @param {number} duration Time to wait before emitting the most recent source
- * value, measured in milliseconds or the time unit determined internally
- * by the optional `scheduler`.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the rate-limiting behavior.
- * @return {Observable<T>} An Observable that performs rate-limiting of
- * emissions from the source Observable.
- * @method auditTime
- * @owner Observable
- */
 function auditTime$3(duration, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return audit_1.audit(function () { return timer$2.timer(duration, scheduler); });
 }
 var auditTime_2$2 = auditTime$3;
-
+//# sourceMappingURL=auditTime.js.map
 
 var auditTime_1 = {
 	auditTime: auditTime_2$2
 };
 
-/**
- * Ignores source values for `duration` milliseconds, then emits the most recent
- * value from the source Observable, then repeats this process.
- *
- * <span class="informal">When it sees a source values, it ignores that plus
- * the next ones for `duration` milliseconds, and then it emits the most recent
- * value from the source.</span>
- *
- * <img src="./img/auditTime.png" width="100%">
- *
- * `auditTime` is similar to `throttleTime`, but emits the last value from the
- * silenced time window, instead of the first value. `auditTime` emits the most
- * recent value from the source Observable on the output Observable as soon as
- * its internal timer becomes disabled, and ignores source values while the
- * timer is enabled. Initially, the timer is disabled. As soon as the first
- * source value arrives, the timer is enabled. After `duration` milliseconds (or
- * the time unit determined internally by the optional `scheduler`) has passed,
- * the timer is disabled, then the most recent source value is emitted on the
- * output Observable, and this process repeats for the next source value.
- * Optionally takes a {@link IScheduler} for managing timers.
- *
- * @example <caption>Emit clicks at a rate of at most one click per second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.auditTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link audit}
- * @see {@link debounceTime}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttleTime}
- *
- * @param {number} duration Time to wait before emitting the most recent source
- * value, measured in milliseconds or the time unit determined internally
- * by the optional `scheduler`.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the rate-limiting behavior.
- * @return {Observable<T>} An Observable that performs rate-limiting of
- * emissions from the source Observable.
- * @method auditTime
- * @owner Observable
- */
 function auditTime$2(duration, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return auditTime_1.auditTime(duration, scheduler)(this);
 }
 var auditTime_3 = auditTime$2;
-
+//# sourceMappingURL=auditTime.js.map
 
 var auditTime_2 = {
 	auditTime: auditTime_3
 };
 
 Observable_1.Observable.prototype.auditTime = auditTime_2.auditTime;
+//# sourceMappingURL=auditTime.js.map
 
 var __extends$75 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33390,53 +31243,30 @@ var LastSubscriber = (function (_super) {
     };
     return LastSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=last.js.map
 
 var last_1 = {
 	last: last_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits only the last item emitted by the source Observable.
- * It optionally takes a predicate function as a parameter, in which case, rather than emitting
- * the last item from the source Observable, the resulting Observable will emit the last item
- * from the source Observable that satisfies the predicate.
- *
- * <img src="./img/last.png" width="100%">
- *
- * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
- * callback if the Observable completes before any `next` notification was sent.
- * @param {function} predicate - The condition any source emitted item has to satisfy.
- * @return {Observable} An Observable that emits only the last item satisfying the given condition
- * from the source, or an NoSuchElementException if no such items are emitted.
- * @throws - Throws if no items that match the predicate are emitted by the source Observable.
- * @method last
- * @owner Observable
- */
 function last$2(predicate, resultSelector, defaultValue) {
     return last_1.last(predicate, resultSelector, defaultValue)(this);
 }
 var last_3 = last$2;
-
+//# sourceMappingURL=last.js.map
 
 var last_2 = {
 	last: last_3
 };
 
 Observable_1.Observable.prototype.last = last_2.last;
+//# sourceMappingURL=last.js.map
 
-/**
- * @param func
- * @return {Observable<R>}
- * @method let
- * @owner Observable
- */
 function letProto(func) {
     return func(this);
 }
 var letProto_1 = letProto;
-
+//# sourceMappingURL=let.js.map
 
 var _let$2 = {
 	letProto: letProto_1
@@ -33444,6 +31274,7 @@ var _let$2 = {
 
 Observable_1.Observable.prototype.let = _let$2.letProto;
 Observable_1.Observable.prototype.letBind = _let$2.letProto;
+//# sourceMappingURL=let.js.map
 
 var __extends$76 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33517,82 +31348,37 @@ var EverySubscriber = (function (_super) {
     };
     return EverySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=every.js.map
 
 var every_1 = {
 	every: every_2$2
 };
 
-/**
- * Returns an Observable that emits whether or not every item of the source satisfies the condition specified.
- *
- * @example <caption>A simple example emitting true if all elements are less than 5, false otherwise</caption>
- *  Observable.of(1, 2, 3, 4, 5, 6)
- *     .every(x => x < 5)
- *     .subscribe(x => console.log(x)); // -> false
- *
- * @param {function} predicate A function for determining if an item meets a specified condition.
- * @param {any} [thisArg] Optional object to use for `this` in the callback.
- * @return {Observable} An Observable of booleans that determines if all items of the source Observable meet the condition specified.
- * @method every
- * @owner Observable
- */
 function every$2(predicate, thisArg) {
     return every_1.every(predicate, thisArg)(this);
 }
 var every_3 = every$2;
-
+//# sourceMappingURL=every.js.map
 
 var every_2 = {
 	every: every_3
 };
 
 Observable_1.Observable.prototype.every = every_2.every;
+//# sourceMappingURL=every.js.map
 
-/**
- * Applies a given `project` function to each value emitted by the source
- * Observable, and emits the resulting values as an Observable.
- *
- * <span class="informal">Like [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map),
- * it passes each source value through a transformation function to get
- * corresponding output values.</span>
- *
- * <img src="./img/map.png" width="100%">
- *
- * Similar to the well known `Array.prototype.map` function, this operator
- * applies a projection to each value and emits that projection in the output
- * Observable.
- *
- * @example <caption>Map every click to the clientX position of that click</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var positions = clicks.map(ev => ev.clientX);
- * positions.subscribe(x => console.log(x));
- *
- * @see {@link mapTo}
- * @see {@link pluck}
- *
- * @param {function(value: T, index: number): R} project The function to apply
- * to each `value` emitted by the source Observable. The `index` parameter is
- * the number `i` for the i-th emission that has happened since the
- * subscription, starting from the number `0`.
- * @param {any} [thisArg] An optional argument to define what `this` is in the
- * `project` function.
- * @return {Observable<R>} An Observable that emits the values from the source
- * Observable transformed by the given `project` function.
- * @method map
- * @owner Observable
- */
 function map$3(project, thisArg) {
     return map_1.map(project, thisArg)(this);
 }
 var map_3 = map$3;
-
+//# sourceMappingURL=map.js.map
 
 var map_2$1 = {
 	map: map_3
 };
 
 Observable_1.Observable.prototype.map = map_2$1.map;
+//# sourceMappingURL=map.js.map
 
 var __extends$77 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33655,49 +31441,24 @@ var MapToSubscriber = (function (_super) {
     };
     return MapToSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=mapTo.js.map
 
 var mapTo_1 = {
 	mapTo: mapTo_2$2
 };
 
-/**
- * Emits the given constant value on the output Observable every time the source
- * Observable emits a value.
- *
- * <span class="informal">Like {@link map}, but it maps every source value to
- * the same output value every time.</span>
- *
- * <img src="./img/mapTo.png" width="100%">
- *
- * Takes a constant `value` as argument, and emits that whenever the source
- * Observable emits a value. In other words, ignores the actual source value,
- * and simply uses the emission moment to know when to emit the given `value`.
- *
- * @example <caption>Map every click to the string 'Hi'</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var greetings = clicks.mapTo('Hi');
- * greetings.subscribe(x => console.log(x));
- *
- * @see {@link map}
- *
- * @param {any} value The value to map each source value to.
- * @return {Observable} An Observable that emits the given `value` every time
- * the source Observable emits something.
- * @method mapTo
- * @owner Observable
- */
 function mapTo$2(value) {
     return mapTo_1.mapTo(value)(this);
 }
 var mapTo_3 = mapTo$2;
-
+//# sourceMappingURL=mapTo.js.map
 
 var mapTo_2 = {
 	mapTo: mapTo_3
 };
 
 Observable_1.Observable.prototype.mapTo = mapTo_2.mapTo;
+//# sourceMappingURL=mapTo.js.map
 
 var __extends$78 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33789,67 +31550,24 @@ var MaterializeSubscriber = (function (_super) {
     };
     return MaterializeSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=materialize.js.map
 
 var materialize_1 = {
 	materialize: materialize_2$2
 };
 
-/**
- * Represents all of the notifications from the source Observable as `next`
- * emissions marked with their original types within {@link Notification}
- * objects.
- *
- * <span class="informal">Wraps `next`, `error` and `complete` emissions in
- * {@link Notification} objects, emitted as `next` on the output Observable.
- * </span>
- *
- * <img src="./img/materialize.png" width="100%">
- *
- * `materialize` returns an Observable that emits a `next` notification for each
- * `next`, `error`, or `complete` emission of the source Observable. When the
- * source Observable emits `complete`, the output Observable will emit `next` as
- * a Notification of type "complete", and then it will emit `complete` as well.
- * When the source Observable emits `error`, the output will emit `next` as a
- * Notification of type "error", and then `complete`.
- *
- * This operator is useful for producing metadata of the source Observable, to
- * be consumed as `next` emissions. Use it in conjunction with
- * {@link dematerialize}.
- *
- * @example <caption>Convert a faulty Observable to an Observable of Notifications</caption>
- * var letters = Rx.Observable.of('a', 'b', 13, 'd');
- * var upperCase = letters.map(x => x.toUpperCase());
- * var materialized = upperCase.materialize();
- * materialized.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // - Notification {kind: "N", value: "A", error: undefined, hasValue: true}
- * // - Notification {kind: "N", value: "B", error: undefined, hasValue: true}
- * // - Notification {kind: "E", value: undefined, error: TypeError:
- * //   x.toUpperCase is not a function at MapSubscriber.letters.map.x
- * //   [as project] (http://1…, hasValue: false}
- *
- * @see {@link Notification}
- * @see {@link dematerialize}
- *
- * @return {Observable<Notification<T>>} An Observable that emits
- * {@link Notification} objects that wrap the original emissions from the source
- * Observable with metadata.
- * @method materialize
- * @owner Observable
- */
 function materialize$2() {
     return materialize_1.materialize()(this);
 }
 var materialize_3 = materialize$2;
-
+//# sourceMappingURL=materialize.js.map
 
 var materialize_2 = {
 	materialize: materialize_3
 };
 
 Observable_1.Observable.prototype.materialize = materialize_2.materialize;
+//# sourceMappingURL=materialize.js.map
 
 var __extends$79 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -33970,7 +31688,7 @@ var ScanSubscriber = (function (_super) {
     };
     return ScanSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=scan.js.map
 
 var scan_1 = {
 	scan: scan_2
@@ -34083,57 +31801,12 @@ var TakeLastSubscriber = (function (_super) {
     };
     return TakeLastSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=takeLast.js.map
 
 var takeLast_1 = {
 	takeLast: takeLast_2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Applies an accumulator function over the source Observable, and returns the
- * accumulated result when the source completes, given an optional seed value.
- *
- * <span class="informal">Combines together all values emitted on the source,
- * using an accumulator function that knows how to join a new source value into
- * the accumulation from the past.</span>
- *
- * <img src="./img/reduce.png" width="100%">
- *
- * Like
- * [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce),
- * `reduce` applies an `accumulator` function against an accumulation and each
- * value of the source Observable (from the past) to reduce it to a single
- * value, emitted on the output Observable. Note that `reduce` will only emit
- * one value, only when the source Observable completes. It is equivalent to
- * applying operator {@link scan} followed by operator {@link last}.
- *
- * Returns an Observable that applies a specified `accumulator` function to each
- * item emitted by the source Observable. If a `seed` value is specified, then
- * that value will be used as the initial value for the accumulator. If no seed
- * value is specified, the first item of the source is used as the seed.
- *
- * @example <caption>Count the number of click events that happened in 5 seconds</caption>
- * var clicksInFiveSeconds = Rx.Observable.fromEvent(document, 'click')
- *   .takeUntil(Rx.Observable.interval(5000));
- * var ones = clicksInFiveSeconds.mapTo(1);
- * var seed = 0;
- * var count = ones.reduce((acc, one) => acc + one, seed);
- * count.subscribe(x => console.log(x));
- *
- * @see {@link count}
- * @see {@link expand}
- * @see {@link mergeScan}
- * @see {@link scan}
- *
- * @param {function(acc: R, value: T, index: number): R} accumulator The accumulator function
- * called on each source value.
- * @param {R} [seed] The initial accumulation value.
- * @return {Observable<R>} An Observable that emits a single value that is the
- * result of accumulating the values emitted by the source Observable.
- * @method reduce
- * @owner Observable
- */
 function reduce(accumulator, seed) {
     // providing a seed of `undefined` *should* be valid and trigger
     // hasSeed! so don't use `seed !== undefined` checks!
@@ -34152,43 +31825,12 @@ function reduce(accumulator, seed) {
     };
 }
 var reduce_2 = reduce;
-
+//# sourceMappingURL=reduce.js.map
 
 var reduce_1 = {
 	reduce: reduce_2
 };
 
-/**
- * The Max operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
- * and when source Observable completes it emits a single item: the item with the largest value.
- *
- * <img src="./img/max.png" width="100%">
- *
- * @example <caption>Get the maximal value of a series of numbers</caption>
- * Rx.Observable.of(5, 4, 7, 2, 8)
- *   .max()
- *   .subscribe(x => console.log(x)); // -> 8
- *
- * @example <caption>Use a comparer function to get the maximal item</caption>
- * interface Person {
- *   age: number,
- *   name: string
- * }
- * Observable.of<Person>({age: 7, name: 'Foo'},
- *                       {age: 5, name: 'Bar'},
- *                       {age: 9, name: 'Beer'})
- *           .max<Person>((a: Person, b: Person) => a.age < b.age ? -1 : 1)
- *           .subscribe((x: Person) => console.log(x.name)); // -> 'Beer'
- * }
- *
- * @see {@link min}
- *
- * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
- * value of two items.
- * @return {Observable} An Observable that emits item with the largest value.
- * @method max
- * @owner Observable
- */
 function max$3(comparer) {
     var max = (typeof comparer === 'function')
         ? function (x, y) { return comparer(x, y) > 0 ? x : y; }
@@ -34196,54 +31838,24 @@ function max$3(comparer) {
     return reduce_1.reduce(max);
 }
 var max_2$2 = max$3;
-
+//# sourceMappingURL=max.js.map
 
 var max_1 = {
 	max: max_2$2
 };
 
-/**
- * The Max operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
- * and when source Observable completes it emits a single item: the item with the largest value.
- *
- * <img src="./img/max.png" width="100%">
- *
- * @example <caption>Get the maximal value of a series of numbers</caption>
- * Rx.Observable.of(5, 4, 7, 2, 8)
- *   .max()
- *   .subscribe(x => console.log(x)); // -> 8
- *
- * @example <caption>Use a comparer function to get the maximal item</caption>
- * interface Person {
- *   age: number,
- *   name: string
- * }
- * Observable.of<Person>({age: 7, name: 'Foo'},
- *                       {age: 5, name: 'Bar'},
- *                       {age: 9, name: 'Beer'})
- *           .max<Person>((a: Person, b: Person) => a.age < b.age ? -1 : 1)
- *           .subscribe((x: Person) => console.log(x.name)); // -> 'Beer'
- * }
- *
- * @see {@link min}
- *
- * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
- * value of two items.
- * @return {Observable} An Observable that emits item with the largest value.
- * @method max
- * @owner Observable
- */
 function max$2(comparer) {
     return max_1.max(comparer)(this);
 }
 var max_3 = max$2;
-
+//# sourceMappingURL=max.js.map
 
 var max_2 = {
 	max: max_3
 };
 
 Observable_1.Observable.prototype.max = max_2.max;
+//# sourceMappingURL=max.js.map
 
 var merge_2$1 = merge_1;
 var mergeStatic$1 = merge_2$1.merge;
@@ -34302,7 +31914,7 @@ function merge$6() {
     return function (source) { return source.lift.call(merge_1.merge.apply(void 0, [source].concat(observables))); };
 }
 var merge_4$1 = merge$6;
-
+//# sourceMappingURL=merge.js.map
 
 var merge_3$2 = {
 	mergeStatic: mergeStatic$1,
@@ -34365,7 +31977,7 @@ function merge$5() {
     return merge_3$2.merge.apply(void 0, observables)(this);
 }
 var merge_4 = merge$5;
-
+//# sourceMappingURL=merge.js.map
 
 var merge_3 = {
 	mergeStatic: mergeStatic,
@@ -34373,129 +31985,28 @@ var merge_3 = {
 };
 
 Observable_1.Observable.prototype.merge = merge_3.merge;
+//# sourceMappingURL=merge.js.map
 
-/**
- * Converts a higher-order Observable into a first-order Observable which
- * concurrently delivers all values that are emitted on the inner Observables.
- *
- * <span class="informal">Flattens an Observable-of-Observables.</span>
- *
- * <img src="./img/mergeAll.png" width="100%">
- *
- * `mergeAll` subscribes to an Observable that emits Observables, also known as
- * a higher-order Observable. Each time it observes one of these emitted inner
- * Observables, it subscribes to that and delivers all the values from the
- * inner Observable on the output Observable. The output Observable only
- * completes once all inner Observables have completed. Any error delivered by
- * a inner Observable will be immediately emitted on the output Observable.
- *
- * @example <caption>Spawn a new interval Observable for each click event, and blend their outputs as one Observable</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var firstOrder = higherOrder.mergeAll();
- * firstOrder.subscribe(x => console.log(x));
- *
- * @example <caption>Count from 0 to 9 every second for each click, but only allow 2 concurrent timers</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
- * var firstOrder = higherOrder.mergeAll(2);
- * firstOrder.subscribe(x => console.log(x));
- *
- * @see {@link combineAll}
- * @see {@link concatAll}
- * @see {@link exhaust}
- * @see {@link merge}
- * @see {@link mergeMap}
- * @see {@link mergeMapTo}
- * @see {@link mergeScan}
- * @see {@link switch}
- * @see {@link zipAll}
- *
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of inner
- * Observables being subscribed to concurrently.
- * @return {Observable} An Observable that emits values coming from all the
- * inner Observables emitted by the source Observable.
- * @method mergeAll
- * @owner Observable
- */
 function mergeAll$3(concurrent) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     return mergeAll_1.mergeAll(concurrent)(this);
 }
 var mergeAll_3 = mergeAll$3;
-
+//# sourceMappingURL=mergeAll.js.map
 
 var mergeAll_2$1 = {
 	mergeAll: mergeAll_3
 };
 
 Observable_1.Observable.prototype.mergeAll = mergeAll_2$1.mergeAll;
+//# sourceMappingURL=mergeAll.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to an Observable which is merged in the output
- * Observable.
- *
- * <span class="informal">Maps each value to an Observable, then flattens all of
- * these inner Observables using {@link mergeAll}.</span>
- *
- * <img src="./img/mergeMap.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an Observable, and then merging those resulting Observables and
- * emitting the results of this merger.
- *
- * @example <caption>Map and flatten each letter to an Observable ticking every 1 second</caption>
- * var letters = Rx.Observable.of('a', 'b', 'c');
- * var result = letters.mergeMap(x =>
- *   Rx.Observable.interval(1000).map(i => x+i)
- * );
- * result.subscribe(x => console.log(x));
- *
- * // Results in the following:
- * // a0
- * // b0
- * // c0
- * // a1
- * // b1
- * // c1
- * // continues to list a,b,c with respective ascending integers
- *
- * @see {@link concatMap}
- * @see {@link exhaustMap}
- * @see {@link merge}
- * @see {@link mergeAll}
- * @see {@link mergeMapTo}
- * @see {@link mergeScan}
- * @see {@link switchMap}
- *
- * @param {function(value: T, ?index: number): ObservableInput} project A function
- * that, when applied to an item emitted by the source Observable, returns an
- * Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
- * Observables being subscribed to concurrently.
- * @return {Observable} An Observable that emits the result of applying the
- * projection function (and the optional `resultSelector`) to each item emitted
- * by the source Observable and merging the results of the Observables obtained
- * from this transformation.
- * @method mergeMap
- * @owner Observable
- */
 function mergeMap$3(project, resultSelector, concurrent) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     return mergeMap_1.mergeMap(project, resultSelector, concurrent)(this);
 }
 var mergeMap_3 = mergeMap$3;
-
+//# sourceMappingURL=mergeMap.js.map
 
 var mergeMap_2$1 = {
 	mergeMap: mergeMap_3
@@ -34503,6 +32014,7 @@ var mergeMap_2$1 = {
 
 Observable_1.Observable.prototype.mergeMap = mergeMap_2$1.mergeMap;
 Observable_1.Observable.prototype.flatMap = mergeMap_2$1.mergeMap;
+//# sourceMappingURL=mergeMap.js.map
 
 var __extends$81 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -34657,7 +32169,7 @@ var MergeMapToSubscriber = (function (_super) {
     return MergeMapToSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var MergeMapToSubscriber_1 = MergeMapToSubscriber;
-
+//# sourceMappingURL=mergeMapTo.js.map
 
 var mergeMapTo_1 = {
 	mergeMapTo: mergeMapTo_2$2,
@@ -34665,56 +32177,12 @@ var mergeMapTo_1 = {
 	MergeMapToSubscriber: MergeMapToSubscriber_1
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to the same Observable which is merged multiple
- * times in the output Observable.
- *
- * <span class="informal">It's like {@link mergeMap}, but maps each value always
- * to the same inner Observable.</span>
- *
- * <img src="./img/mergeMapTo.png" width="100%">
- *
- * Maps each source value to the given Observable `innerObservable` regardless
- * of the source value, and then merges those resulting Observables into one
- * single Observable, which is the output Observable.
- *
- * @example <caption>For each click event, start an interval Observable ticking every 1 second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.mergeMapTo(Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link concatMapTo}
- * @see {@link merge}
- * @see {@link mergeAll}
- * @see {@link mergeMap}
- * @see {@link mergeScan}
- * @see {@link switchMapTo}
- *
- * @param {ObservableInput} innerObservable An Observable to replace each value from
- * the source Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of input
- * Observables being subscribed to concurrently.
- * @return {Observable} An Observable that emits items from the given
- * `innerObservable` (and optionally transformed through `resultSelector`) every
- * time a value is emitted on the source Observable.
- * @method mergeMapTo
- * @owner Observable
- */
 function mergeMapTo$2(innerObservable, resultSelector, concurrent) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     return mergeMapTo_1.mergeMapTo(innerObservable, resultSelector, concurrent)(this);
 }
 var mergeMapTo_3 = mergeMapTo$2;
-
+//# sourceMappingURL=mergeMapTo.js.map
 
 var mergeMapTo_2 = {
 	mergeMapTo: mergeMapTo_3
@@ -34722,6 +32190,7 @@ var mergeMapTo_2 = {
 
 Observable_1.Observable.prototype.flatMapTo = mergeMapTo_2.mergeMapTo;
 Observable_1.Observable.prototype.mergeMapTo = mergeMapTo_2.mergeMapTo;
+//# sourceMappingURL=mergeMapTo.js.map
 
 var __extends$82 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -34850,7 +32319,7 @@ var MergeScanSubscriber = (function (_super) {
     return MergeScanSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
 var MergeScanSubscriber_1 = MergeScanSubscriber;
-
+//# sourceMappingURL=mergeScan.js.map
 
 var mergeScan_1 = {
 	mergeScan: mergeScan_2$2,
@@ -34858,81 +32327,20 @@ var mergeScan_1 = {
 	MergeScanSubscriber: MergeScanSubscriber_1
 };
 
-/**
- * Applies an accumulator function over the source Observable where the
- * accumulator function itself returns an Observable, then each intermediate
- * Observable returned is merged into the output Observable.
- *
- * <span class="informal">It's like {@link scan}, but the Observables returned
- * by the accumulator are merged into the outer Observable.</span>
- *
- * @example <caption>Count the number of click events</caption>
- * const click$ = Rx.Observable.fromEvent(document, 'click');
- * const one$ = click$.mapTo(1);
- * const seed = 0;
- * const count$ = one$.mergeScan((acc, one) => Rx.Observable.of(acc + one), seed);
- * count$.subscribe(x => console.log(x));
- *
- * // Results:
- * 1
- * 2
- * 3
- * 4
- * // ...and so on for each click
- *
- * @param {function(acc: R, value: T): Observable<R>} accumulator
- * The accumulator function called on each source value.
- * @param seed The initial accumulation value.
- * @param {number} [concurrent=Number.POSITIVE_INFINITY] Maximum number of
- * input Observables being subscribed to concurrently.
- * @return {Observable<R>} An observable of the accumulated values.
- * @method mergeScan
- * @owner Observable
- */
 function mergeScan$2(accumulator, seed, concurrent) {
     if (concurrent === void 0) { concurrent = Number.POSITIVE_INFINITY; }
     return mergeScan_1.mergeScan(accumulator, seed, concurrent)(this);
 }
 var mergeScan_3 = mergeScan$2;
-
+//# sourceMappingURL=mergeScan.js.map
 
 var mergeScan_2 = {
 	mergeScan: mergeScan_3
 };
 
 Observable_1.Observable.prototype.mergeScan = mergeScan_2.mergeScan;
+//# sourceMappingURL=mergeScan.js.map
 
-/**
- * The Min operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
- * and when source Observable completes it emits a single item: the item with the smallest value.
- *
- * <img src="./img/min.png" width="100%">
- *
- * @example <caption>Get the minimal value of a series of numbers</caption>
- * Rx.Observable.of(5, 4, 7, 2, 8)
- *   .min()
- *   .subscribe(x => console.log(x)); // -> 2
- *
- * @example <caption>Use a comparer function to get the minimal item</caption>
- * interface Person {
- *   age: number,
- *   name: string
- * }
- * Observable.of<Person>({age: 7, name: 'Foo'},
- *                       {age: 5, name: 'Bar'},
- *                       {age: 9, name: 'Beer'})
- *           .min<Person>( (a: Person, b: Person) => a.age < b.age ? -1 : 1)
- *           .subscribe((x: Person) => console.log(x.name)); // -> 'Bar'
- * }
- *
- * @see {@link max}
- *
- * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
- * value of two items.
- * @return {Observable<R>} An Observable that emits item with the smallest value.
- * @method min
- * @owner Observable
- */
 function min$3(comparer) {
     var min = (typeof comparer === 'function')
         ? function (x, y) { return comparer(x, y) < 0 ? x : y; }
@@ -34940,54 +32348,24 @@ function min$3(comparer) {
     return reduce_1.reduce(min);
 }
 var min_2$2 = min$3;
-
+//# sourceMappingURL=min.js.map
 
 var min_1 = {
 	min: min_2$2
 };
 
-/**
- * The Min operator operates on an Observable that emits numbers (or items that can be compared with a provided function),
- * and when source Observable completes it emits a single item: the item with the smallest value.
- *
- * <img src="./img/min.png" width="100%">
- *
- * @example <caption>Get the minimal value of a series of numbers</caption>
- * Rx.Observable.of(5, 4, 7, 2, 8)
- *   .min()
- *   .subscribe(x => console.log(x)); // -> 2
- *
- * @example <caption>Use a comparer function to get the minimal item</caption>
- * interface Person {
- *   age: number,
- *   name: string
- * }
- * Observable.of<Person>({age: 7, name: 'Foo'},
- *                       {age: 5, name: 'Bar'},
- *                       {age: 9, name: 'Beer'})
- *           .min<Person>( (a: Person, b: Person) => a.age < b.age ? -1 : 1)
- *           .subscribe((x: Person) => console.log(x.name)); // -> 'Bar'
- * }
- *
- * @see {@link max}
- *
- * @param {Function} [comparer] - Optional comparer function that it will use instead of its default to compare the
- * value of two items.
- * @return {Observable<R>} An Observable that emits item with the smallest value.
- * @method min
- * @owner Observable
- */
 function min$2(comparer) {
     return min_1.min(comparer)(this);
 }
 var min_3 = min$2;
-
+//# sourceMappingURL=min.js.map
 
 var min_2 = {
 	min: min_3
 };
 
 Observable_1.Observable.prototype.min = min_2.min;
+//# sourceMappingURL=min.js.map
 
 var __extends$84 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -35072,7 +32450,7 @@ var RefCountSubscriber$1 = (function (_super) {
     };
     return RefCountSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=refCount.js.map
 
 var refCount_1 = {
 	refCount: refCount_2
@@ -35230,33 +32608,13 @@ var RefCountSubscriber = (function (_super) {
     };
     return RefCountSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=ConnectableObservable.js.map
 
 var ConnectableObservable_1 = {
 	ConnectableObservable: ConnectableObservable_2,
 	connectableObservableDescriptor: connectableObservableDescriptor
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits the results of invoking a specified selector on items
- * emitted by a ConnectableObservable that shares a single subscription to the underlying stream.
- *
- * <img src="./img/multicast.png" width="100%">
- *
- * @param {Function|Subject} subjectOrSubjectFactory - Factory function to create an intermediate subject through
- * which the source sequence's elements will be multicast to the selector function
- * or Subject to push source elements into.
- * @param {Function} [selector] - Optional selector function that can use the multicasted source stream
- * as many times as needed, without causing multiple subscriptions to the source stream.
- * Subscribers to the given source will receive all notifications of the source from the
- * time of the subscription forward.
- * @return {Observable} An Observable that emits the results of invoking the selector
- * on the items emitted by a `ConnectableObservable` that shares a single subscription to
- * the underlying stream.
- * @method multicast
- * @owner Observable
- */
 function multicast$3(subjectOrSubjectFactory, selector) {
     return function multicastOperatorFunction(source) {
         var subjectFactory;
@@ -35293,241 +32651,40 @@ var MulticastOperator = (function () {
     return MulticastOperator;
 }());
 var MulticastOperator_1 = MulticastOperator;
-
+//# sourceMappingURL=multicast.js.map
 
 var multicast_1 = {
 	multicast: multicast_2$2,
 	MulticastOperator: MulticastOperator_1
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Allows source Observable to be subscribed only once with a Subject of choice,
- * while still sharing its values between multiple subscribers.
- *
- * <span class="informal">Subscribe to Observable once, but send its values to multiple subscribers.</span>
- *
- * <img src="./img/multicast.png" width="100%">
- *
- * `multicast` is an operator that works in two modes.
- *
- * In the first mode you provide a single argument to it, which can be either an initialized Subject or a Subject
- * factory. As a result you will get a special kind of an Observable - a {@link ConnectableObservable}. It can be
- * subscribed multiple times, just as regular Observable, but it won't subscribe to the source Observable at that
- * moment. It will do it only if you call its `connect` method. This means you can essentially control by hand, when
- * source Observable will be actually subscribed. What is more, ConnectableObservable will share this one subscription
- * between all of its subscribers. This means that, for example, `ajax` Observable will only send a request once,
- * even though usually it would send a request per every subscriber. Since it sends a request at the moment of
- * subscription, here request would be sent when the `connect` method of a ConnectableObservable is called.
- *
- * The most common pattern of using ConnectableObservable is calling `connect` when the first consumer subscribes,
- * keeping the subscription alive while several consumers come and go and finally unsubscribing from the source
- * Observable, when the last consumer unsubscribes. To not implement that logic over and over again,
- * ConnectableObservable has a special operator, `refCount`. When called, it returns an Observable, which will count
- * the number of consumers subscribed to it and keep ConnectableObservable connected as long as there is at least
- * one consumer. So if you don't actually need to decide yourself when to connect and disconnect a
- * ConnectableObservable, use `refCount`.
- *
- * The second mode is invoked by calling `multicast` with an additional, second argument - selector function.
- * This function accepts an Observable - which basically mirrors the source Observable - and returns Observable
- * as well, which should be the input stream modified by any operators you want. Note that in this
- * mode you cannot provide initialized Subject as a first argument - it has to be a Subject factory. If
- * you provide selector function, `multicast` returns just a regular Observable, instead of ConnectableObservable.
- * Thus, as usual, each subscription to this stream triggers subscription to the source Observable. However,
- * if inside the selector function you subscribe to the input Observable multiple times, actual source stream
- * will be subscribed only once. So if you have a chain of operators that use some Observable many times,
- * but you want to subscribe to that Observable only once, this is the mode you would use.
- *
- * Subject provided as a first parameter of `multicast` is used as a proxy for the single subscription to the
- * source Observable. It means that all values from the source stream go through that Subject. Thus, if a Subject
- * has some special properties, Observable returned by `multicast` will have them as well. If you want to use
- * `multicast` with a Subject that is one of the ones included in RxJS by default - {@link Subject},
- * {@link AsyncSubject}, {@link BehaviorSubject}, or {@link ReplaySubject} - simply use {@link publish},
- * {@link publishLast}, {@link publishBehavior} or {@link publishReplay} respectively. These are actually
- * just wrappers around `multicast`, with a specific Subject hardcoded inside.
- *
- * Also, if you use {@link publish} or {@link publishReplay} with a ConnectableObservables `refCount` operator,
- * you can simply use {@link share} and {@link shareReplay} respectively, which chain these two.
- *
- * @example <caption>Use ConnectableObservable</caption>
- * const seconds = Rx.Observable.interval(1000);
- * const connectableSeconds = seconds.multicast(new Subject());
- *
- * connectableSeconds.subscribe(value => console.log('first: ' + value));
- * connectableSeconds.subscribe(value => console.log('second: ' + value));
- *
- * // At this point still nothing happens, even though we subscribed twice.
- *
- * connectableSeconds.connect();
- *
- * // From now on `seconds` are being logged to the console,
- * // twice per every second. `seconds` Observable was however only subscribed once,
- * // so under the hood Observable.interval had only one clock started.
- *
- * @example <caption>Use selector</caption>
- * const seconds = Rx.Observable.interval(1000);
- *
- * seconds
- *     .multicast(
- *         () => new Subject(),
- *         seconds => seconds.zip(seconds) // Usually zip would subscribe to `seconds` twice.
- *                                         // Because we are inside selector, `seconds` is subscribed once,
- *     )                                   // thus starting only one clock used internally by Observable.interval.
- *     .subscribe();
- *
- * @see {@link publish}
- * @see {@link publishLast}
- * @see {@link publishBehavior}
- * @see {@link publishReplay}
- * @see {@link share}
- * @see {@link shareReplay}
- *
- * @param {Function|Subject} subjectOrSubjectFactory - Factory function to create an intermediate Subject through
- * which the source sequence's elements will be multicast to the selector function input Observable or
- * ConnectableObservable returned by the operator.
- * @param {Function} [selector] - Optional selector function that can use the input stream
- * as many times as needed, without causing multiple subscriptions to the source stream.
- * Subscribers to the input source will receive all notifications of the source from the
- * time of the subscription forward.
- * @return {Observable<T>|ConnectableObservable<T>} An Observable that emits the results of invoking the selector
- * on the source stream or a special {@link ConnectableObservable}, if selector was not provided.
- *
- * @method multicast
- * @owner Observable
- */
 function multicast$2(subjectOrSubjectFactory, selector) {
     return multicast_1.multicast(subjectOrSubjectFactory, selector)(this);
 }
 var multicast_3 = multicast$2;
-
+//# sourceMappingURL=multicast.js.map
 
 var multicast_2 = {
 	multicast: multicast_3
 };
 
 Observable_1.Observable.prototype.multicast = multicast_2.multicast;
+//# sourceMappingURL=multicast.js.map
 
-/**
- *
- * Re-emits all notifications from source Observable with specified scheduler.
- *
- * <span class="informal">Ensure a specific scheduler is used, from outside of an Observable.</span>
- *
- * `observeOn` is an operator that accepts a scheduler as a first parameter, which will be used to reschedule
- * notifications emitted by the source Observable. It might be useful, if you do not have control over
- * internal scheduler of a given Observable, but want to control when its values are emitted nevertheless.
- *
- * Returned Observable emits the same notifications (nexted values, complete and error events) as the source Observable,
- * but rescheduled with provided scheduler. Note that this doesn't mean that source Observables internal
- * scheduler will be replaced in any way. Original scheduler still will be used, but when the source Observable emits
- * notification, it will be immediately scheduled again - this time with scheduler passed to `observeOn`.
- * An anti-pattern would be calling `observeOn` on Observable that emits lots of values synchronously, to split
- * that emissions into asynchronous chunks. For this to happen, scheduler would have to be passed into the source
- * Observable directly (usually into the operator that creates it). `observeOn` simply delays notifications a
- * little bit more, to ensure that they are emitted at expected moments.
- *
- * As a matter of fact, `observeOn` accepts second parameter, which specifies in milliseconds with what delay notifications
- * will be emitted. The main difference between {@link delay} operator and `observeOn` is that `observeOn`
- * will delay all notifications - including error notifications - while `delay` will pass through error
- * from source Observable immediately when it is emitted. In general it is highly recommended to use `delay` operator
- * for any kind of delaying of values in the stream, while using `observeOn` to specify which scheduler should be used
- * for notification emissions in general.
- *
- * @example <caption>Ensure values in subscribe are called just before browser repaint.</caption>
- * const intervals = Rx.Observable.interval(10); // Intervals are scheduled
- *                                               // with async scheduler by default...
- *
- * intervals
- * .observeOn(Rx.Scheduler.animationFrame)       // ...but we will observe on animationFrame
- * .subscribe(val => {                           // scheduler to ensure smooth animation.
- *   someDiv.style.height = val + 'px';
- * });
- *
- * @see {@link delay}
- *
- * @param {IScheduler} scheduler Scheduler that will be used to reschedule notifications from source Observable.
- * @param {number} [delay] Number of milliseconds that states with what delay every notification should be rescheduled.
- * @return {Observable<T>} Observable that emits the same notifications as the source Observable,
- * but with provided scheduler.
- *
- * @method observeOn
- * @owner Observable
- */
 function observeOn$3(scheduler, delay) {
     if (delay === void 0) { delay = 0; }
     return observeOn_1.observeOn(scheduler, delay)(this);
 }
 var observeOn_3 = observeOn$3;
-
+//# sourceMappingURL=observeOn.js.map
 
 var observeOn_2$1 = {
 	observeOn: observeOn_3
 };
 
 Observable_1.Observable.prototype.observeOn = observeOn_2$1.observeOn;
+//# sourceMappingURL=observeOn.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * When any of the provided Observable emits an complete or error notification, it immediately subscribes to the next one
- * that was passed.
- *
- * <span class="informal">Execute series of Observables no matter what, even if it means swallowing errors.</span>
- *
- * <img src="./img/onErrorResumeNext.png" width="100%">
- *
- * `onErrorResumeNext` is an operator that accepts a series of Observables, provided either directly as
- * arguments or as an array. If no single Observable is provided, returned Observable will simply behave the same
- * as the source.
- *
- * `onErrorResumeNext` returns an Observable that starts by subscribing and re-emitting values from the source Observable.
- * When its stream of values ends - no matter if Observable completed or emitted an error - `onErrorResumeNext`
- * will subscribe to the first Observable that was passed as an argument to the method. It will start re-emitting
- * its values as well and - again - when that stream ends, `onErrorResumeNext` will proceed to subscribing yet another
- * Observable in provided series, no matter if previous Observable completed or ended with an error. This will
- * be happening until there is no more Observables left in the series, at which point returned Observable will
- * complete - even if the last subscribed stream ended with an error.
- *
- * `onErrorResumeNext` can be therefore thought of as version of {@link concat} operator, which is more permissive
- * when it comes to the errors emitted by its input Observables. While `concat` subscribes to the next Observable
- * in series only if previous one successfully completed, `onErrorResumeNext` subscribes even if it ended with
- * an error.
- *
- * Note that you do not get any access to errors emitted by the Observables. In particular do not
- * expect these errors to appear in error callback passed to {@link subscribe}. If you want to take
- * specific actions based on what error was emitted by an Observable, you should try out {@link catch} instead.
- *
- *
- * @example <caption>Subscribe to the next Observable after map fails</caption>
- * Rx.Observable.of(1, 2, 3, 0)
- *   .map(x => {
- *       if (x === 0) { throw Error(); }
-         return 10 / x;
- *   })
- *   .onErrorResumeNext(Rx.Observable.of(1, 2, 3))
- *   .subscribe(
- *     val => console.log(val),
- *     err => console.log(err),          // Will never be called.
- *     () => console.log('that\'s it!')
- *   );
- *
- * // Logs:
- * // 10
- * // 5
- * // 3.3333333333333335
- * // 1
- * // 2
- * // 3
- * // "that's it!"
- *
- * @see {@link concat}
- * @see {@link catch}
- *
- * @param {...ObservableInput} observables Observables passed either directly or as an array.
- * @return {Observable} An Observable that emits values from source Observable, but - if it errors - subscribes
- * to the next passed Observable and so on, until it completes or runs out of Observables.
- * @method onErrorResumeNext
- * @owner Observable
- */
 function onErrorResumeNext$7() {
     var nextSources = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -35536,13 +32693,14 @@ function onErrorResumeNext$7() {
     return onErrorResumeNext_1.onErrorResumeNext.apply(void 0, nextSources)(this);
 }
 var onErrorResumeNext_3 = onErrorResumeNext$7;
-
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 var onErrorResumeNext_2$2 = {
 	onErrorResumeNext: onErrorResumeNext_3
 };
 
 Observable_1.Observable.prototype.onErrorResumeNext = onErrorResumeNext_2$2.onErrorResumeNext;
+//# sourceMappingURL=onErrorResumeNext.js.map
 
 var __extends$85 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -35619,58 +32777,24 @@ var PairwiseSubscriber = (function (_super) {
     };
     return PairwiseSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=pairwise.js.map
 
 var pairwise_1 = {
 	pairwise: pairwise_2$2
 };
 
-/**
- * Groups pairs of consecutive emissions together and emits them as an array of
- * two values.
- *
- * <span class="informal">Puts the current value and previous value together as
- * an array, and emits that.</span>
- *
- * <img src="./img/pairwise.png" width="100%">
- *
- * The Nth emission from the source Observable will cause the output Observable
- * to emit an array [(N-1)th, Nth] of the previous and the current value, as a
- * pair. For this reason, `pairwise` emits on the second and subsequent
- * emissions from the source Observable, but not on the first emission, because
- * there is no previous value in that case.
- *
- * @example <caption>On every click (starting from the second), emit the relative distance to the previous click</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var pairs = clicks.pairwise();
- * var distance = pairs.map(pair => {
- *   var x0 = pair[0].clientX;
- *   var y0 = pair[0].clientY;
- *   var x1 = pair[1].clientX;
- *   var y1 = pair[1].clientY;
- *   return Math.sqrt(Math.pow(x0 - x1, 2) + Math.pow(y0 - y1, 2));
- * });
- * distance.subscribe(x => console.log(x));
- *
- * @see {@link buffer}
- * @see {@link bufferCount}
- *
- * @return {Observable<Array<T>>} An Observable of pairs (as arrays) of
- * consecutive values from the source Observable.
- * @method pairwise
- * @owner Observable
- */
 function pairwise$2() {
     return pairwise_1.pairwise()(this);
 }
 var pairwise_3 = pairwise$2;
-
+//# sourceMappingURL=pairwise.js.map
 
 var pairwise_2 = {
 	pairwise: pairwise_3
 };
 
 Observable_1.Observable.prototype.pairwise = pairwise_2.pairwise;
+//# sourceMappingURL=pairwise.js.map
 
 function not(pred, thisArg) {
     function notPred() {
@@ -35681,53 +32805,12 @@ function not(pred, thisArg) {
     return notPred;
 }
 var not_2 = not;
-
+//# sourceMappingURL=not.js.map
 
 var not_1 = {
 	not: not_2
 };
 
-/**
- * Splits the source Observable into two, one with values that satisfy a
- * predicate, and another with values that don't satisfy the predicate.
- *
- * <span class="informal">It's like {@link filter}, but returns two Observables:
- * one like the output of {@link filter}, and the other with values that did not
- * pass the condition.</span>
- *
- * <img src="./img/partition.png" width="100%">
- *
- * `partition` outputs an array with two Observables that partition the values
- * from the source Observable through the given `predicate` function. The first
- * Observable in that array emits source values for which the predicate argument
- * returns true. The second Observable emits source values for which the
- * predicate returns false. The first behaves like {@link filter} and the second
- * behaves like {@link filter} with the predicate negated.
- *
- * @example <caption>Partition click events into those on DIV elements and those elsewhere</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var parts = clicks.partition(ev => ev.target.tagName === 'DIV');
- * var clicksOnDivs = parts[0];
- * var clicksElsewhere = parts[1];
- * clicksOnDivs.subscribe(x => console.log('DIV clicked: ', x));
- * clicksElsewhere.subscribe(x => console.log('Other clicked: ', x));
- *
- * @see {@link filter}
- *
- * @param {function(value: T, index: number): boolean} predicate A function that
- * evaluates each value emitted by the source Observable. If it returns `true`,
- * the value is emitted on the first Observable in the returned array, if
- * `false` the value is emitted on the second Observable in the array. The
- * `index` parameter is the number `i` for the i-th source emission that has
- * happened since the subscription, starting from the number `0`.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {[Observable<T>, Observable<T>]} An array with two Observables: one
- * with values that passed the predicate, and another with values that did not
- * pass the predicate.
- * @method partition
- * @owner Observable
- */
 function partition$3(predicate, thisArg) {
     return function (source) { return [
         filter_1.filter(predicate, thisArg)(source),
@@ -35735,91 +32818,25 @@ function partition$3(predicate, thisArg) {
     ]; };
 }
 var partition_2$2 = partition$3;
-
+//# sourceMappingURL=partition.js.map
 
 var partition_1 = {
 	partition: partition_2$2
 };
 
-/**
- * Splits the source Observable into two, one with values that satisfy a
- * predicate, and another with values that don't satisfy the predicate.
- *
- * <span class="informal">It's like {@link filter}, but returns two Observables:
- * one like the output of {@link filter}, and the other with values that did not
- * pass the condition.</span>
- *
- * <img src="./img/partition.png" width="100%">
- *
- * `partition` outputs an array with two Observables that partition the values
- * from the source Observable through the given `predicate` function. The first
- * Observable in that array emits source values for which the predicate argument
- * returns true. The second Observable emits source values for which the
- * predicate returns false. The first behaves like {@link filter} and the second
- * behaves like {@link filter} with the predicate negated.
- *
- * @example <caption>Partition click events into those on DIV elements and those elsewhere</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var parts = clicks.partition(ev => ev.target.tagName === 'DIV');
- * var clicksOnDivs = parts[0];
- * var clicksElsewhere = parts[1];
- * clicksOnDivs.subscribe(x => console.log('DIV clicked: ', x));
- * clicksElsewhere.subscribe(x => console.log('Other clicked: ', x));
- *
- * @see {@link filter}
- *
- * @param {function(value: T, index: number): boolean} predicate A function that
- * evaluates each value emitted by the source Observable. If it returns `true`,
- * the value is emitted on the first Observable in the returned array, if
- * `false` the value is emitted on the second Observable in the array. The
- * `index` parameter is the number `i` for the i-th source emission that has
- * happened since the subscription, starting from the number `0`.
- * @param {any} [thisArg] An optional argument to determine the value of `this`
- * in the `predicate` function.
- * @return {[Observable<T>, Observable<T>]} An array with two Observables: one
- * with values that passed the predicate, and another with values that did not
- * pass the predicate.
- * @method partition
- * @owner Observable
- */
 function partition$2(predicate, thisArg) {
     return partition_1.partition(predicate, thisArg)(this);
 }
 var partition_3 = partition$2;
-
+//# sourceMappingURL=partition.js.map
 
 var partition_2 = {
 	partition: partition_3
 };
 
 Observable_1.Observable.prototype.partition = partition_2.partition;
+//# sourceMappingURL=partition.js.map
 
-/**
- * Maps each source value (an object) to its specified nested property.
- *
- * <span class="informal">Like {@link map}, but meant only for picking one of
- * the nested properties of every emitted object.</span>
- *
- * <img src="./img/pluck.png" width="100%">
- *
- * Given a list of strings describing a path to an object property, retrieves
- * the value of a specified nested property from all values in the source
- * Observable. If a property can't be resolved, it will return `undefined` for
- * that value.
- *
- * @example <caption>Map every click to the tagName of the clicked target element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var tagNames = clicks.pluck('target', 'tagName');
- * tagNames.subscribe(x => console.log(x));
- *
- * @see {@link map}
- *
- * @param {...string} properties The nested properties to pluck from each source
- * value (an object).
- * @return {Observable} A new Observable of property values from the source values.
- * @method pluck
- * @owner Observable
- */
 function pluck$3() {
     var properties = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -35848,38 +32865,12 @@ function plucker(props, length) {
     };
     return mapper;
 }
-
+//# sourceMappingURL=pluck.js.map
 
 var pluck_1 = {
 	pluck: pluck_2$2
 };
 
-/**
- * Maps each source value (an object) to its specified nested property.
- *
- * <span class="informal">Like {@link map}, but meant only for picking one of
- * the nested properties of every emitted object.</span>
- *
- * <img src="./img/pluck.png" width="100%">
- *
- * Given a list of strings describing a path to an object property, retrieves
- * the value of a specified nested property from all values in the source
- * Observable. If a property can't be resolved, it will return `undefined` for
- * that value.
- *
- * @example <caption>Map every click to the tagName of the clicked target element</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var tagNames = clicks.pluck('target', 'tagName');
- * tagNames.subscribe(x => console.log(x));
- *
- * @see {@link map}
- *
- * @param {...string} properties The nested properties to pluck from each source
- * value (an object).
- * @return {Observable} A new Observable of property values from the source values.
- * @method pluck
- * @owner Observable
- */
 function pluck$2() {
     var properties = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -35888,65 +32879,39 @@ function pluck$2() {
     return pluck_1.pluck.apply(void 0, properties)(this);
 }
 var pluck_3 = pluck$2;
-
+//# sourceMappingURL=pluck.js.map
 
 var pluck_2 = {
 	pluck: pluck_3
 };
 
 Observable_1.Observable.prototype.pluck = pluck_2.pluck;
+//# sourceMappingURL=pluck.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Returns a ConnectableObservable, which is a variety of Observable that waits until its connect method is called
- * before it begins emitting items to those Observers that have subscribed to it.
- *
- * <img src="./img/publish.png" width="100%">
- *
- * @param {Function} [selector] - Optional selector function which can use the multicasted source sequence as many times
- * as needed, without causing multiple subscriptions to the source sequence.
- * Subscribers to the given source will receive all notifications of the source from the time of the subscription on.
- * @return A ConnectableObservable that upon connection causes the source Observable to emit items to its Observers.
- * @method publish
- * @owner Observable
- */
 function publish$3(selector) {
     return selector ?
         multicast_1.multicast(function () { return new Subject_1.Subject(); }, selector) :
         multicast_1.multicast(new Subject_1.Subject());
 }
 var publish_2$2 = publish$3;
-
+//# sourceMappingURL=publish.js.map
 
 var publish_1 = {
 	publish: publish_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns a ConnectableObservable, which is a variety of Observable that waits until its connect method is called
- * before it begins emitting items to those Observers that have subscribed to it.
- *
- * <img src="./img/publish.png" width="100%">
- *
- * @param {Function} [selector] - Optional selector function which can use the multicasted source sequence as many times
- * as needed, without causing multiple subscriptions to the source sequence.
- * Subscribers to the given source will receive all notifications of the source from the time of the subscription on.
- * @return A ConnectableObservable that upon connection causes the source Observable to emit items to its Observers.
- * @method publish
- * @owner Observable
- */
 function publish$2(selector) {
     return publish_1.publish(selector)(this);
 }
 var publish_3 = publish$2;
-
+//# sourceMappingURL=publish.js.map
 
 var publish_2 = {
 	publish: publish_3
 };
 
 Observable_1.Observable.prototype.publish = publish_2.publish;
+//# sourceMappingURL=publish.js.map
 
 var __extends$86 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -35995,47 +32960,35 @@ var BehaviorSubject$1 = (function (_super) {
     return BehaviorSubject;
 }(Subject_1.Subject));
 var BehaviorSubject_2 = BehaviorSubject$1;
-
+//# sourceMappingURL=BehaviorSubject.js.map
 
 var BehaviorSubject_1 = {
 	BehaviorSubject: BehaviorSubject_2
 };
 
-/**
- * @param value
- * @return {ConnectableObservable<T>}
- * @method publishBehavior
- * @owner Observable
- */
 function publishBehavior$3(value) {
     return function (source) { return multicast_1.multicast(new BehaviorSubject_1.BehaviorSubject(value))(source); };
 }
 var publishBehavior_2$2 = publishBehavior$3;
-
+//# sourceMappingURL=publishBehavior.js.map
 
 var publishBehavior_1 = {
 	publishBehavior: publishBehavior_2$2
 };
 
-/**
- * @param value
- * @return {ConnectableObservable<T>}
- * @method publishBehavior
- * @owner Observable
- */
 function publishBehavior$2(value) {
     return publishBehavior_1.publishBehavior(value)(this);
 }
 var publishBehavior_3 = publishBehavior$2;
-
+//# sourceMappingURL=publishBehavior.js.map
 
 var publishBehavior_2 = {
 	publishBehavior: publishBehavior_3
 };
 
 Observable_1.Observable.prototype.publishBehavior = publishBehavior_2.publishBehavior;
+//# sourceMappingURL=publishBehavior.js.map
 
-/* tslint:enable:max-line-length */
 function publishReplay$3(bufferSize, windowTime, selectorOrScheduler, scheduler) {
     if (selectorOrScheduler && typeof selectorOrScheduler !== 'function') {
         scheduler = selectorOrScheduler;
@@ -36045,71 +32998,49 @@ function publishReplay$3(bufferSize, windowTime, selectorOrScheduler, scheduler)
     return function (source) { return multicast_1.multicast(function () { return subject; }, selector)(source); };
 }
 var publishReplay_2$2 = publishReplay$3;
-
+//# sourceMappingURL=publishReplay.js.map
 
 var publishReplay_1 = {
 	publishReplay: publishReplay_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * @param bufferSize
- * @param windowTime
- * @param selectorOrScheduler
- * @param scheduler
- * @return {Observable<T> | ConnectableObservable<T>}
- * @method publishReplay
- * @owner Observable
- */
 function publishReplay$2(bufferSize, windowTime, selectorOrScheduler, scheduler) {
     return publishReplay_1.publishReplay(bufferSize, windowTime, selectorOrScheduler, scheduler)(this);
 }
 var publishReplay_3 = publishReplay$2;
-
+//# sourceMappingURL=publishReplay.js.map
 
 var publishReplay_2 = {
 	publishReplay: publishReplay_3
 };
 
 Observable_1.Observable.prototype.publishReplay = publishReplay_2.publishReplay;
+//# sourceMappingURL=publishReplay.js.map
 
 function publishLast$3() {
     return function (source) { return multicast_1.multicast(new AsyncSubject_1.AsyncSubject())(source); };
 }
 var publishLast_2$2 = publishLast$3;
-
+//# sourceMappingURL=publishLast.js.map
 
 var publishLast_1 = {
 	publishLast: publishLast_2$2
 };
 
-/**
- * @return {ConnectableObservable<T>}
- * @method publishLast
- * @owner Observable
- */
 function publishLast$2() {
     //TODO(benlesh): correct type-flow through here.
     return publishLast_1.publishLast()(this);
 }
 var publishLast_3 = publishLast$2;
-
+//# sourceMappingURL=publishLast.js.map
 
 var publishLast_2 = {
 	publishLast: publishLast_3
 };
 
 Observable_1.Observable.prototype.publishLast = publishLast_2.publishLast;
+//# sourceMappingURL=publishLast.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that mirrors the first source Observable to emit an item
- * from the combination of this Observable and supplied Observables.
- * @param {...Observables} ...observables Sources used to race for which Observable emits first.
- * @return {Observable} An Observable that mirrors the output of the first Observable to emit an item.
- * @method race
- * @owner Observable
- */
 function race$6() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -36125,13 +33056,11 @@ function race$6() {
     };
 }
 var race_3$2 = race$6;
-
+//# sourceMappingURL=race.js.map
 
 var race_2$1 = {
 	race: race_3$2
 };
-
-// NOTE: to support backwards compatability with 5.4.* and lower
 
 var raceStatic = race_1.race;
 /* tslint:enable:max-line-length */
@@ -36151,7 +33080,7 @@ function race$5() {
     return race_2$1.race.apply(void 0, observables)(this);
 }
 var race_4 = race$5;
-
+//# sourceMappingURL=race.js.map
 
 var race_3 = {
 	raceStatic: raceStatic,
@@ -36159,52 +33088,8 @@ var race_3 = {
 };
 
 Observable_1.Observable.prototype.race = race_3.race;
+//# sourceMappingURL=race.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Applies an accumulator function over the source Observable, and returns the
- * accumulated result when the source completes, given an optional seed value.
- *
- * <span class="informal">Combines together all values emitted on the source,
- * using an accumulator function that knows how to join a new source value into
- * the accumulation from the past.</span>
- *
- * <img src="./img/reduce.png" width="100%">
- *
- * Like
- * [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce),
- * `reduce` applies an `accumulator` function against an accumulation and each
- * value of the source Observable (from the past) to reduce it to a single
- * value, emitted on the output Observable. Note that `reduce` will only emit
- * one value, only when the source Observable completes. It is equivalent to
- * applying operator {@link scan} followed by operator {@link last}.
- *
- * Returns an Observable that applies a specified `accumulator` function to each
- * item emitted by the source Observable. If a `seed` value is specified, then
- * that value will be used as the initial value for the accumulator. If no seed
- * value is specified, the first item of the source is used as the seed.
- *
- * @example <caption>Count the number of click events that happened in 5 seconds</caption>
- * var clicksInFiveSeconds = Rx.Observable.fromEvent(document, 'click')
- *   .takeUntil(Rx.Observable.interval(5000));
- * var ones = clicksInFiveSeconds.mapTo(1);
- * var seed = 0;
- * var count = ones.reduce((acc, one) => acc + one, seed);
- * count.subscribe(x => console.log(x));
- *
- * @see {@link count}
- * @see {@link expand}
- * @see {@link mergeScan}
- * @see {@link scan}
- *
- * @param {function(acc: R, value: T, index: number): R} accumulator The accumulator function
- * called on each source value.
- * @param {R} [seed] The initial accumulation value.
- * @return {Observable<R>} An Observable that emits a single value that is the
- * result of accumulating the values emitted by the source Observable.
- * @method reduce
- * @owner Observable
- */
 function reduce$3(accumulator, seed) {
     // providing a seed of `undefined` *should* be valid and trigger
     // hasSeed! so don't use `seed !== undefined` checks!
@@ -36217,13 +33102,14 @@ function reduce$3(accumulator, seed) {
     return reduce_1.reduce(accumulator)(this);
 }
 var reduce_3 = reduce$3;
-
+//# sourceMappingURL=reduce.js.map
 
 var reduce_2$1 = {
 	reduce: reduce_3
 };
 
 Observable_1.Observable.prototype.reduce = reduce_2$1.reduce;
+//# sourceMappingURL=reduce.js.map
 
 var __extends$87 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36295,36 +33181,25 @@ var RepeatSubscriber = (function (_super) {
     };
     return RepeatSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=repeat.js.map
 
 var repeat_1 = {
 	repeat: repeat_2$2
 };
 
-/**
- * Returns an Observable that repeats the stream of items emitted by the source Observable at most count times.
- *
- * <img src="./img/repeat.png" width="100%">
- *
- * @param {number} [count] The number of times the source Observable items are repeated, a count of 0 will yield
- * an empty Observable.
- * @return {Observable} An Observable that repeats the stream of items emitted by the source Observable at most
- * count times.
- * @method repeat
- * @owner Observable
- */
 function repeat$2(count) {
     if (count === void 0) { count = -1; }
     return repeat_1.repeat(count)(this);
 }
 var repeat_3 = repeat$2;
-
+//# sourceMappingURL=repeat.js.map
 
 var repeat_2 = {
 	repeat: repeat_3
 };
 
 Observable_1.Observable.prototype.repeat = repeat_2.repeat;
+//# sourceMappingURL=repeat.js.map
 
 var __extends$88 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36432,37 +33307,24 @@ var RepeatWhenSubscriber = (function (_super) {
     };
     return RepeatWhenSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=repeatWhen.js.map
 
 var repeatWhen_1 = {
 	repeatWhen: repeatWhen_2$2
 };
 
-/**
- * Returns an Observable that mirrors the source Observable with the exception of a `complete`. If the source
- * Observable calls `complete`, this method will emit to the Observable returned from `notifier`. If that Observable
- * calls `complete` or `error`, then this method will call `complete` or `error` on the child subscription. Otherwise
- * this method will resubscribe to the source Observable.
- *
- * <img src="./img/repeatWhen.png" width="100%">
- *
- * @param {function(notifications: Observable): Observable} notifier - Receives an Observable of notifications with
- * which a user can `complete` or `error`, aborting the repetition.
- * @return {Observable} The source Observable modified with repeat logic.
- * @method repeatWhen
- * @owner Observable
- */
 function repeatWhen$2(notifier) {
     return repeatWhen_1.repeatWhen(notifier)(this);
 }
 var repeatWhen_3 = repeatWhen$2;
-
+//# sourceMappingURL=repeatWhen.js.map
 
 var repeatWhen_2 = {
 	repeatWhen: repeatWhen_3
 };
 
 Observable_1.Observable.prototype.repeatWhen = repeatWhen_2.repeatWhen;
+//# sourceMappingURL=repeatWhen.js.map
 
 var __extends$89 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36527,40 +33389,25 @@ var RetrySubscriber = (function (_super) {
     };
     return RetrySubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=retry.js.map
 
 var retry_1 = {
 	retry: retry_2$2
 };
 
-/**
- * Returns an Observable that mirrors the source Observable with the exception of an `error`. If the source Observable
- * calls `error`, this method will resubscribe to the source Observable for a maximum of `count` resubscriptions (given
- * as a number parameter) rather than propagating the `error` call.
- *
- * <img src="./img/retry.png" width="100%">
- *
- * Any and all items emitted by the source Observable will be emitted by the resulting Observable, even those emitted
- * during failed subscriptions. For example, if an Observable fails at first but emits [1, 2] then succeeds the second
- * time and emits: [1, 2, 3, 4, 5] then the complete stream of emissions and notifications
- * would be: [1, 2, 1, 2, 3, 4, 5, `complete`].
- * @param {number} count - Number of retry attempts before failing.
- * @return {Observable} The source Observable modified with the retry logic.
- * @method retry
- * @owner Observable
- */
 function retry$2(count) {
     if (count === void 0) { count = -1; }
     return retry_1.retry(count)(this);
 }
 var retry_3 = retry$2;
-
+//# sourceMappingURL=retry.js.map
 
 var retry_2 = {
 	retry: retry_3
 };
 
 Observable_1.Observable.prototype.retry = retry_2.retry;
+//# sourceMappingURL=retry.js.map
 
 var __extends$90 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36661,37 +33508,24 @@ var RetryWhenSubscriber = (function (_super) {
     };
     return RetryWhenSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=retryWhen.js.map
 
 var retryWhen_1 = {
 	retryWhen: retryWhen_2$2
 };
 
-/**
- * Returns an Observable that mirrors the source Observable with the exception of an `error`. If the source Observable
- * calls `error`, this method will emit the Throwable that caused the error to the Observable returned from `notifier`.
- * If that Observable calls `complete` or `error` then this method will call `complete` or `error` on the child
- * subscription. Otherwise this method will resubscribe to the source Observable.
- *
- * <img src="./img/retryWhen.png" width="100%">
- *
- * @param {function(errors: Observable): Observable} notifier - Receives an Observable of notifications with which a
- * user can `complete` or `error`, aborting the retry.
- * @return {Observable} The source Observable modified with retry logic.
- * @method retryWhen
- * @owner Observable
- */
 function retryWhen$2(notifier) {
     return retryWhen_1.retryWhen(notifier)(this);
 }
 var retryWhen_3 = retryWhen$2;
-
+//# sourceMappingURL=retryWhen.js.map
 
 var retryWhen_2 = {
 	retryWhen: retryWhen_3
 };
 
 Observable_1.Observable.prototype.retryWhen = retryWhen_2.retryWhen;
+//# sourceMappingURL=retryWhen.js.map
 
 var __extends$91 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36779,57 +33613,24 @@ var SampleSubscriber = (function (_super) {
     };
     return SampleSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=sample.js.map
 
 var sample_1 = {
 	sample: sample_2$2
 };
 
-/**
- * Emits the most recently emitted value from the source Observable whenever
- * another Observable, the `notifier`, emits.
- *
- * <span class="informal">It's like {@link sampleTime}, but samples whenever
- * the `notifier` Observable emits something.</span>
- *
- * <img src="./img/sample.png" width="100%">
- *
- * Whenever the `notifier` Observable emits a value or completes, `sample`
- * looks at the source Observable and emits whichever value it has most recently
- * emitted since the previous sampling, unless the source has not emitted
- * anything since the previous sampling. The `notifier` is subscribed to as soon
- * as the output Observable is subscribed.
- *
- * @example <caption>On every click, sample the most recent "seconds" timer</caption>
- * var seconds = Rx.Observable.interval(1000);
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = seconds.sample(clicks);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link audit}
- * @see {@link debounce}
- * @see {@link sampleTime}
- * @see {@link throttle}
- *
- * @param {Observable<any>} notifier The Observable to use for sampling the
- * source Observable.
- * @return {Observable<T>} An Observable that emits the results of sampling the
- * values emitted by the source Observable whenever the notifier Observable
- * emits value or completes.
- * @method sample
- * @owner Observable
- */
 function sample$3(notifier) {
     return sample_1.sample(notifier)(this);
 }
 var sample_3 = sample$3;
-
+//# sourceMappingURL=sample.js.map
 
 var sample_2 = {
 	sample: sample_3
 };
 
 Observable_1.Observable.prototype.sample = sample_2.sample;
+//# sourceMappingURL=sample.js.map
 
 var __extends$92 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -36920,99 +33721,26 @@ function dispatchNotification(state) {
     subscriber.notifyNext();
     this.schedule(state, period);
 }
-
+//# sourceMappingURL=sampleTime.js.map
 
 var sampleTime_1 = {
 	sampleTime: sampleTime_2$2
 };
 
-/**
- * Emits the most recently emitted value from the source Observable within
- * periodic time intervals.
- *
- * <span class="informal">Samples the source Observable at periodic time
- * intervals, emitting what it samples.</span>
- *
- * <img src="./img/sampleTime.png" width="100%">
- *
- * `sampleTime` periodically looks at the source Observable and emits whichever
- * value it has most recently emitted since the previous sampling, unless the
- * source has not emitted anything since the previous sampling. The sampling
- * happens periodically in time every `period` milliseconds (or the time unit
- * defined by the optional `scheduler` argument). The sampling starts as soon as
- * the output Observable is subscribed.
- *
- * @example <caption>Every second, emit the most recent click at most once</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.sampleTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounceTime}
- * @see {@link delay}
- * @see {@link sample}
- * @see {@link throttleTime}
- *
- * @param {number} period The sampling period expressed in milliseconds or the
- * time unit determined internally by the optional `scheduler`.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the sampling.
- * @return {Observable<T>} An Observable that emits the results of sampling the
- * values emitted by the source Observable at the specified time interval.
- * @method sampleTime
- * @owner Observable
- */
 function sampleTime$2(period, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return sampleTime_1.sampleTime(period, scheduler)(this);
 }
 var sampleTime_3 = sampleTime$2;
-
+//# sourceMappingURL=sampleTime.js.map
 
 var sampleTime_2 = {
 	sampleTime: sampleTime_3
 };
 
 Observable_1.Observable.prototype.sampleTime = sampleTime_2.sampleTime;
+//# sourceMappingURL=sampleTime.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Applies an accumulator function over the source Observable, and returns each
- * intermediate result, with an optional seed value.
- *
- * <span class="informal">It's like {@link reduce}, but emits the current
- * accumulation whenever the source emits a value.</span>
- *
- * <img src="./img/scan.png" width="100%">
- *
- * Combines together all values emitted on the source, using an accumulator
- * function that knows how to join a new source value into the accumulation from
- * the past. Is similar to {@link reduce}, but emits the intermediate
- * accumulations.
- *
- * Returns an Observable that applies a specified `accumulator` function to each
- * item emitted by the source Observable. If a `seed` value is specified, then
- * that value will be used as the initial value for the accumulator. If no seed
- * value is specified, the first item of the source is used as the seed.
- *
- * @example <caption>Count the number of click events</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var ones = clicks.mapTo(1);
- * var seed = 0;
- * var count = ones.scan((acc, one) => acc + one, seed);
- * count.subscribe(x => console.log(x));
- *
- * @see {@link expand}
- * @see {@link mergeScan}
- * @see {@link reduce}
- *
- * @param {function(acc: R, value: T, index: number): R} accumulator
- * The accumulator function called on each source value.
- * @param {T|R} [seed] The initial accumulation value.
- * @return {Observable<R>} An observable of the accumulated values.
- * @method scan
- * @owner Observable
- */
 function scan$3(accumulator, seed) {
     if (arguments.length >= 2) {
         return scan_1.scan(accumulator, seed)(this);
@@ -37020,13 +33748,14 @@ function scan$3(accumulator, seed) {
     return scan_1.scan(accumulator)(this);
 }
 var scan_3 = scan$3;
-
+//# sourceMappingURL=scan.js.map
 
 var scan_2$1 = {
 	scan: scan_3
 };
 
 Observable_1.Observable.prototype.scan = scan_2$1.scan;
+//# sourceMappingURL=scan.js.map
 
 var __extends$93 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37190,7 +33919,7 @@ var SequenceEqualCompareToSubscriber = (function (_super) {
     };
     return SequenceEqualCompareToSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=sequenceEqual.js.map
 
 var sequenceEqual_1 = {
 	sequenceEqual: sequenceEqual_2$2,
@@ -37198,69 +33927,18 @@ var sequenceEqual_1 = {
 	SequenceEqualSubscriber: SequenceEqualSubscriber_1
 };
 
-/**
- * Compares all values of two observables in sequence using an optional comparor function
- * and returns an observable of a single boolean value representing whether or not the two sequences
- * are equal.
- *
- * <span class="informal">Checks to see of all values emitted by both observables are equal, in order.</span>
- *
- * <img src="./img/sequenceEqual.png" width="100%">
- *
- * `sequenceEqual` subscribes to two observables and buffers incoming values from each observable. Whenever either
- * observable emits a value, the value is buffered and the buffers are shifted and compared from the bottom
- * up; If any value pair doesn't match, the returned observable will emit `false` and complete. If one of the
- * observables completes, the operator will wait for the other observable to complete; If the other
- * observable emits before completing, the returned observable will emit `false` and complete. If one observable never
- * completes or emits after the other complets, the returned observable will never complete.
- *
- * @example <caption>figure out if the Konami code matches</caption>
- * var code = Rx.Observable.from([
- *  "ArrowUp",
- *  "ArrowUp",
- *  "ArrowDown",
- *  "ArrowDown",
- *  "ArrowLeft",
- *  "ArrowRight",
- *  "ArrowLeft",
- *  "ArrowRight",
- *  "KeyB",
- *  "KeyA",
- *  "Enter" // no start key, clearly.
- * ]);
- *
- * var keys = Rx.Observable.fromEvent(document, 'keyup')
- *  .map(e => e.code);
- * var matches = keys.bufferCount(11, 1)
- *  .mergeMap(
- *    last11 =>
- *      Rx.Observable.from(last11)
- *        .sequenceEqual(code)
- *   );
- * matches.subscribe(matched => console.log('Successful cheat at Contra? ', matched));
- *
- * @see {@link combineLatest}
- * @see {@link zip}
- * @see {@link withLatestFrom}
- *
- * @param {Observable} compareTo The observable sequence to compare the source sequence to.
- * @param {function} [comparor] An optional function to compare each value pair
- * @return {Observable} An Observable of a single boolean value representing whether or not
- * the values emitted by both observables were equal in sequence.
- * @method sequenceEqual
- * @owner Observable
- */
 function sequenceEqual$2(compareTo, comparor) {
     return sequenceEqual_1.sequenceEqual(compareTo, comparor)(this);
 }
 var sequenceEqual_3 = sequenceEqual$2;
-
+//# sourceMappingURL=sequenceEqual.js.map
 
 var sequenceEqual_2 = {
 	sequenceEqual: sequenceEqual_3
 };
 
 Observable_1.Observable.prototype.sequenceEqual = sequenceEqual_2.sequenceEqual;
+//# sourceMappingURL=sequenceEqual.js.map
 
 function shareSubjectFactory() {
     return new Subject_1.Subject();
@@ -37282,45 +33960,26 @@ function share$3() {
 }
 var share_2$2 = share$3;
 
-
+//# sourceMappingURL=share.js.map
 
 var share_1 = {
 	share: share_2$2
 };
 
-/**
- * Returns a new Observable that multicasts (shares) the original Observable. As long as there is at least one
- * Subscriber this Observable will be subscribed and emitting data. When all subscribers have unsubscribed it will
- * unsubscribe from the source Observable. Because the Observable is multicasting it makes the stream `hot`.
- *
- * This behaves similarly to .publish().refCount(), with a behavior difference when the source observable emits complete.
- * .publish().refCount() will not resubscribe to the original source, however .share() will resubscribe to the original source.
- * Observable.of("test").publish().refCount() will not re-emit "test" on new subscriptions, Observable.of("test").share() will
- * re-emit "test" to new subscriptions.
- *
- * <img src="./img/share.png" width="100%">
- *
- * @return {Observable<T>} An Observable that upon connection causes the source Observable to emit items to its Observers.
- * @method share
- * @owner Observable
- */
 function share$2() {
     return share_1.share()(this);
 }
 var share_3 = share$2;
 
-
+//# sourceMappingURL=share.js.map
 
 var share_2 = {
 	share: share_3
 };
 
 Observable_1.Observable.prototype.share = share_2.share;
+//# sourceMappingURL=share.js.map
 
-/**
- * @method shareReplay
- * @owner Observable
- */
 function shareReplay$3(bufferSize, windowTime, scheduler) {
     return function (source) { return source.lift(shareReplayOperator(bufferSize, windowTime, scheduler)); };
 }
@@ -37359,28 +34018,25 @@ function shareReplayOperator(bufferSize, windowTime, scheduler) {
     };
 }
 
-
+//# sourceMappingURL=shareReplay.js.map
 
 var shareReplay_1 = {
 	shareReplay: shareReplay_2$2
 };
 
-/**
- * @method shareReplay
- * @owner Observable
- */
 function shareReplay$2(bufferSize, windowTime, scheduler) {
     return shareReplay_1.shareReplay(bufferSize, windowTime, scheduler)(this);
 }
 var shareReplay_3 = shareReplay$2;
 
-
+//# sourceMappingURL=shareReplay.js.map
 
 var shareReplay_2 = {
 	shareReplay: shareReplay_3
 };
 
 Observable_1.Observable.prototype.shareReplay = shareReplay_2.shareReplay;
+//# sourceMappingURL=shareReplay.js.map
 
 var __extends$94 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37473,39 +34129,24 @@ var SingleSubscriber = (function (_super) {
     };
     return SingleSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=single.js.map
 
 var single_1 = {
 	single: single_2$2
 };
 
-/**
- * Returns an Observable that emits the single item emitted by the source Observable that matches a specified
- * predicate, if that Observable emits one such item. If the source Observable emits more than one such item or no
- * such items, notify of an IllegalArgumentException or NoSuchElementException respectively.
- *
- * <img src="./img/single.png" width="100%">
- *
- * @throws {EmptyError} Delivers an EmptyError to the Observer's `error`
- * callback if the Observable completes before any `next` notification was sent.
- * @param {Function} predicate - A predicate function to evaluate items emitted by the source Observable.
- * @return {Observable<T>} An Observable that emits the single item emitted by the source Observable that matches
- * the predicate.
- .
- * @method single
- * @owner Observable
- */
 function single$2(predicate) {
     return single_1.single(predicate)(this);
 }
 var single_3 = single$2;
-
+//# sourceMappingURL=single.js.map
 
 var single_2 = {
 	single: single_3
 };
 
 Observable_1.Observable.prototype.single = single_2.single;
+//# sourceMappingURL=single.js.map
 
 var __extends$95 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37556,34 +34197,24 @@ var SkipSubscriber = (function (_super) {
     };
     return SkipSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=skip.js.map
 
 var skip_1 = {
 	skip: skip_2$2
 };
 
-/**
- * Returns an Observable that skips the first `count` items emitted by the source Observable.
- *
- * <img src="./img/skip.png" width="100%">
- *
- * @param {Number} count - The number of times, items emitted by source Observable should be skipped.
- * @return {Observable} An Observable that skips values emitted by the source Observable.
- *
- * @method skip
- * @owner Observable
- */
 function skip$2(count) {
     return skip_1.skip(count)(this);
 }
 var skip_3 = skip$2;
-
+//# sourceMappingURL=skip.js.map
 
 var skip_2 = {
 	skip: skip_3
 };
 
 Observable_1.Observable.prototype.skip = skip_2.skip;
+//# sourceMappingURL=skip.js.map
 
 var __extends$96 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37676,55 +34307,24 @@ var SkipLastSubscriber = (function (_super) {
     };
     return SkipLastSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=skipLast.js.map
 
 var skipLast_1 = {
 	skipLast: skipLast_2$2
 };
 
-/**
- * Skip the last `count` values emitted by the source Observable.
- *
- * <img src="./img/skipLast.png" width="100%">
- *
- * `skipLast` returns an Observable that accumulates a queue with a length
- * enough to store the first `count` values. As more values are received,
- * values are taken from the front of the queue and produced on the result
- * sequence. This causes values to be delayed.
- *
- * @example <caption>Skip the last 2 values of an Observable with many values</caption>
- * var many = Rx.Observable.range(1, 5);
- * var skipLastTwo = many.skipLast(2);
- * skipLastTwo.subscribe(x => console.log(x));
- *
- * // Results in:
- * // 1 2 3
- *
- * @see {@link skip}
- * @see {@link skipUntil}
- * @see {@link skipWhile}
- * @see {@link take}
- *
- * @throws {ArgumentOutOfRangeError} When using `skipLast(i)`, it throws
- * ArgumentOutOrRangeError if `i < 0`.
- *
- * @param {number} count Number of elements to skip from the end of the source Observable.
- * @returns {Observable<T>} An Observable that skips the last count values
- * emitted by the source Observable.
- * @method skipLast
- * @owner Observable
- */
 function skipLast$2(count) {
     return skipLast_1.skipLast(count)(this);
 }
 var skipLast_3 = skipLast$2;
-
+//# sourceMappingURL=skipLast.js.map
 
 var skipLast_2 = {
 	skipLast: skipLast_3
 };
 
 Observable_1.Observable.prototype.skipLast = skipLast_2.skipLast;
+//# sourceMappingURL=skipLast.js.map
 
 var __extends$97 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37795,35 +34395,24 @@ var SkipUntilSubscriber = (function (_super) {
     };
     return SkipUntilSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=skipUntil.js.map
 
 var skipUntil_1 = {
 	skipUntil: skipUntil_2$2
 };
 
-/**
- * Returns an Observable that skips items emitted by the source Observable until a second Observable emits an item.
- *
- * <img src="./img/skipUntil.png" width="100%">
- *
- * @param {Observable} notifier - The second Observable that has to emit an item before the source Observable's elements begin to
- * be mirrored by the resulting Observable.
- * @return {Observable<T>} An Observable that skips items from the source Observable until the second Observable emits
- * an item, then emits the remaining items.
- * @method skipUntil
- * @owner Observable
- */
 function skipUntil$2(notifier) {
     return skipUntil_1.skipUntil(notifier)(this);
 }
 var skipUntil_3 = skipUntil$2;
-
+//# sourceMappingURL=skipUntil.js.map
 
 var skipUntil_2 = {
 	skipUntil: skipUntil_3
 };
 
 Observable_1.Observable.prototype.skipUntil = skipUntil_2.skipUntil;
+//# sourceMappingURL=skipUntil.js.map
 
 var __extends$98 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -37889,51 +34478,25 @@ var SkipWhileSubscriber = (function (_super) {
     };
     return SkipWhileSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=skipWhile.js.map
 
 var skipWhile_1 = {
 	skipWhile: skipWhile_2$2
 };
 
-/**
- * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
- * true, but emits all further source items as soon as the condition becomes false.
- *
- * <img src="./img/skipWhile.png" width="100%">
- *
- * @param {Function} predicate - A function to test each item emitted from the source Observable.
- * @return {Observable<T>} An Observable that begins emitting items emitted by the source Observable when the
- * specified predicate becomes false.
- * @method skipWhile
- * @owner Observable
- */
 function skipWhile$2(predicate) {
     return skipWhile_1.skipWhile(predicate)(this);
 }
 var skipWhile_3 = skipWhile$2;
-
+//# sourceMappingURL=skipWhile.js.map
 
 var skipWhile_2 = {
 	skipWhile: skipWhile_3
 };
 
 Observable_1.Observable.prototype.skipWhile = skipWhile_2.skipWhile;
+//# sourceMappingURL=skipWhile.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits the items you specify as arguments before it begins to emit
- * items emitted by the source Observable.
- *
- * <img src="./img/startWith.png" width="100%">
- *
- * @param {...T} values - Items you want the modified Observable to emit first.
- * @param {Scheduler} [scheduler] - A {@link IScheduler} to use for scheduling
- * the emissions of the `next` notifications.
- * @return {Observable} An Observable that emits the items in the specified Iterable and then emits the items
- * emitted by the source Observable.
- * @method startWith
- * @owner Observable
- */
 function startWith$3() {
     var array = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -37960,27 +34523,12 @@ function startWith$3() {
     };
 }
 var startWith_2$2 = startWith$3;
-
+//# sourceMappingURL=startWith.js.map
 
 var startWith_1 = {
 	startWith: startWith_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits the items you specify as arguments before it begins to emit
- * items emitted by the source Observable.
- *
- * <img src="./img/startWith.png" width="100%">
- *
- * @param {...T} values - Items you want the modified Observable to emit first.
- * @param {Scheduler} [scheduler] - A {@link IScheduler} to use for scheduling
- * the emissions of the `next` notifications.
- * @return {Observable} An Observable that emits the items in the specified Iterable and then emits the items
- * emitted by the source Observable.
- * @method startWith
- * @owner Observable
- */
 function startWith$2() {
     var array = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -37989,13 +34537,14 @@ function startWith$2() {
     return startWith_1.startWith.apply(void 0, array)(this);
 }
 var startWith_3 = startWith$2;
-
+//# sourceMappingURL=startWith.js.map
 
 var startWith_2 = {
 	startWith: startWith_3
 };
 
 Observable_1.Observable.prototype.startWith = startWith_2.startWith;
+//# sourceMappingURL=startWith.js.map
 
 var ImmediateDefinition = (function () {
     function ImmediateDefinition(root$$2) {
@@ -38200,7 +34749,7 @@ var ImmediateDefinition = (function () {
 }());
 var ImmediateDefinition_1 = ImmediateDefinition;
 var Immediate_1 = new ImmediateDefinition(root.root);
-
+//# sourceMappingURL=Immediate.js.map
 
 var Immediate = {
 	ImmediateDefinition: ImmediateDefinition_1,
@@ -38260,7 +34809,7 @@ var AsapAction = (function (_super) {
     return AsapAction;
 }(AsyncAction_1.AsyncAction));
 var AsapAction_2 = AsapAction;
-
+//# sourceMappingURL=AsapAction.js.map
 
 var AsapAction_1 = {
 	AsapAction: AsapAction_2
@@ -38301,48 +34850,14 @@ var AsapScheduler = (function (_super) {
     return AsapScheduler;
 }(AsyncScheduler_1.AsyncScheduler));
 var AsapScheduler_2 = AsapScheduler;
-
+//# sourceMappingURL=AsapScheduler.js.map
 
 var AsapScheduler_1 = {
 	AsapScheduler: AsapScheduler_2
 };
 
-/**
- *
- * Asap Scheduler
- *
- * <span class="informal">Perform task as fast as it can be performed asynchronously</span>
- *
- * `asap` scheduler behaves the same as {@link async} scheduler when you use it to delay task
- * in time. If however you set delay to `0`, `asap` will wait for current synchronously executing
- * code to end and then it will try to execute given task as fast as possible.
- *
- * `asap` scheduler will do its best to minimize time between end of currently executing code
- * and start of scheduled task. This makes it best candidate for performing so called "deferring".
- * Traditionally this was achieved by calling `setTimeout(deferredTask, 0)`, but that technique involves
- * some (although minimal) unwanted delay.
- *
- * Note that using `asap` scheduler does not necessarily mean that your task will be first to process
- * after currently executing code. In particular, if some task was also scheduled with `asap` before,
- * that task will execute first. That being said, if you need to schedule task asynchronously, but
- * as soon as possible, `asap` scheduler is your best bet.
- *
- * @example <caption>Compare async and asap scheduler</caption>
- *
- * Rx.Scheduler.async.schedule(() => console.log('async')); // scheduling 'async' first...
- * Rx.Scheduler.asap.schedule(() => console.log('asap'));
- *
- * // Logs:
- * // "asap"
- * // "async"
- * // ... but 'asap' goes first!
- *
- * @static true
- * @name asap
- * @owner Scheduler
- */
 var asap_1 = new AsapScheduler_1.AsapScheduler(AsapAction_1.AsapAction);
-
+//# sourceMappingURL=asap.js.map
 
 var asap = {
 	asap: asap_1
@@ -38397,23 +34912,12 @@ var SubscribeOnObservable = (function (_super) {
     return SubscribeOnObservable;
 }(Observable_1.Observable));
 var SubscribeOnObservable_2 = SubscribeOnObservable;
-
+//# sourceMappingURL=SubscribeOnObservable.js.map
 
 var SubscribeOnObservable_1 = {
 	SubscribeOnObservable: SubscribeOnObservable_2
 };
 
-/**
- * Asynchronously subscribes Observers to this Observable on the specified IScheduler.
- *
- * <img src="./img/subscribeOn.png" width="100%">
- *
- * @param {Scheduler} scheduler - The IScheduler to perform subscription actions on.
- * @return {Observable<T>} The source Observable modified so that its subscriptions happen on the specified IScheduler.
- .
- * @method subscribeOn
- * @owner Observable
- */
 function subscribeOn$3(scheduler, delay) {
     if (delay === void 0) { delay = 0; }
     return function subscribeOnOperatorFunction(source) {
@@ -38431,35 +34935,25 @@ var SubscribeOnOperator = (function () {
     };
     return SubscribeOnOperator;
 }());
-
+//# sourceMappingURL=subscribeOn.js.map
 
 var subscribeOn_1 = {
 	subscribeOn: subscribeOn_2$2
 };
 
-/**
- * Asynchronously subscribes Observers to this Observable on the specified IScheduler.
- *
- * <img src="./img/subscribeOn.png" width="100%">
- *
- * @param {Scheduler} scheduler - The IScheduler to perform subscription actions on.
- * @return {Observable<T>} The source Observable modified so that its subscriptions happen on the specified IScheduler.
- .
- * @method subscribeOn
- * @owner Observable
- */
 function subscribeOn$2(scheduler, delay) {
     if (delay === void 0) { delay = 0; }
     return subscribeOn_1.subscribeOn(scheduler, delay)(this);
 }
 var subscribeOn_3 = subscribeOn$2;
-
+//# sourceMappingURL=subscribeOn.js.map
 
 var subscribeOn_2 = {
 	subscribeOn: subscribeOn_3
 };
 
 Observable_1.Observable.prototype.subscribeOn = subscribeOn_2.subscribeOn;
+//# sourceMappingURL=subscribeOn.js.map
 
 var __extends$102 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -38601,7 +35095,7 @@ var SwitchMapSubscriber = (function (_super) {
     };
     return SwitchMapSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=switchMap.js.map
 
 var switchMap_1 = {
 	switchMap: switchMap_2
@@ -38611,59 +35105,17 @@ function switchAll() {
     return switchMap_1.switchMap(identity_1.identity);
 }
 var switchAll_2 = switchAll;
-
+//# sourceMappingURL=switchAll.js.map
 
 var switchAll_1 = {
 	switchAll: switchAll_2
 };
 
-/**
- * Converts a higher-order Observable into a first-order Observable by
- * subscribing to only the most recently emitted of those inner Observables.
- *
- * <span class="informal">Flattens an Observable-of-Observables by dropping the
- * previous inner Observable once a new one appears.</span>
- *
- * <img src="./img/switch.png" width="100%">
- *
- * `switch` subscribes to an Observable that emits Observables, also known as a
- * higher-order Observable. Each time it observes one of these emitted inner
- * Observables, the output Observable subscribes to the inner Observable and
- * begins emitting the items emitted by that. So far, it behaves
- * like {@link mergeAll}. However, when a new inner Observable is emitted,
- * `switch` unsubscribes from the earlier-emitted inner Observable and
- * subscribes to the new inner Observable and begins emitting items from it. It
- * continues to behave like this for subsequent inner Observables.
- *
- * @example <caption>Rerun an interval Observable on every click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * // Each click event is mapped to an Observable that ticks every second
- * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var switched = higherOrder.switch();
- * // The outcome is that `switched` is essentially a timer that restarts
- * // on every click. The interval Observables from older clicks do not merge
- * // with the current interval Observable.
- * switched.subscribe(x => console.log(x));
- *
- * @see {@link combineAll}
- * @see {@link concatAll}
- * @see {@link exhaust}
- * @see {@link mergeAll}
- * @see {@link switchMap}
- * @see {@link switchMapTo}
- * @see {@link zipAll}
- *
- * @return {Observable<T>} An Observable that emits the items emitted by the
- * Observable most recently emitted by the source Observable.
- * @method switch
- * @name switch
- * @owner Observable
- */
 function _switch$2() {
     return switchAll_1.switchAll()(this);
 }
 var _switch_2 = _switch$2;
-
+//# sourceMappingURL=switch.js.map
 
 var _switch_1 = {
 	_switch: _switch_2
@@ -38671,66 +35123,20 @@ var _switch_1 = {
 
 Observable_1.Observable.prototype.switch = _switch_1._switch;
 Observable_1.Observable.prototype._switch = _switch_1._switch;
+//# sourceMappingURL=switch.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to an Observable which is merged in the output
- * Observable, emitting values only from the most recently projected Observable.
- *
- * <span class="informal">Maps each value to an Observable, then flattens all of
- * these inner Observables using {@link switch}.</span>
- *
- * <img src="./img/switchMap.png" width="100%">
- *
- * Returns an Observable that emits items based on applying a function that you
- * supply to each item emitted by the source Observable, where that function
- * returns an (so-called "inner") Observable. Each time it observes one of these
- * inner Observables, the output Observable begins emitting the items emitted by
- * that inner Observable. When a new inner Observable is emitted, `switchMap`
- * stops emitting items from the earlier-emitted inner Observable and begins
- * emitting items from the new one. It continues to behave like this for
- * subsequent inner Observables.
- *
- * @example <caption>Rerun an interval Observable on every click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.switchMap((ev) => Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link concatMap}
- * @see {@link exhaustMap}
- * @see {@link mergeMap}
- * @see {@link switch}
- * @see {@link switchMapTo}
- *
- * @param {function(value: T, ?index: number): ObservableInput} project A function
- * that, when applied to an item emitted by the source Observable, returns an
- * Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An Observable that emits the result of applying the
- * projection function (and the optional `resultSelector`) to each item emitted
- * by the source Observable and taking only the values from the most recently
- * projected inner Observable.
- * @method switchMap
- * @owner Observable
- */
 function switchMap$3(project, resultSelector) {
     return switchMap_1.switchMap(project, resultSelector)(this);
 }
 var switchMap_3 = switchMap$3;
-
+//# sourceMappingURL=switchMap.js.map
 
 var switchMap_2$1 = {
 	switchMap: switchMap_3
 };
 
 Observable_1.Observable.prototype.switchMap = switchMap_2$1.switchMap;
+//# sourceMappingURL=switchMap.js.map
 
 var __extends$103 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -38855,66 +35261,24 @@ var SwitchMapToSubscriber = (function (_super) {
     };
     return SwitchMapToSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=switchMapTo.js.map
 
 var switchMapTo_1 = {
 	switchMapTo: switchMapTo_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Projects each source value to the same Observable which is flattened multiple
- * times with {@link switch} in the output Observable.
- *
- * <span class="informal">It's like {@link switchMap}, but maps each value
- * always to the same inner Observable.</span>
- *
- * <img src="./img/switchMapTo.png" width="100%">
- *
- * Maps each source value to the given Observable `innerObservable` regardless
- * of the source value, and then flattens those resulting Observables into one
- * single Observable, which is the output Observable. The output Observables
- * emits values only from the most recently emitted instance of
- * `innerObservable`.
- *
- * @example <caption>Rerun an interval Observable on every click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.switchMapTo(Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link concatMapTo}
- * @see {@link switch}
- * @see {@link switchMap}
- * @see {@link mergeMapTo}
- *
- * @param {ObservableInput} innerObservable An Observable to replace each value from
- * the source Observable.
- * @param {function(outerValue: T, innerValue: I, outerIndex: number, innerIndex: number): any} [resultSelector]
- * A function to produce the value on the output Observable based on the values
- * and the indices of the source (outer) emission and the inner Observable
- * emission. The arguments passed to this function are:
- * - `outerValue`: the value that came from the source
- * - `innerValue`: the value that came from the projected Observable
- * - `outerIndex`: the "index" of the value that came from the source
- * - `innerIndex`: the "index" of the value from the projected Observable
- * @return {Observable} An Observable that emits items from the given
- * `innerObservable` (and optionally transformed through `resultSelector`) every
- * time a value is emitted on the source Observable, and taking only the values
- * from the most recently projected inner Observable.
- * @method switchMapTo
- * @owner Observable
- */
 function switchMapTo$2(innerObservable, resultSelector) {
     return switchMapTo_1.switchMapTo(innerObservable, resultSelector)(this);
 }
 var switchMapTo_3 = switchMapTo$2;
-
+//# sourceMappingURL=switchMapTo.js.map
 
 var switchMapTo_2 = {
 	switchMapTo: switchMapTo_3
 };
 
 Observable_1.Observable.prototype.switchMapTo = switchMapTo_2.switchMapTo;
+//# sourceMappingURL=switchMapTo.js.map
 
 var __extends$104 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39005,104 +35369,37 @@ var TakeSubscriber = (function (_super) {
     };
     return TakeSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=take.js.map
 
 var take_1 = {
 	take: take_2$2
 };
 
-/**
- * Emits only the first `count` values emitted by the source Observable.
- *
- * <span class="informal">Takes the first `count` values from the source, then
- * completes.</span>
- *
- * <img src="./img/take.png" width="100%">
- *
- * `take` returns an Observable that emits only the first `count` values emitted
- * by the source Observable. If the source emits fewer than `count` values then
- * all of its values are emitted. After that, it completes, regardless if the
- * source completes.
- *
- * @example <caption>Take the first 5 seconds of an infinite 1-second interval Observable</caption>
- * var interval = Rx.Observable.interval(1000);
- * var five = interval.take(5);
- * five.subscribe(x => console.log(x));
- *
- * @see {@link takeLast}
- * @see {@link takeUntil}
- * @see {@link takeWhile}
- * @see {@link skip}
- *
- * @throws {ArgumentOutOfRangeError} When using `take(i)`, it delivers an
- * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
- *
- * @param {number} count The maximum number of `next` values to emit.
- * @return {Observable<T>} An Observable that emits only the first `count`
- * values emitted by the source Observable, or all of the values from the source
- * if the source emits fewer than `count` values.
- * @method take
- * @owner Observable
- */
 function take$2(count) {
     return take_1.take(count)(this);
 }
 var take_3 = take$2;
-
+//# sourceMappingURL=take.js.map
 
 var take_2 = {
 	take: take_3
 };
 
 Observable_1.Observable.prototype.take = take_2.take;
+//# sourceMappingURL=take.js.map
 
-/**
- * Emits only the last `count` values emitted by the source Observable.
- *
- * <span class="informal">Remembers the latest `count` values, then emits those
- * only when the source completes.</span>
- *
- * <img src="./img/takeLast.png" width="100%">
- *
- * `takeLast` returns an Observable that emits at most the last `count` values
- * emitted by the source Observable. If the source emits fewer than `count`
- * values then all of its values are emitted. This operator must wait until the
- * `complete` notification emission from the source in order to emit the `next`
- * values on the output Observable, because otherwise it is impossible to know
- * whether or not more values will be emitted on the source. For this reason,
- * all values are emitted synchronously, followed by the complete notification.
- *
- * @example <caption>Take the last 3 values of an Observable with many values</caption>
- * var many = Rx.Observable.range(1, 100);
- * var lastThree = many.takeLast(3);
- * lastThree.subscribe(x => console.log(x));
- *
- * @see {@link take}
- * @see {@link takeUntil}
- * @see {@link takeWhile}
- * @see {@link skip}
- *
- * @throws {ArgumentOutOfRangeError} When using `takeLast(i)`, it delivers an
- * ArgumentOutOrRangeError to the Observer's `error` callback if `i < 0`.
- *
- * @param {number} count The maximum number of values to emit from the end of
- * the sequence of values emitted by the source Observable.
- * @return {Observable<T>} An Observable that emits at most the last count
- * values emitted by the source Observable.
- * @method takeLast
- * @owner Observable
- */
 function takeLast$3(count) {
     return takeLast_1.takeLast(count)(this);
 }
 var takeLast_3 = takeLast$3;
-
+//# sourceMappingURL=takeLast.js.map
 
 var takeLast_2$1 = {
 	takeLast: takeLast_3
 };
 
 Observable_1.Observable.prototype.takeLast = takeLast_2$1.takeLast;
+//# sourceMappingURL=takeLast.js.map
 
 var __extends$105 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39177,56 +35474,24 @@ var TakeUntilSubscriber = (function (_super) {
     };
     return TakeUntilSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=takeUntil.js.map
 
 var takeUntil_1 = {
 	takeUntil: takeUntil_2$2
 };
 
-/**
- * Emits the values emitted by the source Observable until a `notifier`
- * Observable emits a value.
- *
- * <span class="informal">Lets values pass until a second Observable,
- * `notifier`, emits something. Then, it completes.</span>
- *
- * <img src="./img/takeUntil.png" width="100%">
- *
- * `takeUntil` subscribes and begins mirroring the source Observable. It also
- * monitors a second Observable, `notifier` that you provide. If the `notifier`
- * emits a value, the output Observable stops mirroring the source Observable
- * and completes.
- *
- * @example <caption>Tick every second until the first click happens</caption>
- * var interval = Rx.Observable.interval(1000);
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = interval.takeUntil(clicks);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link take}
- * @see {@link takeLast}
- * @see {@link takeWhile}
- * @see {@link skip}
- *
- * @param {Observable} notifier The Observable whose first emitted value will
- * cause the output Observable of `takeUntil` to stop emitting values from the
- * source Observable.
- * @return {Observable<T>} An Observable that emits the values from the source
- * Observable until such time as `notifier` emits its first value.
- * @method takeUntil
- * @owner Observable
- */
 function takeUntil$2(notifier) {
     return takeUntil_1.takeUntil(notifier)(this);
 }
 var takeUntil_3 = takeUntil$2;
-
+//# sourceMappingURL=takeUntil.js.map
 
 var takeUntil_2 = {
 	takeUntil: takeUntil_3
 };
 
 Observable_1.Observable.prototype.takeUntil = takeUntil_2.takeUntil;
+//# sourceMappingURL=takeUntil.js.map
 
 var __extends$106 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39318,59 +35583,24 @@ var TakeWhileSubscriber = (function (_super) {
     };
     return TakeWhileSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=takeWhile.js.map
 
 var takeWhile_1 = {
 	takeWhile: takeWhile_2$2
 };
 
-/**
- * Emits values emitted by the source Observable so long as each value satisfies
- * the given `predicate`, and then completes as soon as this `predicate` is not
- * satisfied.
- *
- * <span class="informal">Takes values from the source only while they pass the
- * condition given. When the first value does not satisfy, it completes.</span>
- *
- * <img src="./img/takeWhile.png" width="100%">
- *
- * `takeWhile` subscribes and begins mirroring the source Observable. Each value
- * emitted on the source is given to the `predicate` function which returns a
- * boolean, representing a condition to be satisfied by the source values. The
- * output Observable emits the source values until such time as the `predicate`
- * returns false, at which point `takeWhile` stops mirroring the source
- * Observable and completes the output Observable.
- *
- * @example <caption>Emit click events only while the clientX property is greater than 200</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.takeWhile(ev => ev.clientX > 200);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link take}
- * @see {@link takeLast}
- * @see {@link takeUntil}
- * @see {@link skip}
- *
- * @param {function(value: T, index: number): boolean} predicate A function that
- * evaluates a value emitted by the source Observable and returns a boolean.
- * Also takes the (zero-based) index as the second argument.
- * @return {Observable<T>} An Observable that emits the values from the source
- * Observable so long as each value satisfies the condition defined by the
- * `predicate`, then completes.
- * @method takeWhile
- * @owner Observable
- */
 function takeWhile$2(predicate) {
     return takeWhile_1.takeWhile(predicate)(this);
 }
 var takeWhile_3 = takeWhile$2;
-
+//# sourceMappingURL=takeWhile.js.map
 
 var takeWhile_2 = {
 	takeWhile: takeWhile_3
 };
 
 Observable_1.Observable.prototype.takeWhile = takeWhile_2.takeWhile;
+//# sourceMappingURL=takeWhile.js.map
 
 var throttle_1 = createCommonjsModule(function (module, exports) {
 var __extends = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
@@ -39513,64 +35743,25 @@ var ThrottleSubscriber = (function (_super) {
     };
     return ThrottleSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=throttle.js.map
 });
 
 var throttle_2$2 = throttle_1.defaultThrottleConfig;
 var throttle_3$1 = throttle_1.throttle;
 
-/**
- * Emits a value from the source Observable, then ignores subsequent source
- * values for a duration determined by another Observable, then repeats this
- * process.
- *
- * <span class="informal">It's like {@link throttleTime}, but the silencing
- * duration is determined by a second Observable.</span>
- *
- * <img src="./img/throttle.png" width="100%">
- *
- * `throttle` emits the source Observable values on the output Observable
- * when its internal timer is disabled, and ignores source values when the timer
- * is enabled. Initially, the timer is disabled. As soon as the first source
- * value arrives, it is forwarded to the output Observable, and then the timer
- * is enabled by calling the `durationSelector` function with the source value,
- * which returns the "duration" Observable. When the duration Observable emits a
- * value or completes, the timer is disabled, and this process repeats for the
- * next source value.
- *
- * @example <caption>Emit clicks at a rate of at most one click per second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.throttle(ev => Rx.Observable.interval(1000));
- * result.subscribe(x => console.log(x));
- *
- * @see {@link audit}
- * @see {@link debounce}
- * @see {@link delayWhen}
- * @see {@link sample}
- * @see {@link throttleTime}
- *
- * @param {function(value: T): SubscribableOrPromise} durationSelector A function
- * that receives a value from the source Observable, for computing the silencing
- * duration for each source value, returned as an Observable or a Promise.
- * @param {Object} config a configuration object to define `leading` and `trailing` behavior. Defaults
- * to `{ leading: true, trailing: false }`.
- * @return {Observable<T>} An Observable that performs the throttle operation to
- * limit the rate of emissions from the source.
- * @method throttle
- * @owner Observable
- */
 function throttle$2(durationSelector, config) {
     if (config === void 0) { config = throttle_1.defaultThrottleConfig; }
     return throttle_1.throttle(durationSelector, config)(this);
 }
 var throttle_3 = throttle$2;
-
+//# sourceMappingURL=throttle.js.map
 
 var throttle_2 = {
 	throttle: throttle_3
 };
 
 Observable_1.Observable.prototype.throttle = throttle_2.throttle;
+//# sourceMappingURL=throttle.js.map
 
 var __extends$107 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39686,64 +35877,26 @@ function dispatchNext$4(arg) {
     var subscriber = arg.subscriber;
     subscriber.clearThrottle();
 }
-
+//# sourceMappingURL=throttleTime.js.map
 
 var throttleTime_1 = {
 	throttleTime: throttleTime_2$2
 };
 
-/**
- * Emits a value from the source Observable, then ignores subsequent source
- * values for `duration` milliseconds, then repeats this process.
- *
- * <span class="informal">Lets a value pass, then ignores source values for the
- * next `duration` milliseconds.</span>
- *
- * <img src="./img/throttleTime.png" width="100%">
- *
- * `throttleTime` emits the source Observable values on the output Observable
- * when its internal timer is disabled, and ignores source values when the timer
- * is enabled. Initially, the timer is disabled. As soon as the first source
- * value arrives, it is forwarded to the output Observable, and then the timer
- * is enabled. After `duration` milliseconds (or the time unit determined
- * internally by the optional `scheduler`) has passed, the timer is disabled,
- * and this process repeats for the next source value. Optionally takes a
- * {@link IScheduler} for managing timers.
- *
- * @example <caption>Emit clicks at a rate of at most one click per second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.throttleTime(1000);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link auditTime}
- * @see {@link debounceTime}
- * @see {@link delay}
- * @see {@link sampleTime}
- * @see {@link throttle}
- *
- * @param {number} duration Time to wait before emitting another value after
- * emitting the last value, measured in milliseconds or the time unit determined
- * internally by the optional `scheduler`.
- * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
- * managing the timers that handle the throttling.
- * @return {Observable<T>} An Observable that performs the throttle operation to
- * limit the rate of emissions from the source.
- * @method throttleTime
- * @owner Observable
- */
 function throttleTime$2(duration, scheduler, config) {
     if (scheduler === void 0) { scheduler = async.async; }
     if (config === void 0) { config = throttle_1.defaultThrottleConfig; }
     return throttleTime_1.throttleTime(duration, scheduler, config)(this);
 }
 var throttleTime_3 = throttleTime$2;
-
+//# sourceMappingURL=throttleTime.js.map
 
 var throttleTime_2 = {
 	throttleTime: throttleTime_3
 };
 
 Observable_1.Observable.prototype.throttleTime = throttleTime_2.throttleTime;
+//# sourceMappingURL=throttleTime.js.map
 
 var __extends$108 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39796,7 +35949,7 @@ var TimeIntervalSubscriber = (function (_super) {
     };
     return TimeIntervalSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=timeInterval.js.map
 
 var timeInterval_1 = {
 	timeInterval: timeInterval_2$2,
@@ -39815,7 +35968,7 @@ function timeInterval$2(scheduler) {
     return timeInterval_1.timeInterval(scheduler)(this);
 }
 var timeInterval_3 = timeInterval$2;
-
+//# sourceMappingURL=timeInterval.js.map
 
 var timeInterval_2 = {
 	TimeInterval: TimeInterval$1,
@@ -39823,6 +35976,7 @@ var timeInterval_2 = {
 };
 
 Observable_1.Observable.prototype.timeInterval = timeInterval_2.timeInterval;
+//# sourceMappingURL=timeInterval.js.map
 
 var __extends$110 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -39847,7 +36001,7 @@ var TimeoutError$1 = (function (_super) {
     return TimeoutError;
 }(Error));
 var TimeoutError_2 = TimeoutError$1;
-
+//# sourceMappingURL=TimeoutError.js.map
 
 var TimeoutError_1 = {
 	TimeoutError: TimeoutError_2
@@ -39992,89 +36146,25 @@ var TimeoutSubscriber = (function (_super) {
     };
     return TimeoutSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=timeout.js.map
 
 var timeout_1 = {
 	timeout: timeout_2$2
 };
 
-/**
- *
- * Errors if Observable does not emit a value in given time span.
- *
- * <span class="informal">Timeouts on Observable that doesn't emit values fast enough.</span>
- *
- * <img src="./img/timeout.png" width="100%">
- *
- * `timeout` operator accepts as an argument either a number or a Date.
- *
- * If number was provided, it returns an Observable that behaves like a source
- * Observable, unless there is a period of time where there is no value emitted.
- * So if you provide `100` as argument and first value comes after 50ms from
- * the moment of subscription, this value will be simply re-emitted by the resulting
- * Observable. If however after that 100ms passes without a second value being emitted,
- * stream will end with an error and source Observable will be unsubscribed.
- * These checks are performed throughout whole lifecycle of Observable - from the moment
- * it was subscribed to, until it completes or errors itself. Thus every value must be
- * emitted within specified period since previous value.
- *
- * If provided argument was Date, returned Observable behaves differently. It throws
- * if Observable did not complete before provided Date. This means that periods between
- * emission of particular values do not matter in this case. If Observable did not complete
- * before provided Date, source Observable will be unsubscribed. Other than that, resulting
- * stream behaves just as source Observable.
- *
- * `timeout` accepts also a Scheduler as a second parameter. It is used to schedule moment (or moments)
- * when returned Observable will check if source stream emitted value or completed.
- *
- * @example <caption>Check if ticks are emitted within certain timespan</caption>
- * const seconds = Rx.Observable.interval(1000);
- *
- * seconds.timeout(1100) // Let's use bigger timespan to be safe,
- *                       // since `interval` might fire a bit later then scheduled.
- * .subscribe(
- *     value => console.log(value), // Will emit numbers just as regular `interval` would.
- *     err => console.log(err) // Will never be called.
- * );
- *
- * seconds.timeout(900).subscribe(
- *     value => console.log(value), // Will never be called.
- *     err => console.log(err) // Will emit error before even first value is emitted,
- *                             // since it did not arrive within 900ms period.
- * );
- *
- * @example <caption>Use Date to check if Observable completed</caption>
- * const seconds = Rx.Observable.interval(1000);
- *
- * seconds.timeout(new Date("December 17, 2020 03:24:00"))
- * .subscribe(
- *     value => console.log(value), // Will emit values as regular `interval` would
- *                                  // until December 17, 2020 at 03:24:00.
- *     err => console.log(err) // On December 17, 2020 at 03:24:00 it will emit an error,
- *                             // since Observable did not complete by then.
- * );
- *
- * @see {@link timeoutWith}
- *
- * @param {number|Date} due Number specifying period within which Observable must emit values
- *                          or Date specifying before when Observable should complete
- * @param {Scheduler} [scheduler] Scheduler controlling when timeout checks occur.
- * @return {Observable<T>} Observable that mirrors behaviour of source, unless timeout checks fail.
- * @method timeout
- * @owner Observable
- */
 function timeout$2(due, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return timeout_1.timeout(due, scheduler)(this);
 }
 var timeout_3 = timeout$2;
-
+//# sourceMappingURL=timeout.js.map
 
 var timeout_2 = {
 	timeout: timeout_3
 };
 
 Observable_1.Observable.prototype.timeout = timeout_2.timeout;
+//# sourceMappingURL=timeout.js.map
 
 var __extends$111 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -40202,79 +36292,26 @@ var TimeoutWithSubscriber = (function (_super) {
     };
     return TimeoutWithSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=timeoutWith.js.map
 
 var timeoutWith_1 = {
 	timeoutWith: timeoutWith_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- *
- * Errors if Observable does not emit a value in given time span, in case of which
- * subscribes to the second Observable.
- *
- * <span class="informal">It's a version of `timeout` operator that let's you specify fallback Observable.</span>
- *
- * <img src="./img/timeoutWith.png" width="100%">
- *
- * `timeoutWith` is a variation of `timeout` operator. It behaves exactly the same,
- * still accepting as a first argument either a number or a Date, which control - respectively -
- * when values of source Observable should be emitted or when it should complete.
- *
- * The only difference is that it accepts a second, required parameter. This parameter
- * should be an Observable which will be subscribed when source Observable fails any timeout check.
- * So whenever regular `timeout` would emit an error, `timeoutWith` will instead start re-emitting
- * values from second Observable. Note that this fallback Observable is not checked for timeouts
- * itself, so it can emit values and complete at arbitrary points in time. From the moment of a second
- * subscription, Observable returned from `timeoutWith` simply mirrors fallback stream. When that
- * stream completes, it completes as well.
- *
- * Scheduler, which in case of `timeout` is provided as as second argument, can be still provided
- * here - as a third, optional parameter. It still is used to schedule timeout checks and -
- * as a consequence - when second Observable will be subscribed, since subscription happens
- * immediately after failing check.
- *
- * @example <caption>Add fallback observable</caption>
- * const seconds = Rx.Observable.interval(1000);
- * const minutes = Rx.Observable.interval(60 * 1000);
- *
- * seconds.timeoutWith(900, minutes)
- *     .subscribe(
- *         value => console.log(value), // After 900ms, will start emitting `minutes`,
- *                                      // since first value of `seconds` will not arrive fast enough.
- *         err => console.log(err) // Would be called after 900ms in case of `timeout`,
- *                                 // but here will never be called.
- *     );
- *
- * @param {number|Date} due Number specifying period within which Observable must emit values
- *                          or Date specifying before when Observable should complete
- * @param {Observable<T>} withObservable Observable which will be subscribed if source fails timeout check.
- * @param {Scheduler} [scheduler] Scheduler controlling when timeout checks occur.
- * @return {Observable<T>} Observable that mirrors behaviour of source or, when timeout check fails, of an Observable
- *                          passed as a second parameter.
- * @method timeoutWith
- * @owner Observable
- */
 function timeoutWith$2(due, withObservable, scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return timeoutWith_1.timeoutWith(due, withObservable, scheduler)(this);
 }
 var timeoutWith_3 = timeoutWith$2;
-
+//# sourceMappingURL=timeoutWith.js.map
 
 var timeoutWith_2 = {
 	timeoutWith: timeoutWith_3
 };
 
 Observable_1.Observable.prototype.timeoutWith = timeoutWith_2.timeoutWith;
+//# sourceMappingURL=timeoutWith.js.map
 
-/**
- * @param scheduler
- * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
- * @method timestamp
- * @owner Observable
- */
 function timestamp$3(scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return map_1.map(function (value) { return new Timestamp$1(value, scheduler.now()); });
@@ -40290,31 +36327,26 @@ var Timestamp$1 = (function () {
 }());
 var Timestamp_1 = Timestamp$1;
 
-
+//# sourceMappingURL=timestamp.js.map
 
 var timestamp_1 = {
 	timestamp: timestamp_2$2,
 	Timestamp: Timestamp_1
 };
 
-/**
- * @param scheduler
- * @return {Observable<Timestamp<any>>|WebSocketSubject<T>|Observable<T>}
- * @method timestamp
- * @owner Observable
- */
 function timestamp$2(scheduler) {
     if (scheduler === void 0) { scheduler = async.async; }
     return timestamp_1.timestamp(scheduler)(this);
 }
 var timestamp_3 = timestamp$2;
-
+//# sourceMappingURL=timestamp.js.map
 
 var timestamp_2 = {
 	timestamp: timestamp_3
 };
 
 Observable_1.Observable.prototype.timestamp = timestamp_2.timestamp;
+//# sourceMappingURL=timestamp.js.map
 
 function toArrayReducer(arr, item, index) {
     arr.push(item);
@@ -40324,49 +36356,28 @@ function toArray$3() {
     return reduce_1.reduce(toArrayReducer, []);
 }
 var toArray_2$2 = toArray$3;
-
+//# sourceMappingURL=toArray.js.map
 
 var toArray_1 = {
 	toArray: toArray_2$2
 };
 
-/**
- * Collects all source emissions and emits them as an array when the source completes.
- *
- * <span class="informal">Get all values inside an array when the source completes</span>
- *
- * <img src="./img/toArray.png" width="100%">
- *
- * `toArray` will wait until the source Observable completes
- * before emitting the array containing all emissions.
- * When the source Observable errors no array will be emitted.
- *
- * @example <caption>Create array from input</caption>
- * const input = Rx.Observable.interval(100).take(4);
- *
- * input.toArray()
- *   .subscribe(arr => console.log(arr)); // [0,1,2,3]
- *
- * @see {@link buffer}
- *
- * @return {Observable<any[]>|WebSocketSubject<T>|Observable<T>}
- * @method toArray
- * @owner Observable
- */
 function toArray$2() {
     return toArray_1.toArray()(this);
 }
 var toArray_3 = toArray$2;
-
+//# sourceMappingURL=toArray.js.map
 
 var toArray_2 = {
 	toArray: toArray_3
 };
 
 Observable_1.Observable.prototype.toArray = toArray_2.toArray;
+//# sourceMappingURL=toArray.js.map
 
 // HACK: does nothing, because `toPromise` now lives on the `Observable` itself.
 // leaving this module here to prevent breakage.
+//# sourceMappingURL=toPromise.js.map
 
 var __extends$112 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -40478,59 +36489,24 @@ var WindowSubscriber = (function (_super) {
     };
     return WindowSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=window.js.map
 
 var window_1 = {
 	window: window_2$2
 };
 
-/**
- * Branch out the source Observable values as a nested Observable whenever
- * `windowBoundaries` emits.
- *
- * <span class="informal">It's like {@link buffer}, but emits a nested Observable
- * instead of an array.</span>
- *
- * <img src="./img/window.png" width="100%">
- *
- * Returns an Observable that emits windows of items it collects from the source
- * Observable. The output Observable emits connected, non-overlapping
- * windows. It emits the current window and opens a new one whenever the
- * Observable `windowBoundaries` emits an item. Because each window is an
- * Observable, the output is a higher-order Observable.
- *
- * @example <caption>In every window of 1 second each, emit at most 2 click events</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var interval = Rx.Observable.interval(1000);
- * var result = clicks.window(interval)
- *   .map(win => win.take(2)) // each window has at most 2 emissions
- *   .mergeAll(); // flatten the Observable-of-Observables
- * result.subscribe(x => console.log(x));
- *
- * @see {@link windowCount}
- * @see {@link windowTime}
- * @see {@link windowToggle}
- * @see {@link windowWhen}
- * @see {@link buffer}
- *
- * @param {Observable<any>} windowBoundaries An Observable that completes the
- * previous window and starts a new window.
- * @return {Observable<Observable<T>>} An Observable of windows, which are
- * Observables emitting values of the source Observable.
- * @method window
- * @owner Observable
- */
 function window$3(windowBoundaries) {
     return window_1.window(windowBoundaries)(this);
 }
 var window_3 = window$3;
-
+//# sourceMappingURL=window.js.map
 
 var window_2 = {
 	window: window_3
 };
 
 Observable_1.Observable.prototype.window = window_2.window;
+//# sourceMappingURL=window.js.map
 
 var __extends$113 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -40663,72 +36639,25 @@ var WindowCountSubscriber = (function (_super) {
     };
     return WindowCountSubscriber;
 }(Subscriber_1.Subscriber));
-
+//# sourceMappingURL=windowCount.js.map
 
 var windowCount_1 = {
 	windowCount: windowCount_2$2
 };
 
-/**
- * Branch out the source Observable values as a nested Observable with each
- * nested Observable emitting at most `windowSize` values.
- *
- * <span class="informal">It's like {@link bufferCount}, but emits a nested
- * Observable instead of an array.</span>
- *
- * <img src="./img/windowCount.png" width="100%">
- *
- * Returns an Observable that emits windows of items it collects from the source
- * Observable. The output Observable emits windows every `startWindowEvery`
- * items, each containing no more than `windowSize` items. When the source
- * Observable completes or encounters an error, the output Observable emits
- * the current window and propagates the notification from the source
- * Observable. If `startWindowEvery` is not provided, then new windows are
- * started immediately at the start of the source and when each window completes
- * with size `windowSize`.
- *
- * @example <caption>Ignore every 3rd click event, starting from the first one</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.windowCount(3)
- *   .map(win => win.skip(1)) // skip first of every 3 clicks
- *   .mergeAll(); // flatten the Observable-of-Observables
- * result.subscribe(x => console.log(x));
- *
- * @example <caption>Ignore every 3rd click event, starting from the third one</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks.windowCount(2, 3)
- *   .mergeAll(); // flatten the Observable-of-Observables
- * result.subscribe(x => console.log(x));
- *
- * @see {@link window}
- * @see {@link windowTime}
- * @see {@link windowToggle}
- * @see {@link windowWhen}
- * @see {@link bufferCount}
- *
- * @param {number} windowSize The maximum number of values emitted by each
- * window.
- * @param {number} [startWindowEvery] Interval at which to start a new window.
- * For example if `startWindowEvery` is `2`, then a new window will be started
- * on every other value from the source. A new window is started at the
- * beginning of the source by default.
- * @return {Observable<Observable<T>>} An Observable of windows, which in turn
- * are Observable of values.
- * @method windowCount
- * @owner Observable
- */
 function windowCount$2(windowSize, startWindowEvery) {
     if (startWindowEvery === void 0) { startWindowEvery = 0; }
     return windowCount_1.windowCount(windowSize, startWindowEvery)(this);
 }
 var windowCount_3 = windowCount$2;
-
+//# sourceMappingURL=windowCount.js.map
 
 var windowCount_2 = {
 	windowCount: windowCount_3
 };
 
 Observable_1.Observable.prototype.windowCount = windowCount_2.windowCount;
+//# sourceMappingURL=windowCount.js.map
 
 var __extends$114 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -40891,7 +36820,7 @@ function dispatchWindowClose(state) {
     }
     subscriber.closeWindow(window);
 }
-
+//# sourceMappingURL=windowTime.js.map
 
 var windowTime_1 = {
 	windowTime: windowTime_2$2
@@ -40919,13 +36848,14 @@ function windowTime$2(windowTimeSpan) {
     return windowTime_1.windowTime(windowTimeSpan, windowCreationInterval, maxWindowSize, scheduler)(this);
 }
 var windowTime_3 = windowTime$2;
-
+//# sourceMappingURL=windowTime.js.map
 
 var windowTime_2 = {
 	windowTime: windowTime_3
 };
 
 Observable_1.Observable.prototype.windowTime = windowTime_2.windowTime;
+//# sourceMappingURL=windowTime.js.map
 
 var __extends$115 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -41105,64 +37035,24 @@ var WindowToggleSubscriber = (function (_super) {
     };
     return WindowToggleSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=windowToggle.js.map
 
 var windowToggle_1 = {
 	windowToggle: windowToggle_2$2
 };
 
-/**
- * Branch out the source Observable values as a nested Observable starting from
- * an emission from `openings` and ending when the output of `closingSelector`
- * emits.
- *
- * <span class="informal">It's like {@link bufferToggle}, but emits a nested
- * Observable instead of an array.</span>
- *
- * <img src="./img/windowToggle.png" width="100%">
- *
- * Returns an Observable that emits windows of items it collects from the source
- * Observable. The output Observable emits windows that contain those items
- * emitted by the source Observable between the time when the `openings`
- * Observable emits an item and when the Observable returned by
- * `closingSelector` emits an item.
- *
- * @example <caption>Every other second, emit the click events from the next 500ms</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var openings = Rx.Observable.interval(1000);
- * var result = clicks.windowToggle(openings, i =>
- *   i % 2 ? Rx.Observable.interval(500) : Rx.Observable.empty()
- * ).mergeAll();
- * result.subscribe(x => console.log(x));
- *
- * @see {@link window}
- * @see {@link windowCount}
- * @see {@link windowTime}
- * @see {@link windowWhen}
- * @see {@link bufferToggle}
- *
- * @param {Observable<O>} openings An observable of notifications to start new
- * windows.
- * @param {function(value: O): Observable} closingSelector A function that takes
- * the value emitted by the `openings` observable and returns an Observable,
- * which, when it emits (either `next` or `complete`), signals that the
- * associated window should complete.
- * @return {Observable<Observable<T>>} An observable of windows, which in turn
- * are Observables.
- * @method windowToggle
- * @owner Observable
- */
 function windowToggle$2(openings, closingSelector) {
     return windowToggle_1.windowToggle(openings, closingSelector)(this);
 }
 var windowToggle_3 = windowToggle$2;
-
+//# sourceMappingURL=windowToggle.js.map
 
 var windowToggle_2 = {
 	windowToggle: windowToggle_3
 };
 
 Observable_1.Observable.prototype.windowToggle = windowToggle_2.windowToggle;
+//# sourceMappingURL=windowToggle.js.map
 
 var __extends$116 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -41291,61 +37181,24 @@ var WindowSubscriber$1 = (function (_super) {
     };
     return WindowSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=windowWhen.js.map
 
 var windowWhen_1 = {
 	windowWhen: windowWhen_2$2
 };
 
-/**
- * Branch out the source Observable values as a nested Observable using a
- * factory function of closing Observables to determine when to start a new
- * window.
- *
- * <span class="informal">It's like {@link bufferWhen}, but emits a nested
- * Observable instead of an array.</span>
- *
- * <img src="./img/windowWhen.png" width="100%">
- *
- * Returns an Observable that emits windows of items it collects from the source
- * Observable. The output Observable emits connected, non-overlapping windows.
- * It emits the current window and opens a new one whenever the Observable
- * produced by the specified `closingSelector` function emits an item. The first
- * window is opened immediately when subscribing to the output Observable.
- *
- * @example <caption>Emit only the first two clicks events in every window of [1-5] random seconds</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var result = clicks
- *   .windowWhen(() => Rx.Observable.interval(1000 + Math.random() * 4000))
- *   .map(win => win.take(2)) // each window has at most 2 emissions
- *   .mergeAll(); // flatten the Observable-of-Observables
- * result.subscribe(x => console.log(x));
- *
- * @see {@link window}
- * @see {@link windowCount}
- * @see {@link windowTime}
- * @see {@link windowToggle}
- * @see {@link bufferWhen}
- *
- * @param {function(): Observable} closingSelector A function that takes no
- * arguments and returns an Observable that signals (on either `next` or
- * `complete`) when to close the previous window and start a new one.
- * @return {Observable<Observable<T>>} An observable of windows, which in turn
- * are Observables.
- * @method windowWhen
- * @owner Observable
- */
 function windowWhen$2(closingSelector) {
     return windowWhen_1.windowWhen(closingSelector)(this);
 }
 var windowWhen_3 = windowWhen$2;
-
+//# sourceMappingURL=windowWhen.js.map
 
 var windowWhen_2 = {
 	windowWhen: windowWhen_3
 };
 
 Observable_1.Observable.prototype.windowWhen = windowWhen_2.windowWhen;
+//# sourceMappingURL=windowWhen.js.map
 
 var __extends$117 = (commonjsGlobal && commonjsGlobal.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -41477,51 +37330,12 @@ var WithLatestFromSubscriber = (function (_super) {
     };
     return WithLatestFromSubscriber;
 }(OuterSubscriber_1.OuterSubscriber));
-
+//# sourceMappingURL=withLatestFrom.js.map
 
 var withLatestFrom_1 = {
 	withLatestFrom: withLatestFrom_2$2
 };
 
-/* tslint:enable:max-line-length */
-/**
- * Combines the source Observable with other Observables to create an Observable
- * whose values are calculated from the latest values of each, only when the
- * source emits.
- *
- * <span class="informal">Whenever the source Observable emits a value, it
- * computes a formula using that value plus the latest values from other input
- * Observables, then emits the output of that formula.</span>
- *
- * <img src="./img/withLatestFrom.png" width="100%">
- *
- * `withLatestFrom` combines each value from the source Observable (the
- * instance) with the latest values from the other input Observables only when
- * the source emits a value, optionally using a `project` function to determine
- * the value to be emitted on the output Observable. All input Observables must
- * emit at least one value before the output Observable will emit a value.
- *
- * @example <caption>On every click event, emit an array with the latest timer event plus the click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var timer = Rx.Observable.interval(1000);
- * var result = clicks.withLatestFrom(timer);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link combineLatest}
- *
- * @param {ObservableInput} other An input Observable to combine with the source
- * Observable. More than one input Observables may be given as argument.
- * @param {Function} [project] Projection function for combining values
- * together. Receives all values in order of the Observables passed, where the
- * first parameter is a value from the source Observable. (e.g.
- * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
- * passed, arrays will be emitted on the output Observable.
- * @return {Observable} An Observable of projected values from the most recent
- * values from each input Observable, or an array of the most recent values from
- * each input Observable.
- * @method withLatestFrom
- * @owner Observable
- */
 function withLatestFrom$2() {
     var args = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -41530,21 +37344,15 @@ function withLatestFrom$2() {
     return withLatestFrom_1.withLatestFrom.apply(void 0, args)(this);
 }
 var withLatestFrom_3 = withLatestFrom$2;
-
+//# sourceMappingURL=withLatestFrom.js.map
 
 var withLatestFrom_2 = {
 	withLatestFrom: withLatestFrom_3
 };
 
 Observable_1.Observable.prototype.withLatestFrom = withLatestFrom_2.withLatestFrom;
+//# sourceMappingURL=withLatestFrom.js.map
 
-/* tslint:enable:max-line-length */
-/**
- * @param observables
- * @return {Observable<R>}
- * @method zip
- * @owner Observable
- */
 function zipProto() {
     var observables = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -41553,41 +37361,37 @@ function zipProto() {
     return zip_1.zip.apply(void 0, observables)(this);
 }
 var zipProto_1 = zipProto;
-
+//# sourceMappingURL=zip.js.map
 
 var zip$7 = {
 	zipProto: zipProto_1
 };
 
 Observable_1.Observable.prototype.zip = zip$7.zipProto;
+//# sourceMappingURL=zip.js.map
 
 function zipAll$3(project) {
     return function (source) { return source.lift(new zip_1.ZipOperator(project)); };
 }
 var zipAll_2$2 = zipAll$3;
-
+//# sourceMappingURL=zipAll.js.map
 
 var zipAll_1 = {
 	zipAll: zipAll_2$2
 };
 
-/**
- * @param project
- * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
- * @method zipAll
- * @owner Observable
- */
 function zipAll$2(project) {
     return zipAll_1.zipAll(project)(this);
 }
 var zipAll_3 = zipAll$2;
-
+//# sourceMappingURL=zipAll.js.map
 
 var zipAll_2 = {
 	zipAll: zipAll_3
 };
 
 Observable_1.Observable.prototype.zipAll = zipAll_2.zipAll;
+//# sourceMappingURL=zipAll.js.map
 
 var SubscriptionLog = (function () {
     function SubscriptionLog(subscribedFrame, unsubscribedFrame) {
@@ -41598,7 +37402,7 @@ var SubscriptionLog = (function () {
     return SubscriptionLog;
 }());
 var SubscriptionLog_2 = SubscriptionLog;
-
+//# sourceMappingURL=SubscriptionLog.js.map
 
 var SubscriptionLog_1 = {
 	SubscriptionLog: SubscriptionLog_2
@@ -41620,7 +37424,7 @@ var SubscriptionLoggable = (function () {
     return SubscriptionLoggable;
 }());
 var SubscriptionLoggable_2 = SubscriptionLoggable;
-
+//# sourceMappingURL=SubscriptionLoggable.js.map
 
 var SubscriptionLoggable_1 = {
 	SubscriptionLoggable: SubscriptionLoggable_2
@@ -41637,7 +37441,7 @@ function applyMixins(derivedCtor, baseCtors) {
     }
 }
 var applyMixins_2 = applyMixins;
-
+//# sourceMappingURL=applyMixins.js.map
 
 var applyMixins_1 = {
 	applyMixins: applyMixins_2
@@ -41687,7 +37491,7 @@ var ColdObservable = (function (_super) {
 }(Observable_1.Observable));
 var ColdObservable_2 = ColdObservable;
 applyMixins_1.applyMixins(ColdObservable, [SubscriptionLoggable_1.SubscriptionLoggable]);
-
+//# sourceMappingURL=ColdObservable.js.map
 
 var ColdObservable_1 = {
 	ColdObservable: ColdObservable_2
@@ -41739,7 +37543,7 @@ var HotObservable = (function (_super) {
 }(Subject_1.Subject));
 var HotObservable_2 = HotObservable;
 applyMixins_1.applyMixins(HotObservable, [SubscriptionLoggable_1.SubscriptionLoggable]);
-
+//# sourceMappingURL=HotObservable.js.map
 
 var HotObservable_1 = {
 	HotObservable: HotObservable_2
@@ -41856,7 +37660,7 @@ var VirtualAction = (function (_super) {
     return VirtualAction;
 }(AsyncAction_1.AsyncAction));
 var VirtualAction_1 = VirtualAction;
-
+//# sourceMappingURL=VirtualTimeScheduler.js.map
 
 var VirtualTimeScheduler_1 = {
 	VirtualTimeScheduler: VirtualTimeScheduler_2,
@@ -42084,7 +37888,7 @@ var TestScheduler$1 = (function (_super) {
     return TestScheduler;
 }(VirtualTimeScheduler_1.VirtualTimeScheduler));
 var TestScheduler_2 = TestScheduler$1;
-
+//# sourceMappingURL=TestScheduler.js.map
 
 var TestScheduler_1 = {
 	TestScheduler: TestScheduler_2
@@ -42121,7 +37925,7 @@ var RequestAnimationFrameDefinition = (function () {
 }());
 var RequestAnimationFrameDefinition_1 = RequestAnimationFrameDefinition;
 var AnimationFrame_1 = new RequestAnimationFrameDefinition(root.root);
-
+//# sourceMappingURL=AnimationFrame.js.map
 
 var AnimationFrame = {
 	RequestAnimationFrameDefinition: RequestAnimationFrameDefinition_1,
@@ -42181,7 +37985,7 @@ var AnimationFrameAction = (function (_super) {
     return AnimationFrameAction;
 }(AsyncAction_1.AsyncAction));
 var AnimationFrameAction_2 = AnimationFrameAction;
-
+//# sourceMappingURL=AnimationFrameAction.js.map
 
 var AnimationFrameAction_1 = {
 	AnimationFrameAction: AnimationFrameAction_2
@@ -42222,44 +38026,14 @@ var AnimationFrameScheduler = (function (_super) {
     return AnimationFrameScheduler;
 }(AsyncScheduler_1.AsyncScheduler));
 var AnimationFrameScheduler_2 = AnimationFrameScheduler;
-
+//# sourceMappingURL=AnimationFrameScheduler.js.map
 
 var AnimationFrameScheduler_1 = {
 	AnimationFrameScheduler: AnimationFrameScheduler_2
 };
 
-/**
- *
- * Animation Frame Scheduler
- *
- * <span class="informal">Perform task when `window.requestAnimationFrame` would fire</span>
- *
- * When `animationFrame` scheduler is used with delay, it will fall back to {@link async} scheduler
- * behaviour.
- *
- * Without delay, `animationFrame` scheduler can be used to create smooth browser animations.
- * It makes sure scheduled task will happen just before next browser content repaint,
- * thus performing animations as efficiently as possible.
- *
- * @example <caption>Schedule div height animation</caption>
- * const div = document.querySelector('.some-div');
- *
- * Rx.Scheduler.schedule(function(height) {
- *   div.style.height = height + "px";
- *
- *   this.schedule(height + 1);  // `this` references currently executing Action,
- *                               // which we reschedule with new state
- * }, 0, 0);
- *
- * // You will see .some-div element growing in height
- *
- *
- * @static true
- * @name animationFrame
- * @owner Scheduler
- */
 var animationFrame_1 = new AnimationFrameScheduler_1.AnimationFrameScheduler(AnimationFrameAction_1.AnimationFrameAction);
-
+//# sourceMappingURL=animationFrame.js.map
 
 var animationFrame = {
 	animationFrame: animationFrame_1
@@ -42473,7 +38247,7 @@ var withLatestFrom$4 = withLatestFrom_1.withLatestFrom;
 var zip$9 = zip_1.zip;
 
 var zipAll$4 = zipAll_1.zipAll;
-
+//# sourceMappingURL=operators.js.map
 
 var operators$1 = {
 	audit: audit$4,
@@ -42578,11 +38352,6 @@ var operators$1 = {
 	zip: zip$9,
 	zipAll: zipAll$4
 };
-
-/* tslint:disable:no-unused-variable */
-// Subject imported before Observable to bypass circular dependency issue since
-// Subject extends Observable and Observable references Subject in it's
-// definition
 
 var Subject = Subject_1.Subject;
 var AnonymousSubject = Subject_1.AnonymousSubject;
@@ -42810,7 +38579,7 @@ var Symbol = {
     iterator: iterator.iterator
 };
 var Symbol_1 = Symbol;
-
+//# sourceMappingURL=Rx.js.map
 
 var Rx = {
 	Subject: Subject,
@@ -42895,15 +38664,6 @@ runAsync.cb = function (func, cb) {
 };
 });
 
-/**
- * Resolve a question property value if it is passed as a function.
- * This method will overwrite the property on the question object with the received value.
- * @param  {Object} question - Question object
- * @param  {String} prop     - Property to fetch name
- * @param  {Object} answers  - Answers object
- * @return {Rx.Observable}   - Observable emitting once value is known
- */
-
 var fetchAsyncQuestionProperty = function(question, prop, answers) {
   if (!lodash.isFunction(question[prop])) {
     return Rx.Observable.of(question);
@@ -42920,10 +38680,6 @@ var fetchAsyncQuestionProperty = function(question, prop, answers) {
 var utils = {
 	fetchAsyncQuestionProperty: fetchAsyncQuestionProperty
 };
-
-/**
- * Base interface class other can inherits from
- */
 
 class PromptUI extends baseUI {
   constructor(prompts, opt) {
@@ -43136,10 +38892,6 @@ if (process.platform === 'linux') {
 }
 });
 
-// Note: since nyc uses this module to output coverage, any lines
-// that are in the direct sync flow of nyc's outputCoverage are
-// ignored, since we can never get coverage for them.
-
 var signals = signals$1;
 
 var EE = events;
@@ -43347,14 +39099,6 @@ var cliCursor_1 = cliCursor.show;
 var cliCursor_2 = cliCursor.hide;
 var cliCursor_3 = cliCursor.toggle;
 
-/**
- * Choice object
- * Normalize input as choice object
- * @constructor
- * @param {String|Object} val  Choice value. If an object is passed, it should contains
- *                             at least one of `value` or `name` property
- */
-
 var choice = class Choice {
   constructor(val, answers) {
     // Don't process Choice and Separator object
@@ -43381,13 +39125,6 @@ var choice = class Choice {
     }
   }
 };
-
-/**
- * Choices collection
- * Collection of multiple `choice` object
- * @constructor
- * @param {Array} choices  All `choice` to keep in the collection
- */
 
 var choices = class Choices {
   constructor(choices, answers) {
@@ -43768,17 +39505,6 @@ class ScreenManager {
 
 var screenManager = ScreenManager;
 
-/**
- * Base prompt implementation
- * Should be extended by prompt types.
- */
-
-
-
-
-
-
-
 class Prompt {
   constructor(question, rl, answers) {
     // Setup instance defaults property
@@ -43939,11 +39665,6 @@ var events$1 = function(rl) {
   };
 };
 
-/**
- * The paginator keeps track of a pointer index in a list and returns
- * a subset of the choices if the list is too long.
- */
-
 class Paginator {
   constructor(screen) {
     this.pointer = 0;
@@ -43987,19 +39708,6 @@ class Paginator {
 }
 
 var paginator = Paginator;
-
-/**
- * `list` type prompt
- */
-
-
-
-
-
-
-
-
-
 
 class ListPrompt extends base {
   constructor(questions, rl, answers) {
@@ -44165,14 +39873,6 @@ function listRender(choices, pointer) {
 
 var list = ListPrompt;
 
-/**
- * `input` type prompt
- */
-
-
-
-
-
 class InputPrompt extends base {
   /**
    * Start the Inquiry session
@@ -44257,15 +39957,6 @@ class InputPrompt extends base {
 }
 
 var input = InputPrompt;
-
-/**
- * `confirm` type prompt
- */
-
-
-
-
-
 
 class ConfirmPrompt extends base {
   constructor(questions, rl, answers) {
@@ -44356,17 +40047,6 @@ class ConfirmPrompt extends base {
 }
 
 var confirm = ConfirmPrompt;
-
-/**
- * `rawlist` type prompt
- */
-
-
-
-
-
-
-
 
 class RawListPrompt extends base {
   constructor(questions, rl, answers) {
@@ -44534,17 +40214,6 @@ function renderChoices(choices, pointer) {
 }
 
 var rawlist = RawListPrompt;
-
-/**
- * `rawlist` type prompt
- */
-
-
-
-
-
-
-
 
 class ExpandPrompt extends base {
   constructor(questions, rl, answers) {
@@ -44801,18 +40470,6 @@ function renderChoices$1(choices, pointer) {
 
 var expand$5 = ExpandPrompt;
 
-/**
- * `list` type prompt
- */
-
-
-
-
-
-
-
-
-
 class CheckboxPrompt extends base {
   constructor(questions, rl, answers) {
     super(questions, rl, answers);
@@ -45044,14 +40701,6 @@ function getCheckbox(checked) {
 
 var checkbox = CheckboxPrompt;
 
-/**
- * `password` type prompt
- */
-
-
-
-
-
 function mask(input, maskChar) {
   input = String(input);
   maskChar = typeof maskChar === 'string' ? maskChar : '*';
@@ -45174,21 +40823,6 @@ var osTmpdir = function () {
 
 	return path$$1;
 };
-
-/*!
- * Tmp
- *
- * Copyright (c) 2011-2017 KARASZI Istvan <github@spam.raszi.hu>
- *
- * MIT Licensed
- */
-
-/*
- * Module dependencies.
- */
-
-
-
 
 const _c = process.binding('constants');
 
@@ -46577,8 +42211,6 @@ var sbcsCodec = {
 	_sbcs: _sbcs
 };
 
-// Manually added data to be used by sbcs codec in addition to generated one.
-
 var sbcsData = {
     // Not supported by iconv, not sure why.
     "10029": "maccenteuro",
@@ -46744,7 +42376,6 @@ var sbcsData = {
     "csmacintosh": "macintosh",
 };
 
-// Generated data for sbcs codec. Don't edit manually. Regenerate using generation/gen-sbcs.js script.
 var sbcsDataGenerated = {
   "437": "cp437",
   "737": "cp737",
@@ -49021,10 +44652,6 @@ var require$$6 = ( cp950$1 && cp950 ) || cp950$1;
 
 var require$$7 = ( big5Added$1 && big5Added ) || big5Added$1;
 
-// Description of supported double byte encodings and aliases.
-// Tables are not require()-d until they are needed to speed up library load.
-// require()-s are direct to support Browserify.
-
 var dbcsData = {
     
     // == Japanese/ShiftJIS ====================================================
@@ -49701,9 +45328,6 @@ var match = function(det, rec, confidence, name, lang) {
   this.lang = lang;
 };
 
-/**
- * Charset recognizer for UTF-8
- */
 var utf8 = function() {
   this.name = function() {
     return 'UTF-8';
@@ -51927,16 +47551,6 @@ var main = createCommonjsModule(function (module) {
 
 }).call(commonjsGlobal);
 });
-
-/**
- * `editor` type prompt
- */
-
-
-
-
-
-
 
 class EditorPrompt extends base {
   /**
