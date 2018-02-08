@@ -87,4 +87,5 @@ node命令行开发：process、readline、child_process
 
 相关链接：[http://javascript.ruanyifeng.com/nodejs/child-process.html#toc2](http://javascript.ruanyifeng.com/nodejs/child-process.html#toc2),
 [http://nodejs.cn/api/child_process.html](http://nodejs.cn/api/child_process.html),
-[https://blog.liftsecurity.io/2014/08/19/Avoid-Command-Injection-Node.js](https://blog.liftsecurity.io/2014/08/19/Avoid-Command-Injection-Node.js)
+[https://blog.liftsecurity.io/2014/08/19/Avoid-Command-Injection-Node.js](https://blog.liftsecurity.io/2014/08/19/Avoid-Command-Injection-Node.js),
+[http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
