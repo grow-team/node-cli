@@ -13,7 +13,7 @@ log('\r\nprocess.execArgv=',process.execArgv);
 
 process.stdin.on('data', function(data) {
   process.stdout.write(data);
-
+  // 变更当前工作目录
   try {
     process.chdir('../');
     console.log(`New directory: ${process.cwd()}`);
