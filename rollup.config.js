@@ -35,6 +35,14 @@ const files = [
 	{
 		input: './child_process/index.js',
 		output: 'dist/child_process/build.js'
+	},
+	{
+		input: './child_process/execFile.js',
+		output: 'dist/child_process/execFile.js'
+	},
+	{
+		input: './child_process/spawn.js',
+		output: 'dist/child_process/spawn.js'
 	}
 ];
 function creatConfig(files){
